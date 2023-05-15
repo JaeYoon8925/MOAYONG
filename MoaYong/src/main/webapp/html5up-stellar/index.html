@@ -1,4 +1,4 @@
-@ page import="필요한 dto 연결1" %>
+<%@ page import="필요한 dto 연결1" %>
 	<%@ page import="필요한 dto 연결2" %>
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 			<!DOCTYPE HTML>
@@ -76,7 +76,7 @@
 										</ul>
 								</div>
 								<!-- 프로필 사진 클래스명 image에서 photo로 변경(css파일 선택자도 함께) 변경 -->
-								<!-- 일단 이미지 크기는 높이 폭 모두 16em-->
+								<!-- 일단 이미지 크기는 높이 폭 모두 14em-->
 								<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 							</div>
 						</section>
@@ -153,7 +153,7 @@
 							<footer class="major">
 								<ul class="actions special">
 									<li><a href="generic.html" class="button">메모하기</a></li>
-									<li><a href="calendarfix.html" class="button primary">수정하기</a></li>
+									<li><a href="calendarfix.html" class="button primary">일정추가</a></li>
 								</ul>
 							</footer>
 						</section>
@@ -184,14 +184,14 @@
 									<thead>
 										<tr>
 											<th>보낸 사람</th>
-											<th>내용</th>
+											<th>제목</th>
 											<th>보낸 일자(년월일까지만?)</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
+											<td><a href="viewmessage.html">Ante turpis integer aliquet porttitor.</a></td>
 											<td>29.99</td>
 										</tr>
 										<tr>
@@ -228,7 +228,7 @@
 							</header>
 							<footer class="major">
 								<ul class="actions special">
-									<li><a href="generic.html" class="button">쪽지 보내기</a></li>
+									<li><a href="sendmessage.html" class="button">쪽지 보내기</a></li>
 									<li><a href="generic.html" class="button primary">모두 읽음처리</a></li>
 								</ul>
 							</footer>

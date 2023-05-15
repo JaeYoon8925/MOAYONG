@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>캘린더 수정</title>
+	<title>쪽지 보내기</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,13 +17,12 @@
 </head>
 
 <body class="is-preload">
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
 		<!-- Header -->
 		<header id="header">
-			<h1>프로필 수정 페이지</h1>
+			<h1>쪽지 보내기</h1>
 		</header>
 
 		<!-- Main -->
@@ -34,48 +33,45 @@
 
 				<div class="spotlight">
 					<div class="content">
-						<h2>수정하기</h2>
-
-						<!-- 캘린더db로 보내야댐-->
-						<form action=".do" method="POST">
+						<h2>쪽지쓰기</h2>
+						<form action="login.do" method="POST">
 							<div class="row gtr-uniform">
 
-								<div class="col-6 col-12-xsmall">
-									시작일 : <input type="date">
-								</div>
 								<br>
-								<div class="col-6">
-									마감일 : <input type="date">
+								<div class="col-7">
+									<input type="text" name="" id="password" value=""
+										placeholder="수신자 닉네임?ID?" />
 								</div>
 
-								<div class="col-11">
-									<input type="text" name="nickname" id="nickname" value="title" placeholder="이벤트 이름" />
+								<div class="col-7">
+									<input type="text" name="" id="nickname" value=""
+										placeholder="쪽지 제목" />
 								</div>
-								<!--		
-								캘린더api에서 받는 데이터 양식					
-									{
-									title: 'All Day Event', // 이벤트명, title
-									start: '2023-05-15', // 시작일
-									end: '2021-05-18' // 마감일
-									color: 'red' // 바 색상
-									},
-								-->
+								
 
+
+								<div class="col-12">
+									<textarea name="comment" id="comment" placeholder="내용 입력"
+										rows="6"></textarea>
+								</div>
 
 								<div class="col-12">
 									<ul class="actions">
 
 
-										<li><input type="submit" value="추가하기" class="primary" /></li>
-										<!-- 수정하기 버튼을 눌렀을때 닉네임 중복체크?-->
+										<li><input type="submit" value="보내기" class="primary" /></li>
 
-										<li><input type="reset" value="변경취소" /></li>
+										<li><input type="reset" value="취소" /></li>
 										<!-- 메인으로 -->
+										<!-- 첨부할 파일 -->
+										<div><input type="file" value="이미지 업로드" class="primary" /></div>
 									</ul>
 								</div>
 							</div>
 						</form>
 					</div>
+					<!-- 프로필 사진 클래스명 image에서 photo로 변경(css파일 선택자도 함께) 변경 -->
+					<!-- 일단 이미지 크기는 높이 폭 모두 16em-->
 				</div>
 
 				<section>
