@@ -1,9 +1,10 @@
-package dao;
+package main.java.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import entity.User;
+import main.java.entity.User;
+
 
 public class UserDAO {
 

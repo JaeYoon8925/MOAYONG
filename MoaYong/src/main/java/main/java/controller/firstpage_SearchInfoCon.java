@@ -1,4 +1,4 @@
-package controller;
+package main.java.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,8 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UserDAO;
-import entity.User;
+import main.java.dao.UserDAO;
+import main.java.entity.User;
+
+
 
 public class firstpage_SearchInfoCon implements controller {
 

@@ -1,4 +1,4 @@
-package controller;
+package main.java.controller;
 
 import java.io.IOException;
 
@@ -7,9 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.BoardDAO;
-import entity.Board;
-import entity.User;
+import main.java.dao.BoardDAO;
+import main.java.entity.Board;
+import main.java.entity.User;
+
 
 public class mainpage_WritePostCon implements controller {
 

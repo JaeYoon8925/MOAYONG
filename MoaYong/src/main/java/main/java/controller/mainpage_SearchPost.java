@@ -1,4 +1,4 @@
-package controller;
+package main.java.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,8 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BoardDAO;
-import entity.Board;
+import main.java.dao.BoardDAO;
+import main.java.entity.Board;
+
+
 
 public class mainpage_SearchPost implements controller {
 

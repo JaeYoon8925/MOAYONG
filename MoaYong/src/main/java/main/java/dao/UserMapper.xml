@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.UserDAO">
+<mapper namespace="main.java.dao.UserDAO">
 <select id="login" resultType='entity.User' parameterType="entity.User">
 	select * from T_PERSONAL_INFO
 	where id=#{id}

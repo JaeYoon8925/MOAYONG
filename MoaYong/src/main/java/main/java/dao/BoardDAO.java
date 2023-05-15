@@ -1,4 +1,4 @@
-package dao;
+package main.java.dao;
 
 import java.util.List;
 
@@ -7,7 +7,9 @@ import javax.management.openmbean.OpenDataException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import entity.Board;
+import main.java.entity.Board;
+
+
 
 public class BoardDAO {
 

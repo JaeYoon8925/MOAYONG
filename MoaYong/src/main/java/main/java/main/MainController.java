@@ -1,4 +1,4 @@
-package main;
+package main.java.main;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,18 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.GoFirstPageCon;
-import controller.GoMainCon;
-import controller.controller;
-import controller.firstpage_JoinCon;
-import controller.firstpage_LoginCon;
-import controller.firstpage_SearchInfoCon;
-import controller.mainpage_GoMypageCon;
-import controller.mainpage_GoWritePostCon;
-import controller.mainpage_ListBoardCon;
-import controller.mainpage_SearchPost;
-import controller.mainpage_ViewPostContent;
-import controller.mainpage_WritePostCon;
+import main.java.controller.GoFirstPageCon;
+import main.java.controller.GoMainCon;
+import main.java.controller.controller;
+import main.java.controller.firstpage_JoinCon;
+import main.java.controller.firstpage_LoginCon;
+import main.java.controller.firstpage_SearchInfoCon;
+import main.java.controller.mainpage_GoMypageCon;
+import main.java.controller.mainpage_GoWritePostCon;
+import main.java.controller.mainpage_ListBoardCon;
+import main.java.controller.mainpage_SearchPost;
+import main.java.controller.mainpage_ViewPostContent;
+import main.java.controller.mainpage_WritePostCon;
+
+
 
 
 @WebServlet("/.do")
