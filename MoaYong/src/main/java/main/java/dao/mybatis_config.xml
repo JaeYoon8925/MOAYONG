@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<properties resource="smhrd5/dao/db.properties"></properties>
+	<properties resource="dao/db.properties"></properties>
 	<!-- <property name="driver value".." ==>${driver} -->
 
 <environments default="development">
@@ -21,7 +21,7 @@
 </environments>
 
 <mappers>
-  <mapper resource="smhrd5/dao/BoardMapper.xml"/>
-  <mapper resource="smhrd5/dao/UserMapper.xml"/>
+  <mapper resource="dao/BoardMapper.xml"/>
+  <mapper resource="dao/UserMapper.xml"/>
 </mappers>
 </configuration>

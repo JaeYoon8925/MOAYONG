@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="smhrd5_dao.userMapper">
-<select id="login" resultType='smhrd5.entity.User' parameterType="smhrd5.entity.User">
+<mapper namespace="dao.UserDAO">
+<select id="login" resultType='entity.User' parameterType="entity.User">
 	select * from T_PERSONAL_INFO
 	where id=#{id}
 	and pw=#{pw}
@@ -9,10 +9,10 @@
 
 <insert id="join">
 insert into t_personal_info
-	values( #{id},#{pw},#{nickname},sysdate,#{person_type},#{email} )
+	values( #{id},#{pw},#{nickname},sysdate,#{person_type},null,null,#{email} )
 </insert>
 
-<select id="searchInfo" resultType="smhrd5.entity.User">
+<select id="searchInfo" resultType="entity.User">
 select * from t_personal_info
 where email= #{email}
 </select>
