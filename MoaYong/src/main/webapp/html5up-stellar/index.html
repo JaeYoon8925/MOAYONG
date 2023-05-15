@@ -1,4 +1,4 @@
-<%@ page import="필요한 dto 연결1" %>
+@ page import="필요한 dto 연결1" %>
 	<%@ page import="필요한 dto 연결2" %>
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 			<!DOCTYPE HTML>
@@ -8,8 +8,12 @@
 			<head>
 				<title>Stellar by HTML5 UP</title>
 				<meta charset="utf-8" />
+				<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+				<meta name="viewport"
+					content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 				<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+				<script src="index.js"></script>
 				<link rel="stylesheet" href="assets/css/main.css" />
 				<noscript>
 					<link rel="stylesheet" href="assets/css/noscript.css" />
@@ -27,8 +31,8 @@
 						<!-- 대충 if문 씌우고 내 로그인 세션id == 페이지id 일때만 버튼 출력-->
 						<h1>환영, <%= id %>
 								<h1>
-									<p>모아보아용<br />
-										<!--built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p> -->
+									<p>마이페이지<br/></p>
+										<!--built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>. -->
 					</header>
 
 
@@ -53,10 +57,18 @@
 									<header class="major">
 										<h2> (칭호) 유저 닉네임</h2>
 									</header>
-									<p>간단한 코멘트 : 저는 용이에용 </p>
+									<p>	간단한 코멘트 : 저는 용이에용 <br>
+										self_intro가 아니라 comment로 회원테이블에 컬럼추가 요망 </p>
+								
 									<ul class="actions">
 										<!-- class="" 칭호 리스트 페이지로 -->
-										<li><a href="generic.html" class="button">칭호 조회</a></li>
+										<li>
+
+
+											<a href="generic.html" class="button">칭호 조회</a>
+										
+										
+										</li>
 										<!-- class="" 수정하기 페이지로? -->
 										<!-- 대충 if문 씌우고 내 로그인 세션id == 페이지id 일때만 버튼 출력-->
 										<ul class="actions">
@@ -132,7 +144,7 @@
 								<p>개인 일정이에용</p>
 							</header>
 
-
+							<!-- 캘린더 API -->
 							<div id='calendar'></div>
 
 							<br>
@@ -150,12 +162,12 @@
 						<section id="cta" class="main special">
 							<header class="major">
 								<h2>자기소개란</h2>
-								<p>저는 28 무직이에요. 경력도 없어요;;</p>
+								<p>self_intro</p>
 							</header>
 							<footer class="major">
 								<ul class="actions special">
-									<li><a href="generic.html" class="button primary">Get Started</a></li>
-									<li><a href="generic.html" class="button">Learn More</a></li>
+									<li><a href="generic.html" class="button">Get Started</a></li>
+									<li><a href="generic.html" class="button primary">Learn More</a></li>
 								</ul>
 							</footer>
 						</section>
@@ -167,13 +179,13 @@
 								<h2>알람 / 쪽지 등이 나올 공간이에용</h2>
 
 
-								<!-- if문으로 출력할거라 코드가 압축될거에용-->>
+								<!-- if문으로 출력할거라 코드가 압축될거에용-->
 								<table>
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
+											<th>보낸 사람</th>
+											<th>내용</th>
+											<th>보낸 일자(년월일까지만?)</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -216,6 +228,7 @@
 							</header>
 							<footer class="major">
 								<ul class="actions special">
+									<li><a href="generic.html" class="button">쪽지 보내기</a></li>
 									<li><a href="generic.html" class="button primary">모두 읽음처리</a></li>
 								</ul>
 							</footer>
@@ -270,17 +283,6 @@
 				<script src="assets/js/breakpoints.min.js"></script>
 				<script src="assets/js/util.js"></script>
 				<script src="assets/js/main.js"></script>
-
-
-				<script>
-					document.addEventListener('DOMContentLoaded', function () {
-						var calendarEl = document.getElementById('calendar');
-						var calendar = new FullCalendar.Calendar(calendarEl, {
-							initialView: 'dayGridMonth'
-						});
-						calendar.render();
-					});
-				</script>
 			</body>
 
 			</html>

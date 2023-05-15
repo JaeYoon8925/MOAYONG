@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Generic - Stellar by HTML5 UP</title>
+	<title>개인정보 수정</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,8 +23,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1>Generic</h1>
-			<p>Ipsum dolor sit amet nullam</p>
+			<h1>프로필 수정 페이지</h1>
 		</header>
 
 		<!-- Main -->
@@ -32,21 +31,59 @@
 
 			<!-- Content -->
 			<section id="content" class="main">
-				<!-- <span class="image main"><img src="images/pic04.jpg" alt="" /></span> -->
-				<h2>프로필 수정</h2>
 
-				<form action="">
-					ID : 수정불가 <br>
-					PW :
-				</form>
+				<div class="spotlight">
+					<div class="content">
+						<h2>수정하기</h2>
+						<form action="login.do" method="POST">
+							<div class="row gtr-uniform">
 
-				<form action="login.do" method="POST">
-					<ul class="alt">
-						<li><input name="email" type="text" placeholder="Email을 입력하세요"></li>
-						<li>PW : <input name="pw" type="password" placeholder=" 변경할 PW를 입력하세요"></li>
-						<li><input type="submit" value="LogIn" class="button fit"></li>
-					</ul>
-				</form>
+								<div class="col-6 col-12-xsmall">
+									<input type="password" name="email" id="email" value=""
+										placeholder="변경할 password을 입력하세요" />
+								</div>
+
+								<br>
+								<div class="col-6">
+									<input type="password" name="password" id="password" value=""
+										placeholder="비밀번호 재입력" />
+								</div>
+
+								<div class="col-6">
+									<input type="text" name="nickname" id="nickname" value=""
+										placeholder="닉네임 변경" />
+								</div>
+								
+
+
+								<div class="col-12">
+									<textarea name="comment" id="comment" placeholder="설정되어 있는 코멘트 출력?"
+										rows="6"></textarea>
+								</div>
+
+								<div class="col-12">
+									<ul class="actions">
+
+
+										<li><input type="submit" value="수정하기" class="primary" /></li>
+										<!-- 수정하기 버튼을 눌렀을때 닉네임 중복체크?-->
+
+										<li><input type="reset" value="변경취소" /></li>
+										<!-- 메인으로 -->
+										<div><input type="file" value="이미지 업로드" class="primary" /></div>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- 프로필 사진 클래스명 image에서 photo로 변경(css파일 선택자도 함께) 변경 -->
+					<!-- 일단 이미지 크기는 높이 폭 모두 16em-->
+					<div class="image"><img src="images/pic01.jpg" alt="" /></div>
+				</div>
+
+				<section>
+
+				</section>
 
 
 			</section>
