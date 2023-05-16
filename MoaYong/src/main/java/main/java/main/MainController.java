@@ -16,7 +16,7 @@ import main.java.controller.controller;
 import main.java.controller.firstpage_JoinCon;
 import main.java.controller.firstpage_LoginCon;
 import main.java.controller.firstpage_SearchInfoCon;
-import main.java.controller.mainpage_GoMypageCon;
+import main.java.controller.mainpage_GoBoardCon;
 import main.java.controller.mainpage_GoWritePostCon;
 import main.java.controller.mainpage_ListBoardCon;
 import main.java.controller.mainpage_SearchPost;
@@ -26,7 +26,7 @@ import main.java.controller.mainpage_WritePostCon;
 
 
 
-@WebServlet("/.do")
+@WebServlet("*.do")
 public class MainController extends HttpServlet {
 	
 	private HashMap<String, controller> mappings;
@@ -36,12 +36,12 @@ public class MainController extends HttpServlet {
 		mappings.put("/login.do", new firstpage_LoginCon());
 		mappings.put("/join.do", new firstpage_JoinCon());
 		mappings.put("/goFirstpage.do", new GoFirstPageCon());
-		mappings.put("/goMain.do", new GoMainCon());
+		mappings.put("/goMain.do",new GoMainCon());
 		mappings.put("/searchInfo.do", new firstpage_SearchInfoCon());
 		mappings.put("/goWritePost.do", new mainpage_GoWritePostCon());
 		mappings.put("/writePost.do", new mainpage_WritePostCon());
 		mappings.put("/ListBoard.do", new mainpage_ListBoardCon());
-		mappings.put("/goMypage.do", new mainpage_GoMypageCon());
+		mappings.put("/goMypage.do", new mainpage_GoBoardCon());
 		mappings.put("/searchPost.do", new mainpage_SearchPost());
 		mappings.put("/viewPostContent.do",new mainpage_ViewPostContent());
 

@@ -44,7 +44,7 @@ public class firstpage_JoinCon implements controller {
 			nextView="firstPage"; // <- 가입 실패시 띄워줄 회원가입창
 			out.print("회원가입실패");
 		}
-		return null;
+		return nextView;
 	}
 
 }

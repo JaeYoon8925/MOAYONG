@@ -45,4 +45,20 @@ select * from T_PROJECT
 where prj_seq = :prj_seq.value
 </select>
 
+
+
+<update id="updatePost" parameterType="main.java.entity.Board">
+update t_project
+set 
+<if test="prj_category != null and prj_category != ''">prj_category=#{prj_category}</if>
+<if test="prj_name != null and prj_name != ''">prj_name=#{prj_name}</if>
+<if test="post != null and post != ''">post=#{post}</if>
+<if test="status != null and status != ''">status=#{status}</if>
+<if test="deadline_dt != null and deadline_dt != ''">deadline_dt=#{deadline_dt}</if>
+<if test="start_dt != null and start_dt != ''">start_dt=#{start_dt}</if>
+<if test="end_dt != null and end_dt !=''">end_dt=#{end_dt}</if>
+<if test="recruit_count != null and recruit_count !=''">recruit_count=#{recruit_count}</if>
+where prj_seq = #{existing_prj_seq}
+</update>
+
 </mapper>
