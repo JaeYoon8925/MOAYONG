@@ -8,17 +8,35 @@
 			<head>
 				<title>Stellar by HTML5 UP</title>
 				<meta charset="utf-8" />
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+				<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 				<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
 				<meta name="viewport"
 					content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 				<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+				<!-- 캘린더 api -->
 				<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+				<!-- ajax 비동기 통신에 필요-->
+				<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+				<!-- js파일 경로-->
 				<script src="index.js"></script>
+				<!-- 프리셋 -->
 				<link rel="stylesheet" href="assets/css/main.css" />
 				<noscript>
 					<link rel="stylesheet" href="assets/css/noscript.css" />
 				</noscript>
 			</head>
+
+			<style>
+
+
+
+
+			</style>
+
 
 			<body class="is-preload">
 
@@ -29,10 +47,8 @@
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/logo.svg" alt="" /></span>
 						<!-- 대충 if문 씌우고 내 로그인 세션id == 페이지id 일때만 버튼 출력-->
-						<h1>환영, <%= id %>
-								<h1>
-									<p>마이페이지<br/></p>
-										<!--built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>. -->
+						<p>마이페이지<br /></p>
+						<!--built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>. -->
 					</header>
 
 
@@ -57,23 +73,68 @@
 									<header class="major">
 										<h2> (칭호) 유저 닉네임</h2>
 									</header>
-									<p>	간단한 코멘트 : 저는 용이에용 <br>
+									<p> 간단한 코멘트 : 저는 용이에용 <br>
 										self_intro가 아니라 comment로 회원테이블에 컬럼추가 요망 </p>
-								
+
 									<ul class="actions">
 										<!-- class="" 칭호 리스트 페이지로 -->
 										<li>
 
 
-											<a href="generic.html" class="button">칭호 조회</a>
-										
-										
+											<!-- Modal -->
+											<button type="button" class="button" data-toggle="modal"
+												data-target="#myModal">
+												칭호 조회
+											</button>
+
+											<!-- Modal -->
+											<div class="modal" id="myModal">
+												<div class="modal-dialog">
+													<div class="modal-content">
+
+														<!-- Modal Header -->
+														<div class="modal-header">
+															<h4 class="modal-title">칭호 리스트</h4>
+															<!-- <button type="button" class="close"
+																data-dismiss="modal">&times;</button> -->
+														</div>
+
+														<!-- Modal body -->
+														<div class="modal-body">
+															칭호1 이름
+															<div class="btn-group btn-group-sm">
+																<button type="button"
+																	class="btn btn-outline-primary">선택</button>
+															</div>
+															<br>
+															칭호2 이름
+															<div class="btn-group btn-group-sm">
+																<button type="button"
+																	class="btn btn-outline-primary">선택</button>
+															</div>
+														</div>
+
+														<!-- Modal footer -->
+														<div class="modal-footer">
+															<button type="button" class="btn btn-danger"
+																data-dismiss="modal">Close</button>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<!-- /Modal -->
+
+
+											<a href="profile.html">
+												<button type="button" class="button primary" href="profile.html">
+													수정하기
+												</button>
+											</a>
+
 										</li>
 										<!-- class="" 수정하기 페이지로? -->
 										<!-- 대충 if문 씌우고 내 로그인 세션id == 페이지id 일때만 버튼 출력-->
-										<ul class="actions">
-											<li><a href="profile.html" class="button primary">수정하기</a></li>
-										</ul>
 								</div>
 								<!-- 프로필 사진 클래스명 image에서 photo로 변경(css파일 선택자도 함께) 변경 -->
 								<!-- 일단 이미지 크기는 높이 폭 모두 14em-->
@@ -145,6 +206,7 @@
 							</header>
 
 							<!-- 캘린더 API -->
+
 							<div id='calendar'></div>
 
 							<br>
@@ -191,7 +253,8 @@
 									<tbody>
 										<tr>
 											<td>Item One</td>
-											<td><a href="viewmessage.html">Ante turpis integer aliquet porttitor.</a></td>
+											<td><a href="viewmessage.html">Ante turpis integer aliquet porttitor.</a>
+											</td>
 											<td>29.99</td>
 										</tr>
 										<tr>
