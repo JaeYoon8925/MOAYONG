@@ -11,7 +11,6 @@ public class GoFirstPageCon implements controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		return "firstpage";
 	}
 
