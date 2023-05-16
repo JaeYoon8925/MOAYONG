@@ -4,11 +4,11 @@ public class User {
 	private String id;
 	private String pw;
 	private String nickname;
+	private String email;
 	private int joindate;
 	private String person_type;
 	private String photo;
 	private String self_intro;
-	private String email;
 	
 	public User() {}
 	public User(String id, String pw, String nickname, int joindate, String person_type, String photo,

@@ -36,7 +36,7 @@ public class MainController extends HttpServlet {
 		mappings.put("/login.do", new firstpage_LoginCon());
 		mappings.put("/join.do", new firstpage_JoinCon());
 		mappings.put("/goFirstpage.do", new GoFirstPageCon());
-		mappings.put("/goMain.do",new GoMainCon());
+		mappings.put("/goMain.do", new GoMainCon());
 		mappings.put("/searchInfo.do", new firstpage_SearchInfoCon());
 		mappings.put("/goWritePost.do", new mainpage_GoWritePostCon());
 		mappings.put("/writePost.do", new mainpage_WritePostCon());
