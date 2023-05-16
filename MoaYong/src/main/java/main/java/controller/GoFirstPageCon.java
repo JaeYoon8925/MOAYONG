@@ -11,6 +11,7 @@ public class GoFirstPageCon implements controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("로그인창됌");
 		return "firstpage";
 	}
 
