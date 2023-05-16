@@ -6,13 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GoFirstPageCon implements controller {
+public class mainpage_GoBoardCon implements controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		return "firstpage";
+		// 마이페이지 누르면 마이페이지로 넘어감
+		return "redirect:/mypage.do";
 	}
 
 }
