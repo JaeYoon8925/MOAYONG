@@ -1,8 +1,8 @@
-
-<!--
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-  -->
+ 
+ 
+ 
 <!DOCTYPE html>
 <html>
 
@@ -126,96 +126,78 @@ body {
 <body>
 
 	<!--modal-->
+
 	<!-- sign modal-->
-	<li>
-		<h5>회원가입</h5>
-	</li>
-	<form action="join.do" method="POST">
-		<li><input id="check" name="id" type="text"
-			placeholder="ID 입력하세요">
-		<li><input name="pw" type="password" placeholder="PW 입력하세요"></li>
-		<li><input name="email" tpye="text" placeholder="email 입력하세요"></li>
-		<li><input name="nick" type="text" placeholder="nickname 입력하세요"></li>
-		<li><input type="submit" value="JoinUs" class="button fit"></li>
+	<dialog id="sign">
+	<form action="join.do" method="post">
+		<label for="username">ID:</label>
+		 <input type="text" id="username" name="id" required><br>
+		
+		<button type="submit">중복검사</button><br>
+	 	
+	 	<label for="password">Pw:</label> <input type="password" id="password" name="pw" required><br> <label for="email">email:</label>
+		<input type="text" id="email" name="email" require><br> 
+		
+		<labelfor="nickname">Nick:</label> 
+		<input type="text" id="nickname"name="nickname" required><br>
+
+		<button type="submit">Submit</button>
+	
 	</form>
-
-
-	<!-- <dialog id="sign">
-			</dialog>
-					<!-- <label for="username"> ID: </label> <input type="text" id="username"
-			name="username" required><br> <label for="password">
-			Pw: </label> <input type="password" id="password" name="password" required><br>
-		<label for="nickname"> Nick:</label> <input type="text" id="nickname"
-			name="nickname" required><br> <br> -->
-	-->
+	</dialog>
 
 
 	<!-- reset modal-->
+	 <dialog id="reset">
+	<form action="searchInfo.do" method="post">
+		
+		<label for="reset-id ">ID::</label>
+		 <input type="text" id="id"name="id" required><br> 
+		 <label for="reset-email">Email:</label>
+		<input type="email" id="reset-email" name="email" required><br>
 
-	<<<<<<< HEAD
-	<dialog id="reset">
-	<form>
-		<label for="reset-email">Email:</label> <input type="email"
-			id="reset-email" name="reset-email" required><br>
-		=======
-		<dialog id="reset">
-		<form>
-
-			<label for="reset-email">Email:</label> <input type="email"
-				id="reset-email" name="reset-email" required><br>
-			>>>>>>> branch 'master' of
-			https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
-
-			<button type="submit">Submit</button>
-		</form>
-		</dialog>
+		<button type="submit">Submit</button>
+	
+	</form>
+	</dialog>
 
 
-		<div class="main">
-			<h1>Login</h1>
+	<div class="main">
+		<h1>Login</h1>
 
-			<div id="result-area">ID</div>
-			<input type="text" id="user-input">
+		<div id="result-area">ID</div>
+		<input type="text" id="user-input" name="id">
 
-			<div id="chance-area">Passward</div>
-			<input type="text" id="user-input">
+		<div id="chance-area">Passward</div>
+		<input type="text" id="user-input" name="pw">
 
 
 
-			<div class="button-area">
-				<button id="login-button">Login</button>
-				<br> <br>
+		<div class="button-area">
+			
+			<button id="login-button">Login</button>
+			<br> <br>
 
-				<button id="sign-button">회원가입</button>
+			<button id="sign-button">회원가입</button>
 
-				<button id="reset-button">회원찾기</button>
+			<button id="reset-button">회원찾기</button>
 
-			</div>
 		</div>
+	</div>
 
-		<!-- <script>
-        const modal = document.querySelector("#modal")
-        const btn = document.querySelector("#showBtn")
+				 <script>
+					$('#sign-button').on('click', function() {
+						sign.showModal();
+					});
 
-        btn.addEventListener("click", function () {
-            modal.showModal();
-        })
+					$('#login-button').on('click', function name(params) {
 
-    </script> -->
+					});
 
-		<script>
-			$('#sign-button').on('click', function() {
-				sign.showModal();
-			});
-
-			$('#login-button').on('click', function name(params) {
-
-			});
-
-			$('#reset-button').on('click', function() {
-				reset.showModal();
-			});
-		</script>
+					$('#reset-button').on('click', function() {
+						reset.showModal();
+					});
+				</script>
 </body>
 
 </html>
