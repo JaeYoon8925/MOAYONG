@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
- 
- 
- 
+	pageEncoding="UTF-8"%>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -29,10 +29,6 @@ pageEncoding="UTF-8"%>
 	src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
 <!-- ajax 비동기 통신에 필요-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<!-- js파일 경로-->
-<script src="index.js"></script>
-<!-- 프리셋 -->
-<link rel="stylesheet" href="../assets/css/main.css" />
 <noscript>
 	<link rel="stylesheet" href="../assets/css/noscript.css" />
 </noscript>
@@ -71,7 +67,7 @@ body {
 	margin-top: 0;
 }
 
-#user-input {
+.user-input {
 	width: 200px;
 	height: 30px;
 	border: 0;
@@ -130,34 +126,33 @@ body {
 	<!-- sign modal-->
 	<dialog id="sign">
 	<form action="join.do" method="post">
-		<label for="username">ID:</label>
-		 <input type="text" id="username" name="id" required><br>
-		
-		<button type="submit">중복검사</button><br>
-	 	
-	 	<label for="password">Pw:</label> <input type="password" id="password" name="pw" required><br> <label for="email">email:</label>
-		<input type="text" id="email" name="email" require><br> 
-		
-		<labelfor="nickname">Nick:</label> 
-		<input type="text" id="nickname"name="nickname" required><br>
+		<label for="username">ID:</label> <input type="text" id="username"
+			name="id" required><br>
+
+		<button type="submit">중복검사</button>
+		<br> <label for="password">Pw:</label> <input type="password"
+			id="password" name="pw" required><br> <label for="email">email:</label>
+		<input type="text" id="email" name="email" require><br>
+
+		<labelfor="nickname">Nick:</label> <input type="text" id="nickname"
+			name="nickname" required>
+		<br>
 
 		<button type="submit">Submit</button>
-	
 	</form>
 	</dialog>
 
 
 	<!-- reset modal-->
-	 <dialog id="reset">
+	<dialog id="reset">
 	<form action="searchInfo.do" method="post">
-		
-		<label for="reset-id ">ID::</label>
-		 <input type="text" id="id"name="id" required><br> 
-		 <label for="reset-email">Email:</label>
+
+		<label for="reset-id ">ID::</label> <input type="text" id="id"
+			name="id" required><br> <label for="reset-email">Email:</label>
 		<input type="email" id="reset-email" name="email" required><br>
 
 		<button type="submit">Submit</button>
-	
+
 	</form>
 	</dialog>
 
@@ -165,16 +160,17 @@ body {
 	<div class="main">
 		<h1>Login</h1>
 
-		<div id="result-area">ID</div>
-		<input type="text" id="user-input" name="id">
 
-		<div id="chance-area">Passward</div>
-		<input type="text" id="user-input" name="pw">
+		<form action="login.do" method="post">
+			<div id="result-area">ID</div>
+			<input type="text" class="user-input" name="id">
 
-
+			<div id="chance-area">Password</div>
+			<input type="text" class="user-input" name="pw">
+		</form>
 
 		<div class="button-area">
-			
+
 			<button id="login-button">Login</button>
 			<br> <br>
 
@@ -185,19 +181,19 @@ body {
 		</div>
 	</div>
 
-				 <script>
-					$('#sign-button').on('click', function() {
-						sign.showModal();
-					});
+	<script>
+		$('#sign-button').on('click', function() {
+			sign.showModal();
+		});
 
-					$('#login-button').on('click', function name(params) {
+		$('#login-button').on('click', function name(params) {
 
-					});
+		});
 
-					$('#reset-button').on('click', function() {
-						reset.showModal();
-					});
-				</script>
+		$('#reset-button').on('click', function() {
+			reset.showModal();
+		});
+	</script>
 </body>
 
 </html>

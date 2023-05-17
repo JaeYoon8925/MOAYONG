@@ -66,6 +66,7 @@ public class MainController extends HttpServlet {
 			nextView=con.execute(request, response);
 		
 		}
+		
 		if(nextView!=null) {
 			if(nextView.contains("redirect:/")) {
 				response.sendRedirect(nextView.split(":/")[1]);
