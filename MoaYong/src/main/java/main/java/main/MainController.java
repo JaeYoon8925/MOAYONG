@@ -14,14 +14,21 @@ import main.java.controller.firstpage_GoFirstPageCon;
 import main.java.controller.firstpage_GoMainCon;
 import main.java.controller.mainpage_LogoutCon;
 import main.java.controller.mainpage_SaveModifiedPostCon;
+import main.java.controller.GoFirstPageCon;
+import main.java.controller.GoMainCon;
 import main.java.controller.controller;
 import main.java.controller.firstpage_JoinCon;
 import main.java.controller.firstpage_LoginCon;
 import main.java.controller.firstpage_SearchInfoCon;
+
 import main.java.controller.firstpage_NoticePwCon;
 import main.java.controller.mainpage_GoMypageCon;
 import main.java.controller.mainpage_GoModifyPostCon;
+
+import main.java.controller.mainpage_GoBoardCon;
+
 import main.java.controller.mainpage_GoWritePostCon;
+import main.java.controller.mainpage_ListBoardCon;
 import main.java.controller.mainpage_SearchPost;
 import main.java.controller.mainpage_ViewPostContent;
 import main.java.controller.mainpage_WritePostCon;
@@ -37,6 +44,7 @@ public class MainController extends HttpServlet {
 	public void init() throws ServletException{
 		mappings = new HashMap<String, controller>();
 		
+
 		// fistpage
 		mappings.put("/goFirstpage.do", new firstpage_GoFirstPageCon()); // 첫 화면 가는거. 
 		mappings.put("/login.do", new firstpage_LoginCon()); // 로그인
@@ -55,6 +63,19 @@ public class MainController extends HttpServlet {
 		// mainpage_기타
 		mappings.put("/goMypage.do", new mainpage_GoMypageCon()); // 마이페이지가기
 		mappings.put("/logout.do", new mainpage_LogoutCon()); // 로그아웃
+
+		mappings.put("/login.do", new firstpage_LoginCon());
+		mappings.put("/join.do", new firstpage_JoinCon());
+		mappings.put("/goFirstpage.do", new GoFirstPageCon());
+		mappings.put("/goMain.do",new GoMainCon());
+		mappings.put("/searchInfo.do", new firstpage_SearchInfoCon());
+		mappings.put("/goWritePost.do", new mainpage_GoWritePostCon());
+		mappings.put("/writePost.do", new mainpage_WritePostCon());
+		mappings.put("/ListBoard.do", new mainpage_ListBoardCon());
+		mappings.put("/goMypage.do", new mainpage_GoBoardCon()); // GoMypageCon()으로
+		// mappings.put("/goSetprofile.do", new goSetprofileCon ()); // 이거 필요할듯 함다.
+		mappings.put("/searchPost.do", new mainpage_SearchPost());
+		mappings.put("/viewPostContent.do",new mainpage_ViewPostContent());
 
 		
 	}
@@ -76,6 +97,7 @@ public class MainController extends HttpServlet {
 			nextView=con.execute(request, response);
 		
 		}
+		
 		if(nextView!=null) {
 			if(nextView.contains("redirect:/")) {
 				response.sendRedirect(nextView.split(":/")[1]);
