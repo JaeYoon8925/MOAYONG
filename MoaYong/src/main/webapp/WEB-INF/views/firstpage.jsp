@@ -121,8 +121,8 @@
 
 			<dialog id="reset">
 				<form>
-
-					<label for="reset-email">Email:</label> <input type="email" id="reset-email" name="reset-email"
+					<label for="reset-email">Email:</label>
+					<input type="email" id="reset-email" name="reset-email"
 						required><br>
 
 					<button type="submit">Submit</button>
