@@ -18,6 +18,8 @@ public class firstpage_GoMainCon implements controller {
 		BoardDAO dao=new BoardDAO();
 		List<Board> list = dao.list();
 		request.setAttribute("list", list);
+		
+		System.out.println("쏴짐");
 		return "main";// <- 메인화면 주소 적기(.jsp)
 	}
 

@@ -72,7 +72,9 @@ public class MainController extends HttpServlet {
 		mappings.put("/goWritePost.do", new mainpage_GoWritePostCon());
 		mappings.put("/writePost.do", new mainpage_WritePostCon());
 		mappings.put("/ListBoard.do", new mainpage_ListBoardCon());
-		mappings.put("/goMypage.do", new mainpage_GoBoardCon()); // GoMypageCon()으로
+		
+		// goMypage콘이 2번째로 기입됌.
+//		mappings.put("/goMypage.do", new mainpage_GoBoardCon()); // GoMypageCon()으로
 		// mappings.put("/goSetprofile.do", new goSetprofileCon ()); // 이거 필요할듯 함다.
 		mappings.put("/searchPost.do", new mainpage_SearchPost());
 		mappings.put("/viewPostContent.do",new mainpage_ViewPostContent());

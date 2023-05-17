@@ -1,5 +1,5 @@
 <%@ page import="main.java.entity.User" %>
-	<%@ page import="main.java.entity.Board" %>
+		<!-- page import="main.java.entity.Board" -->
 		<!-- import="main.java.entity.캘린더 데이터 엔터티"%> -->
 		<!-- import="main.java.entity.쪽지테이블 엔터티"%> -->
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -36,8 +36,7 @@
 			<style>
 			</style>
 			<% // session에 있는 사용자 정보 꺼내기 
-			User user=(User) session.getAttribute("user"); out.print(user); %>
-
+			User user=(User) session.getAttribute("user"); System.out.println(user); %>
 
 
 				<nav id="nav">
@@ -53,19 +52,20 @@
 							<button type="submit" id="logout-btn">
 								<a href="logout.do">로그아웃</a>
 							</button>
+									<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
+									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 							<% } %>
 
+					</ul>
+				</nav>
+				
+				
 								<!-- <button type="submit" id="mypage-btn">마이페이지</button> -->
 								<!-- 일단 로그인 한 계정의 닉네임 출력 -->
 								<h2>
 									<%=user.getId()%>
 								</h2>
-								<div class="image">
-									<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
-									<img src="/images/pic01.jpg" alt="" />
-								</div>
-					</ul>
-				</nav>
+
 
 				<body class="is-preload">
 
@@ -76,7 +76,7 @@
 
 						<!-- Header -->
 						<header id="header" class="alt">
-							images/pic01.jpg <span class="logo"><img src="images/pic01.jpg" alt="" /></span>
+							로고 <span class="logo"><img src="images/logo.svg" alt="" /></span>
 							built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.
 						</header>
 
