@@ -182,6 +182,12 @@ body {
 	</div>
 
 	<script>
+		var joinCom = '${joinComplete}';
+	 	if (  joinCom === "회원가입 완료!"){
+	 		alert("회원가입 완료!");
+	 	}
+	
+	
 		$('#sign-button').on('click', function() {
 			sign.showModal();
 		});

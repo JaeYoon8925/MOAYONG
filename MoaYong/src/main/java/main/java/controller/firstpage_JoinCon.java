@@ -41,6 +41,10 @@ public class firstpage_JoinCon implements controller {
 		if(row>0) {
 			nextView="firstpage"; // <- 가입 공시 띄워줄 jsp
 			out.print("회원가입성공");
+			
+			String message = "회원가입 완료!";
+		    request.setAttribute("joinComplete", message);
+		    
 		}else {
 			nextView="firstpage"; // <- 가입 실패시 띄워줄 회원가입창
 			out.print("회원가입실패");
