@@ -9,7 +9,7 @@
 
 <insert id="join">
 insert into t_personal_info
-	values( #{id},#{pw},#{nickname},sysdate,#{person_type},null,null,#{email} )
+	values( #{id},#{pw},#{nickname},sysdate,'n',null,null,#{email} )
 </insert>
 
 <select id="searchInfo" resultType="main.java.entity.User">

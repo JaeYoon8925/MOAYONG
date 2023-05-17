@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class mainpage_GoWritePostCon implements controller {
+public class mainpage_LogoutCon implements controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session= request.getSession();
-		return "write";
+		session.removeAttribute("user");
+		String nextView ="redirect:/goFirstpage.do";
+		return nextView;
 	}
 
 }
