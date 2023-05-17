@@ -6,13 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GoMainCon implements controller {
+public class mainpage_GoModifyPostCon implements controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("dd");
-		return "redirect:/goMain.do";// <- 메인화면 주소 적기(.jsp)
+		return null; //<-수정화면으로 이동
 	}
 
 }
