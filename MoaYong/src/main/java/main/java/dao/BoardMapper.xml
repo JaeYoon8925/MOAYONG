@@ -2,63 +2,65 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="main.java.dao.BoardDAO">
 
-<insert id="write" parameterType="main.java.entity.Board">
-insert into T_project
-values(prj_seq.nextval,#{id},#{prj_category},#{prj_name},#{post},#{status},#{deadline_dt},#{start_dt},#{end_dt},#{recuruit_count),null,null,sysdate,null)
-</insert>
+	<insert id="write" parameterType="main.java.entity.Board">
+		insert into T_project
+		values(prj_seq.nextval,#{id},#{prj_category},#{prj_name},#{post},#{status},#{deadline_dt},#{start_dt},#{end_dt},#{recuruit_count),null,null,sysdate,null)
+	</insert>
 
-<select id="list" resultType="main.java.entity.Board">
-select * from T_project
-select rownum as rn, A.*
-from(
-select *
-from T_project
-order by post_dt desc
-)A
-where rownum &lt;=20*?
-)
-where rn>= 20*(?-1)+1
-</select>
+	<select id="list" resultType="main.java.entity.Board">
+		select * from T_project
+		select rownum as rn, A.*
+		from(
+		select *
+		from T_project
+		order by post_dt desc
+		)A
+		where rownum &lt;=20*?
+		)
+		where rn>= 20*(?-1)+1
+	</select>
 
-<select id="searchPost" resultType="main.java.entity.Board" parameterType="main.java.entity.Board">
-select * from T_project
-select rownum as rn, A.*
-from(
-select *
-from T_project
-where 
-<if test="prj_category != null AND prj_name != null">
-prj_category=#{prj_category} AND post_name LIKE CONCAT('%',#{prj_name},'%')</if>
-<if test="prj_category is null AND prj_name != null">
-post_name LIKE CONCAT('%', #{prj_name}, '%')</if>
-<if test="prj_category != null AND prj_name is null">
-prj_category=#{prj_category}</if>
-order by post_dt desc
-)A
-where rownum &lt;=20*?
-)
-where rn>= 20*(?-1)+1
-</select>
+	<select id="searchPost" resultType="main.java.entity.Board"
+		parameterType="main.java.entity.Board">
+		select * from T_project
+		select rownum as rn, A.*
+		from(
+		select *
+		from T_project
+		where
+		<if test="prj_category != null AND prj_name != null">
+			prj_category=#{prj_category} AND post_name LIKE CONCAT('%',#{prj_name},'%')</if>
+		<if test="prj_category is null AND prj_name != null">
+			post_name LIKE CONCAT('%', #{prj_name}, '%')</if>
+		<if test="prj_category != null AND prj_name is null">
+			prj_category=#{prj_category}
+		</if>
+		order by post_dt desc
+		)A
+		where rownum &lt;=20*?
+		)
+		where rn>= 20*(?-1)+1
+	</select>
 
-<select id="viewPostContent" resultType="main.java.entity.Board">
-select * from T_PROJECT
-where prj_seq = :prj_seq.value
-</select>
+	<select id="viewPostContent" resultType="main.java.entity.Board">
+		select * from T_PROJECT
+		where prj_seq = :prj_seq.value
+	</select>
 
 
 
-<update id="updatePost" parameterType="main.java.entity.Board">
-update t_project
-set 
-<if test="prj_category != null and prj_category != ''">prj_category=#{prj_category}</if>
-<if test="prj_name != null and prj_name != ''">prj_name=#{prj_name}</if>
-<if test="post != null and post != ''">post=#{post}</if>
-<if test="status != null and status != ''">status=#{status}</if>
-<if test="deadline_dt != null and deadline_dt != ''">deadline_dt=#{deadline_dt}</if>
-<if test="start_dt != null and start_dt != ''">start_dt=#{start_dt}</if>
-<if test="end_dt != null and end_dt !=''">end_dt=#{end_dt}</if>
-<if test="recruit_count != null and recruit_count !=''">recruit_count=#{recruit_count}</if>
-where prj_seq = #{existing_prj_seq}
-</update>
+	<update id="updatePost" parameterType="main.java.entity.Board">
+		update t_project
+		set
+		<if test="prj_category != null and prj_category != ''">prj_category=#{prj_category}</if>
+		<if test="prj_name != null and prj_name != ''">prj_name=#{prj_name}</if>
+		<if test="post != null and post != ''">post=#{post}</if>
+		<if test="status != null and status != ''">status=#{status}</if>
+		<if test="deadline_dt != null and deadline_dt != ''">deadline_dt=#{deadline_dt}</if>
+		<if test="start_dt != null and start_dt != ''">start_dt=#{start_dt}</if>
+		<if test="end_dt != null and end_dt !=''">end_dt=#{end_dt}</if>
+		<if test="recruit_count != null and recruit_count !=''">recruit_count=#{recruit_count}</if>
+		where prj_seq = #{existing_prj_seq}
+	</update>
 
 </mapper>
