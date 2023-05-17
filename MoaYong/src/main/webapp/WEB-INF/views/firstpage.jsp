@@ -131,10 +131,11 @@ body {
 		<h5>회원가입</h5>
 	</li>
 	<form action="join.do" method="POST">
-		<li><input id="check" name="email" type="text"
+		<li><input id="check" name="id" type="text"
 			placeholder="ID 입력하세요">
 		<li><input name="pw" type="password" placeholder="PW 입력하세요"></li>
-		<li><input name="tel" type="text" placeholder="nickname 입력하세요"></li>
+		<li><input name="nickname" type="text"
+			placeholder="nickname 입력하세요"></li>
 		<li><input type="submit" value="JoinUs" class="button fit"></li>
 	</form>
 
@@ -153,9 +154,9 @@ body {
 
 	<dialog id="reset">
 	<form>
-
-		<label for="reset-email">Email:</label> <input type="email"
-			id="reset-email" name="reset-email" required><br>
+		<label for="username">ID:</label> <input type="text" id="username"
+			name="username" required><br> <label for="reset-email">Email:</label>
+		<input type="email" id="reset-email" name="reset-email" required><br>
 
 		<button type="submit">Submit</button>
 	</form>
