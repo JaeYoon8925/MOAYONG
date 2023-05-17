@@ -16,7 +16,7 @@ import main.java.controller.controller;
 import main.java.controller.firstpage_JoinCon;
 import main.java.controller.firstpage_LoginCon;
 import main.java.controller.firstpage_SearchInfoCon;
-//import main.java.controller.mainpage_GoBoardCon;
+import main.java.controller.mainpage_GoBoardCon;
 import main.java.controller.mainpage_GoWritePostCon;
 import main.java.controller.mainpage_ListBoardCon;
 import main.java.controller.mainpage_SearchPost;
@@ -41,7 +41,8 @@ public class MainController extends HttpServlet {
 		mappings.put("/goWritePost.do", new mainpage_GoWritePostCon());
 		mappings.put("/writePost.do", new mainpage_WritePostCon());
 		mappings.put("/ListBoard.do", new mainpage_ListBoardCon());
-//		mappings.put("/goMypage.do", new mainpage_GoBoardCon());
+		mappings.put("/goMypage.do", new mainpage_GoBoardCon()); // GoMypageCon()으로
+		// mappings.put("/goSetprofile.do", new goSetprofileCon ()); // 이거 필요할듯 함다.
 		mappings.put("/searchPost.do", new mainpage_SearchPost());
 		mappings.put("/viewPostContent.do",new mainpage_ViewPostContent());
 

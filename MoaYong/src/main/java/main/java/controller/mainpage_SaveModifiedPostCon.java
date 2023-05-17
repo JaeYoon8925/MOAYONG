@@ -13,7 +13,7 @@ public class mainpage_SaveModifiedPostCon implements controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		HttpSession session = response.get
+//		HttpSession session = response.get
 		String prj_name=request.getParameter("prj_name");
 		String post = request.getParameter("post");
 		String status = request.getParameter("status");

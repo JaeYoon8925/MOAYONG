@@ -12,7 +12,7 @@ public class mainpage_GoBoardCon implements controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 마이페이지 누르면 마이페이지로 넘어감
-		return "redirect:/mypage.do";
+		return "mypage";
 	}
 
 }
