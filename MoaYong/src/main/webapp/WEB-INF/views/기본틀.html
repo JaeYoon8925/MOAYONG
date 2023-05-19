@@ -1,3 +1,12 @@
+<!-- 필요한 엔터티들 주석 풀면 될듯합니다 -->
+<%@ page import="com.smhrd.entity.User"%>
+<!-- page import="com.smhrd.entity.Board" -->
+<!-- import="com.smhrd.entity.캘린더 데이터 엔터티"%> -->
+<!-- import="com.smhrd.entity.쪽지테이블 엔터티"%> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE HTML>
 <!--
 	Stellar by HTML5 UP
@@ -25,25 +34,43 @@
 	<!-- js파일 경로-->
 	<script src="index.js"></script>
 	<!-- 프리셋 -->
-	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
-		<link rel="stylesheet" href="/assets/css/noscript.css" />
+		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 </head>
 
 <body class="is-preload">
 
-	<nav id="nav">
-		<ul>
-			<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
-			<li><a href="" class="active">게시판</a></li>
-			<li><a href="">프로젝트 관리</a></li>
-			<li><a href="">마이페이지</a></li>
-			<button type="submit" id="logout-btn">로그아웃</button>
-			<button type="submit" id="mypage-btn">마이페이지</button>
-			<div class="image"><img src="/images/pic01.jpg" alt="" /></div>
-		</ul>
-	</nav>
+	<!-- 유저정보 받아오기-->
+<%
+User user = (User) session.getAttribute("user");
+System.out.println(user);
+%>
+<!-- 맨 위에 있는 이동하는 네비게이션 -->
+<nav id="nav">
+	<ul>
+		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
+		<li><a href="goMain.do" classs="active">게시판</a></li>
+		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
+
+		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
+		<li><a href="goMypage.do">마이페이지</a></li>
+
+		<%
+		if (user != null) {
+		%>
+		<button type="submit" id="logout-btn">
+			<a href="logout.do">로그아웃</a>
+		</button>
+		<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
+		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+		<%
+		}
+		%>
+
+	</ul>
+</nav>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -62,30 +89,17 @@
 
 			<!-- Content -->
 			<section id="content" class="main">
-				<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-				<h2>Magna feugiat lorem</h2>
-				<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
-					venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor
-					sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu
-					massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
-					Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in
-					faucibus.</p>
-				<p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas
-					enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo
-					eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus
-					convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada
-					quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis
-					lorem.</p>
-				<h2>Tempus veroeros</h2>
-				<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing
-					turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut
-					praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae
-					ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus
-					fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies
-					blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci
-					blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat.
-					Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi
-					eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
+				
+
+
+
+
+				<h2>이 부분이 아마 하얀 박스 안</h2>
+				
+
+
+
+
 			</section>
 
 		</div>

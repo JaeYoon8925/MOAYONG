@@ -53,7 +53,9 @@ System.out.println(user);
 	<ul>
 		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
 		<li><a href="goMain.do" class="active">게시판</a></li>
-		<li><a href="go(프로젝트메인가칭).do">프로젝트 관리</a></li>
+
+		<!-- 프로젝트페이지의 gant.jsp로-->
+		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
 
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>

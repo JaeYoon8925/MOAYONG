@@ -46,11 +46,12 @@ User user = (User) session.getAttribute("user");
 System.out.println(user);
 %>
 
+<!-- 맨 위에 있는, 이동하는 네비게이션 -->
 <nav id="nav">
 	<ul>
 		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
 		<li><a href="goMain.do" classs="active">게시판</a></li>
-		<li><a href="go(프로젝트메인가칭).do">프로젝트 관리</a></li>
+		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
 
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>
@@ -76,9 +77,9 @@ System.out.println(user);
 	<div id="wrapper">
 
 		<!-- Header -->
-		<header id="header">
-			<h1>Generic</h1>
-			<p>Ipsum dolor sit amet nullam</p>
+		<header id="header" style="padding-top: 6em;">
+			<h1 style="margin-top: 40px;">MoaYong</h1>
+			<p>게시판이에용</p>
 		</header>
 
 		<!-- Main -->
@@ -208,16 +209,16 @@ System.out.println(user);
 					%>
 					<form action="GoListPage.do" method="post" style="float: left;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist">
+						<button type="submit" id="pagelist" style=" width:44px">
 							<%=i%>
 						</button>
 					</form>
 					<%
 					} else {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left;">
+					<form action="GoListPage.do" method="post" style="float: left; width:44px">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist">
+						<button type="submit" id="pagelist" style=" width:44px">
 							<%=i%>
 						</button>
 					</form>
