@@ -191,24 +191,24 @@ System.out.println(user);
 				</header>
 				<ul class="features">
 					<li><span class="icon solid major style1 fa-code"></span>
-						<h3>게시한 프로젝트</h3>
-						<p>이 사람이 올린 프로젝트 들이에용.</p>
+						<h3>참가신청한 프로젝트</h3>
+						
 						<ul class="alt">
 							<li>Dolor pulvinar magna etiam.</li>
 							<li>Sagittis sed lorem adipiscing.</li>
 							<li>Felis enim etiam feugiat.</li>
 						</ul></li>
 					<li><span class="icon major style3 fa-copy"></span>
-						<h3>참여 중 프로젝트</h3>
-						<p>이 사람이 참여 중 프로젝트들이에용.</p>
+						<h3>진행 중인 프로젝트</h3>
+						
 						<ul class="alt">
 							<li>Dolor pulvinar magna etiam.</li>
 							<li>Sagittis sed lorem adipiscing.</li>
 							<li>Felis enim etiam feugiat.</li>
 						</ul> <!-- 이 사람의 진행 중 프로젝트 리스트 전부 보기 --></li>
 					<li><span class="icon major style5 fa-gem"></span>
-						<h3>완료 프로젝트</h3>
-						<p>이 사람이 완료한 프로젝트들이에용.</p>
+						<h3>완료된 프로젝트</h3>
+						
 						<ul class="alt">
 							<li>Dolor pulvinar magna etiam.</li>
 							<li>Sagittis sed lorem adipiscing.</li>
