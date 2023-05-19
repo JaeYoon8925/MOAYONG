@@ -9,22 +9,23 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.dao.BoardDAO;
 import com.smhrd.entity.Board;
 
-
-
 public class mainpage_ViewPostContent implements controller {
-// 게시글 클릭하면 해당 게시글 데이터 불러오기.
+	// 게시글 클릭하면 해당 게시글 데이터 불러오기.
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int post = Integer.parseInt(request.getParameter("viewPostContent"));
-		
+		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
+
+		Board dto = new Board();
+		dto.setPrj_seq(prj_seq);
+
 		BoardDAO dao = new BoardDAO();
-		Board dto = dao.viewPostContent(post);
-		
-		request.setAttribute("viewPostContent", dto);
-		
-		
-		return "viewPostContent"; //<= 게시글 보이는 jsp
+
+		Board info = dao.viewPostContent(dto);
+
+		request.setAttribute("viewPostContent", info);
+		return "viewPostContent"; // 게시글 보여주는 JSP 파일의 경로
+
 	}
 
 }

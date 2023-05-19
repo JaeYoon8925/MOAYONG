@@ -1,5 +1,7 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.dao.BoardDAO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.entity.Board"%>
+<%@ page import="com.smhrd.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 태그라이브러리 추가★★★★★★★★ -->
@@ -39,7 +41,10 @@
 
 </head>
 
-<% User user=(User) session.getAttribute("user"); System.out.println(user); %>
+<%
+User user = (User) session.getAttribute("user");
+System.out.println(user);
+%>
 
 <nav id="nav">
 	<ul>
@@ -50,13 +55,17 @@
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>
 
-		<% if (user !=null) { %>
+		<%
+		if (user != null) {
+		%>
 		<button type="submit" id="logout-btn">
 			<a href="logout.do">로그아웃</a>
 		</button>
 		<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
 		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-		<% } %>
+		<%
+		}
+		%>
 
 	</ul>
 </nav>
@@ -77,39 +86,43 @@
 
 			<!-- Content -->
 			<section id="content" class="main">
-				<form action="searchPost.do" methond="post">
-					<table border="1">
-						<div class="col-3 col-12-xsmall" style="display: flex;">
-							<select name="prj_category" class="col-6" style="display: flex;">
-								<option value="" selected disabled>카테고리 검색</option>
-								<option value="모두" type="text">모두보기</option>
-								<option value="프로그래밍" type="text">프로그래밍</option>
-								<option value="전시회" type="text">전시회</option>
-								<option value="게임" type="text">게임</option>
-								<option value="스터디" type="text">스터디</option>
-							</select>
-						</div>
-						<div class="col-3 col-12-xsmall" style="display: flex;">
-							<input type="text" name="prj_name" class="col-6"
-								style="display: flex;">
-						</div>
-					</table>
+				<form action="searchPost.do" methond="post" style="font-size: 85%;">
+					<div style="float: left; max-width: none; width: 15%;">
+						<select name="prj_category" class="col-12" style="display: flex;">
+							<option value="" selected disabled>카테고리 검색</option>
+							<option value="모두" type="text">모두보기</option>
+							<option value="프로그래밍" type="text">프로그래밍</option>
+							<option value="전시회" type="text">전시회</option>
+							<option value="게임" type="text">게임</option>
+							<option value="스터디" type="text">스터디</option>
+						</select>
+					</div>
+					<div
+						style="float: left; max-width: none; width: 40%; margin-left: 2%;">
+						<input type="text" name="prj_name" class="col-12"
+							style="display: flex;">
+					</div>
 					<!--      <button type="submit" id="open">최신순</button> -->
 					<!--      <button type="submit" id="close">마감임박순</button> -->
-					<button type="submit" id="search">검색</button>
+					<button type="submit" id="search"
+						style="display: flex; float: left; min-width: 0; margin-left: 2%; margin-top: 5px;">검색</button>
+					<button id="writer"
+						style="display: flex; float: right; min-width: 0; margin-left: 18%; margin-top: 5px;">
+						<a href="goWritePost.do">글쓰기</a>
+					</button>
 				</form>
-				<br>
-				<table border="1">
+				<br> <br>
+				<table border="1" style="font-size: 85%; text-align: center;">
 					<thead>
 						<tr>
-							<th>No.</th>
-							<th>카테고리</th>
-							<th>모집중</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>등록일</th>
-							<th>마감일</th>
-							<th>모집인원</th>
+							<th style="width: 10%">No.</th>
+							<th style="width: 10%">카테고리</th>
+							<th style="width: 10%">상태</th>
+							<th style="width: 25%">제목</th>
+							<th style="width: 7.5%">작성자</th>
+							<th style="width: 15%">등록일</th>
+							<th style="width: 15%">마감일</th>
+							<th style="width: 7.5%">모집인원</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -150,51 +163,80 @@
 						<!-- 이하 생략 -->
 					</tbody>
 				</table>
-				<br> <br> <a href="goWritePost.do"><button id="writer">글쓰기</button></a>
 
-				<% BoardDAO paging=new BoardDAO(); 
-				int count=paging.getBoardCount(); //게시판 전체 글 개수 가져오기 
-				int pageSize=10; //한 페이지 보여줄 글 개수 설정 //현페이지 번호 가져오기 String
-												pageNum=request.getParameter("pageNum"); //파라미터가 없으면 "1" 로 설정 if
-												(pageNum==null) { pageNum="1" ; } int
-												currentPage=Integer.parseInt(pageNum); int startRow=(currentPage - 1) *
-												pageSize + 1; int endRow=currentPage * pageSize; %>
-				<h1>
-					boarder/list.jsp [전체 글개수 :
-					<%=count%>]
-				</h1>
 
+				<%
+				BoardDAO paging = new BoardDAO();
+				int count = paging.getBoardCount(); //게시판 전체 글 개수 가져오기
+				int pageSize = 10; //한 페이지 보여줄 글 개수 설정
+
+				//현페이지 번호 가져오기
+				String pageNum = request.getParameter("pageNum");
+				//파라미터가 없으면 "1"로 설정
+				if (pageNum == null) {
+					pageNum = "1";
+				}
+
+				int currentPage = Integer.parseInt(pageNum);
+				int startRow = (currentPage - 1) * pageSize + 1;
+				int endRow = currentPage * pageSize;
+				%>
 				<!-- 페이지 이동 버튼 -->
 				<div>
-					<% int pageCount=count / pageSize + (count % pageSize==0 ? 0 : 1);
-														int pageBlock=10; int startPage=(currentPage - 1) / pageBlock *
-														pageBlock + 1; int endPage=Math.min(startPage + pageBlock - 1,
-														pageCount); %>
-					<% if (startPage> pageBlock) {
-															%>
-					<form action="GoListPage.do" methond="post">
+					<%
+					int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
+					int pageBlock = 10;
+					int startPage = (currentPage - 1) / pageBlock * pageBlock + 1;
+					int endPage = Math.min(startPage + pageBlock - 1, pageCount);
+					%>
+					<%
+					if (startPage > pageBlock) {
+					%>
+					<form action="GoListPage.do" methond="post" style="float: left;">
 						<a href="GoListPage.do?pageNum=<%=startPage - pageBlock%>">[이전]</a>
 					</form>
-					<% } %>
 
-					<% for (int i=startPage; i <=endPage; i++) { %>
-					<% if (i==currentPage) { %>
-					<%=i%>
-					<% } else { %>
-					<form action="GoListPage.do" method="post">
+					<%
+					}
+					%>
+
+					<%
+					for (int i = startPage; i <= endPage; i++) {
+					%>
+					<%
+					if (i == currentPage) {
+					%>
+					<form action="GoListPage.do" method="post" style="float: left;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit">
+						<button type="submit" id="pagelist">
 							<%=i%>
 						</button>
 					</form>
-					<% } %>
-					<% } %>
+					<%
+					} else {
+					%>
+					<form action="GoListPage.do" method="post" style="float: left;">
+						<input type="hidden" name="pageNum" value="<%=i%>">
+						<button type="submit" id="pagelist">
+							<%=i%>
+						</button>
+					</form>
+					<%
+					}
+					%>
+					<%
+					}
+					%>
 
-					<% if (endPage < pageCount) { %>
-					<form action="GoListPage.do" methond="post">
+					<%
+					if (endPage < pageCount) {
+					%>
+					<form action="GoListPage.do" methond="post" style="float: left;">
 						<a href="GoListPage.do?pageNum=<%=startPage + pageBlock%>">[다음]</a>
 					</form>
-					<% } %>
+					<%
+					}
+					%>
 				</div>
 
 
