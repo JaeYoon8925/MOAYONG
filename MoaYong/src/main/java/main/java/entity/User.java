@@ -1,19 +1,21 @@
 package main.java.entity;
 
+import java.util.Date;
+
 public class User {
-	private String id;
+	private String t_id;
 	private String pw;
 	private String nickname;
 	private String email;
-	private int joindate;
+	private Date joindate;
 	private String person_type;
 	private String photo;
 	private String self_intro;
 	
 	public User() {}
-	public User(String id, String pw, String nickname, int joindate, String person_type, String photo,
+	public User(String t_id, String pw, String nickname, Date joindate, String person_type, String photo,
 			String self_intro, String email) {
-		this.id = id;
+		this.t_id = t_id;
 		this.pw = pw;
 		this.nickname = nickname;
 		this.joindate = joindate;
@@ -22,11 +24,11 @@ public class User {
 		this.self_intro = self_intro;
 		this.email = email;
 	}
-	public String getId() {
-		return id;
+	public String getT_id() {
+		return t_id;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setT_id(String t_id) {
+		this.t_id = t_id;
 	}
 	public String getPw() {
 		return pw;
@@ -40,10 +42,10 @@ public class User {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public int getJoindate() {
+	public Date getJoindate() {
 		return joindate;
 	}
-	public void setJoindate(int joindate) {
+	public void setJoindate(Date joindate) {
 		this.joindate = joindate;
 	}
 	public String getPerson_type() {
@@ -73,3 +75,4 @@ public class User {
 	
 	
 }
+

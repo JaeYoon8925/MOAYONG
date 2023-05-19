@@ -25,9 +25,9 @@ public class UserDAO {
 		return  row;
 	}
 	
-	public User serchInfo(String email) {
+	public User searchInfo(User dto) {
 		SqlSession session = factory.openSession(true);
-		User searchInfo = session.selectOne("searchInfo",email);
+		User searchInfo = session.selectOne("searchInfo",dto);
 		session.close();
 		return searchInfo;
 	}

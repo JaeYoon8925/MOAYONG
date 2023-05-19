@@ -35,13 +35,29 @@ public class BoardDAO {
 		session.close();
 		return list;
 	}
-	
-	public Board viewPostContent(int post) {
+	// 게시글 내용 보기(클릭하면 보여지기)
+	public Board viewPostContent(Board dto) {
 		SqlSession session = factory.openSession(true);
-		Board dto = session.selectOne("viewPostContent",post);
+		Board info = session.selectOne("viewPostContent",dto);
 		session.close();
-		return dto;
+		return info;
 		
 	}
+	// 게시글 수정사항 저장하기
+	public int updatePost(Board dto) {
+		SqlSession session = factory.openSession(true);
+		int row = session.update("updatePost",dto);
+		session.close();
+		return row;
+		
+	}
+	// 게시글 삭제하기
+	public int deletePost(Board dto) {
+		SqlSession session = factory.openSession(true);
+		int row = session.delete("deletePost",dto);
+		session.close();
+		return row;
+	}
+	
 
 }

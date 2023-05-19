@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class Board {
 	private int prj_seq;
-	private String id;
+	private String t_id;
 	private String prj_category;
 	private String prj_name;
 	private String post;
 	private String status;
-	private String deadlind_dt;
-	private String start_dt;
-	private String end_dt;
+	private Date deadline_dt;
+	private Date start_dt;
+	private Date end_dt;
 	private int recruit_count;
 	private int join_count;
 	private Date post_dt;
@@ -22,16 +22,16 @@ public class Board {
 		
 	}
 
-	public Board(int prj_seq, String id, String prj_category, String prj_name, String post, String status,
-			String deadlind_dt, String start_dt, String end_dt, int recruit_count, int join_count, Date post_dt,
+	public Board(int prj_seq, String t_id, String prj_category, String prj_name, String post, String status,
+			Date deadline_dt, Date start_dt, Date end_dt, int recruit_count, int join_count, Date post_dt,
 			String comment, String comment_join) {
 		this.prj_seq = prj_seq;
-		this.id = id;
+		this.t_id = t_id;
 		this.prj_category = prj_category;
 		this.prj_name = prj_name;
 		this.post = post;
 		this.status = status;
-		this.deadlind_dt = deadlind_dt;
+		this.deadline_dt = deadline_dt;
 		this.start_dt = start_dt;
 		this.end_dt = end_dt;
 		this.recruit_count = recruit_count;
@@ -49,12 +49,12 @@ public class Board {
 		this.prj_seq = prj_seq;
 	}
 
-	public String getId() {
-		return id;
+	public String getT_id() {
+		return t_id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setT_id(String t_id) {
+		this.t_id = t_id;
 	}
 
 	public String getPrj_category() {
@@ -89,27 +89,27 @@ public class Board {
 		this.status = status;
 	}
 
-	public String getDeadlind_dt() {
-		return deadlind_dt;
+	public Date getDeadline_dt() {
+		return deadline_dt;
 	}
 
-	public void setDeadlind_dt(String deadlind_dt) {
-		this.deadlind_dt = deadlind_dt;
+	public void setDeadline_dt(Date deadline_dt) {
+		this.deadline_dt = deadline_dt;
 	}
 
-	public String getStart_dt() {
+	public Date getStart_dt() {
 		return start_dt;
 	}
 
-	public void setStart_dt(String start_dt) {
+	public void setStart_dt(Date start_dt) {
 		this.start_dt = start_dt;
 	}
 
-	public String getEnd_dt() {
+	public Date getEnd_dt() {
 		return end_dt;
 	}
 
-	public void setEnd_dt(String end_dt) {
+	public void setEnd_dt(Date end_dt) {
 		this.end_dt = end_dt;
 	}
 
@@ -152,4 +152,8 @@ public class Board {
 	public void setComment_join(String comment_join) {
 		this.comment_join = comment_join;
 	}
+	
+	
 }
+
+	
