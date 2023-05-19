@@ -1,6 +1,9 @@
 package main.java.controller;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,23 +21,46 @@ public class mainpage_WritePostCon implements controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-//		values(prj_seq.nextval,id ?,#{prj_category},#{prj_name},#{post},#{status},#{deadline_dt},
-//				#{start_dt},#{end_dt},#{recuruit_count),join_count,post_dt(sysdate))
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
 		String prj_category = request.getParameter("prj_category");
 		String prj_name = request.getParameter("prj_name");
 		String post = request.getParameter("post");
-		String status = request.getParameter("status");
-		String deadline_dt=request.getParameter("deadline_dt");
-		String start_dt = request.getParameter("start_dt");
-		String end_dt = request.getParameter("end_dt");
+		Date deadline_dt;
+		try {
+		    deadline_dt = dateFormat.parse(request.getParameter("deadline_dt"));
+		} catch (ParseException e) {
+		    e.printStackTrace();
+		    deadline_dt = new Date();
+		}
+		Date start_dt;
+		try {
+		    start_dt = dateFormat.parse(request.getParameter("start_dt"));
+		} catch (ParseException e) {
+		    e.printStackTrace();
+		    start_dt = new Date();
+		}
+		Date end_dt;
+		try {
+		    end_dt = dateFormat.parse(request.getParameter("end_dt"));
+		} catch (ParseException e) {
+		    e.printStackTrace();
+		    end_dt = new Date(); 
+		}
 		int recruit_count = Integer.parseInt(request.getParameter("recruit_count"));
 		
+		
+		HttpSession session= request.getSession();
+		User user = (User)session.getAttribute("user");
+		
+		
 		Board dto = new Board();
+		dto.setT_id(user.getT_id());
 		dto.setPrj_category(prj_category);
 		dto.setPrj_name(prj_name);
 		dto.setPost(post);
-		dto.setStatus(status);
-		dto.setDeadlind_dt(deadline_dt);
+		dto.setDeadline_dt(deadline_dt);
 		dto.setStart_dt(start_dt);
 		dto.setEnd_dt(end_dt);
 		dto.setRecruit_count(recruit_count);
@@ -43,7 +69,9 @@ public class mainpage_WritePostCon implements controller {
 		
 		dao.write(dto);
 		
-		return "redirect:/mainpage.do";
+		String nextView="redirect:/goMain.do";
+		
+		return nextView;
 	}
 
 }

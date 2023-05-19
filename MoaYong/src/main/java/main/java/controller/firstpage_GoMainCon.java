@@ -19,7 +19,7 @@ public class firstpage_GoMainCon implements controller {
 		List<Board> list = dao.list();
 		request.setAttribute("list", list);
 		
-		return "main";
+		return "main";// <- 메인화면 주소 적기(.jsp)
 	}
 
 }

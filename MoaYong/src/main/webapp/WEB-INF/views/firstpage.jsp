@@ -7,31 +7,21 @@
 <html>
 
 <head>
-<title>Stellar by HTML5 UP</title>
-<meta charset="utf-8" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
-<meta name="viewport"
-	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<!-- 캘린더 api -->
-<script
-	src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- ajax 비동기 통신에 필요-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <noscript>
 	<link rel="stylesheet" href="../assets/css/noscript.css" />
 </noscript>
+
+
+
+<title>Firstpage</title>
+
 </head>
 
 <body>
@@ -127,7 +117,7 @@ body {
 	<dialog id="sign">
 	<form action="join.do" method="post">
 		<label for="username">ID:</label> <input type="text" id="username"
-			name="id" required><br>
+			name="t_id" required><br>
 
 		<button type="submit">중복검사</button>
 		<br> <label for="password">Pw:</label> <input type="password"
@@ -135,36 +125,21 @@ body {
 		<input type="text" id="email" name="email" require><br>
 
 		<labelfor="nickname">Nick:</label> <input type="text" id="nickname"
-			name="nickname" required>
-		<br>
+			name="nickname" required> <br>
 
 		<button type="submit">Submit</button>
-<<<<<<< HEAD
-	
-
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 	</form>
 	</dialog>
 
 
-<<<<<<< HEAD
-	<!-- reset modal-->
-=======
 	<!-- reset modal-->
 	<dialog id="reset">
 	<form action="searchInfo.do" method="post">
 
 		<label for="reset-id ">ID::</label> <input type="text" id="id"
-			name="id" required><br> <label for="reset-email">Email:</label>
+			name="t_id" required><br> <label for="reset-email">Email:</label>
 		<input type="email" id="reset-email" name="email" required><br>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 
-	<dialog id="reset">
-	<form>
-		<label for="username">ID:</label> <input type="text" id="username"
-			name="username" required><br> <label for="reset-email">Email:</label>
-		<input type="email" id="reset-email" name="reset-email" required><br>
 		<button type="submit">Submit</button>
 
 	</form>
@@ -177,37 +152,32 @@ body {
 
 		<form action="login.do" method="post">
 			<div id="result-area">ID</div>
-			<input type="text" class="user-input" name="id">
+			<input type="text" class="user-input" name="t_id">
 
 			<div id="chance-area">Password</div>
 			<input type="text" class="user-input" name="pw">
+
+			<div class="button-area">
+				<button id="login-button">Login</button>
 		</form>
 
-		<div class="button-area">
 
-			<button id="login-button">Login</button>
-			<br> <br>
+		<br> <br>
 
-			<button id="sign-button">회원가입</button>
 
-			<button id="reset-button">회원찾기</button>
-
-		</div>
 	</div>
+	<button id="sign-button">회원가입</button>
+
+	<button id="reset-button">회원찾기</button>
 
 	<script>
 		var joinCom = '${joinComplete}';
-	 	if (  joinCom === "회원가입 완료!"){
-	 		alert("회원가입 완료!");
-	 	}
-	
-	
+		if (joinCom === "회원가입 완료!") {
+			alert("회원가입 완료!");
+		}
+
 		$('#sign-button').on('click', function() {
 			sign.showModal();
-		});
-
-		$('#login-button').on('click', function name(params) {
-
 		});
 
 		$('#reset-button').on('click', function() {

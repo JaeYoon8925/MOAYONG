@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,38 +114,39 @@
 }
     </style>
     <!-- 폼 태그 -->
-    <form action="">
+    <form action="writePost.do" method="post">
         <table>
             <tr>
                 <td>
-                    <select id="search_category">
-                        <option value="category">카테고리 검색</option>
-                        <option value="develop">개발</option>
-                        <option value="translation">번역</option>
-                        <option value="design">그림/디자인</option>
-                        <option value="video_editing">영상/편집</option>
-                        <option value="planning_marketing">기획/마케팅</option>
-                        <option value="others">기타</option>
-                    </select>
-                    <input type="text" name="search_keyword" placeholder="검색어를 입력하세요">
+                    <select name="prj_category">
+                        <option value="" selected disabled>카테고리 검색</option>
+                        <option value="프로그래밍">프로그래밍</option>
+                        <option value="전시회">전시회</option>
+                        <option value="게임">게임</option>
+                        <option value="스터디">스터디</option>
+                   </select>
+                  <!-- <input type="text" name="search_keyword" placeholder="검색어를 입력하세요"> -->  
                 </td>
             </tr>
         </table>
 
-        <div id="title">제목 :  <input type="text" placeholder="제목을 입력하세요"></div>
+        <div id="title">제목 :  <input name ="prj_name" type="text" placeholder="제목을 입력하세요"></div>
 
         <div id="date" class="row gtr-uniform">날짜정보입력
             <div class="col-6 col-12-xsmall">
-                시작일 : <input type="date">
+               모집마감일 : <input name="deadline_dt" type="date">
             </div>
             <div class="col-6">
-                마감일 : <input type="date">
+                프로젝트시작일 : <input name="start_dt" type="date">
+            </div>
+            <div class="col-6">
+                프로젝트종료일 : <input name="end_dt" type="date">
             </div>
         </div>
 
         <br>
 
-        <div >모집인원 : <input type="text" placeholder="모집인원을 입력하세요"></div>
+        <div >모집인원 : <input name="recruit_count" type="text" placeholder="모집인원을 입력하세요"></div>
 
         <table>
             <tr>
@@ -181,8 +183,9 @@
 
         <br>
         <br>
-        <textarea placeholder="내용을 입력해주세요."></textarea><br>
-        <button id="register">게시</button>
+        <textarea name="post" placeholder="내용을 입력해주세요."></textarea><br>
+        <a><c items="${user}" var="user">${user.nickname}님</a>
+        <button type="submit" id="register">게시</button>
         <button id="esc">취소</button>
 
 
@@ -192,10 +195,10 @@
 
     <!-- 스크립트 태그 -->
     <script>
-        var registerbtn = document.getElementById("register");
-        registerbtn.addEventListener('click', () => {
-            alert("게시 완료")
-        })
+       // var registerbtn = document.getElementById("register");
+        // registerbtn.addEventListener('click', () => {
+           // alert("게시 완료")
+       // })
         var registerbtn = document.getElementById("esc");
         registerbtn.addEventListener('click', () => {
             alert("취소 완료")

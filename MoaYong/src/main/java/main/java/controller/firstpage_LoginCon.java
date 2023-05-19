@@ -14,17 +14,15 @@ import main.java.entity.User;
 
 
 public class firstpage_LoginCon implements controller {
-	
-	
-	
+
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		String t_id = request.getParameter("t_id");
 		String pw = request.getParameter("pw");
 		User dto = new User();
-		dto.setId(id);
+		dto.setT_id(t_id);
 		dto.setPw(pw);
 
 		UserDAO dao = new UserDAO();
@@ -36,8 +34,10 @@ public class firstpage_LoginCon implements controller {
 			HttpSession session=request.getSession();
 			session.setAttribute("user", user);
 			nextView="redirect:/goMain.do";
+			System.out.println("로그인성공");
 		} else {
-			out.print("비밀번호 또는 아이디를 다시 확인하세요.");
+			nextView="firstpage";
+			System.out.println("로그인실패");
 		}
 		return nextView;
 	}

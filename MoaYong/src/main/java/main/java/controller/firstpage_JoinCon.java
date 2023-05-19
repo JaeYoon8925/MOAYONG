@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import main.java.dao.UserDAO;
 import main.java.entity.User;
@@ -18,17 +19,15 @@ public class firstpage_JoinCon implements controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String id=request.getParameter("id");
+		String t_id=request.getParameter("t_id");
 		String pw = request.getParameter("pw");
 		String nickname = request.getParameter("nickname");
-		String person_type = request.getParameter("person_type");
 		String email = request.getParameter("email");
 
 		User dto= new User();
-		dto.setId(id);
+		dto.setT_id(t_id);
 		dto.setPw(pw);
 		dto.setNickname(nickname);
-//		dto.setPerson_type(person_type);
 		dto.setEmail(email);
 
 		UserDAO dao= new UserDAO();
@@ -37,19 +36,19 @@ public class firstpage_JoinCon implements controller {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		String nextView=null;
-		
 		if(row>0) {
-			nextView="firstpage"; // <- 가입 공시 띄워줄 jsp
+			nextView="firstpage"; // <- 가입 성공시 띄워줄 jsp
 			out.print("회원가입성공");
 			
-			String message = "회원가입 완료!";
-		    request.setAttribute("joinComplete", message);
-		    
+			HttpSession session = request.getSession();
+			String joinComplete = "회원가입 완료!";
+			request.setAttribute("joinComplete", joinComplete);
+					
+					
 		}else {
 			nextView="firstpage"; // <- 가입 실패시 띄워줄 회원가입창
 			out.print("회원가입실패");
 		}
-		
 		return nextView;
 	}
 

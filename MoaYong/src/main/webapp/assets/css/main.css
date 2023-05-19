@@ -3388,7 +3388,7 @@ body.is-preload #header.alt .logo {
 
 
 /* 메인 네비에만 */
-.is-preload>#nav {
+.is-preload > #nav {
 	position: fixed;
 	z-index: 10;
 }
