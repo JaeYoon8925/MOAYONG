@@ -1,5 +1,5 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="main.java.dao.BoardDAO"%>
+<%@page import="com.smhrd.dao.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 태그라이브러리 추가★★★★★★★★ -->

@@ -1,4 +1,4 @@
-<%@ page import="main.java.entity.User"%>
+<%@ page import="com.smhrd.entity.User"%>
 <!-- page import="main.java.entity.Board" -->
 <!-- import="main.java.entity.캘린더 데이터 엔터티"%> -->
 <!-- import="main.java.entity.쪽지테이블 엔터티"%> -->
