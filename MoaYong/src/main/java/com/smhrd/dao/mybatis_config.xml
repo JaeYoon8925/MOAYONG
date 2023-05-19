@@ -23,5 +23,6 @@
 <mappers>
   <mapper resource="main/java/dao/BoardMapper.xml"/>
   <mapper resource="main/java/dao/UserMapper.xml"/>
+  <mapper resource="main/java/dao/ProjectManageMapper.xml" />
 </mappers>
 </configuration>
