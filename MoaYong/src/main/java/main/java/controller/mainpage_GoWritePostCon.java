@@ -12,11 +12,8 @@ public class mainpage_GoWritePostCon implements controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-
-		String nextView = "redirect:/writePost.do";
-
-		return nextView;
+		HttpSession session= request.getSession();
+		return "write";
 	}
 
 }

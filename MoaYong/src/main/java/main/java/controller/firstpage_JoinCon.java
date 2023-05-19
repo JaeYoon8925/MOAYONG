@@ -28,7 +28,7 @@ public class firstpage_JoinCon implements controller {
 		dto.setId(id);
 		dto.setPw(pw);
 		dto.setNickname(nickname);
-		dto.setPerson_type(person_type);
+//		dto.setPerson_type(person_type);
 		dto.setEmail(email);
 
 		UserDAO dao= new UserDAO();
@@ -37,13 +37,19 @@ public class firstpage_JoinCon implements controller {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		String nextView=null;
+		
 		if(row>0) {
-			nextView="firstPage"; // <- 가입 성공시 띄워줄 jsp
+			nextView="firstpage"; // <- 가입 공시 띄워줄 jsp
 			out.print("회원가입성공");
+			
+			String message = "회원가입 완료!";
+		    request.setAttribute("joinComplete", message);
+		    
 		}else {
-			nextView="firstPage"; // <- 가입 실패시 띄워줄 회원가입창
+			nextView="firstpage"; // <- 가입 실패시 띄워줄 회원가입창
 			out.print("회원가입실패");
 		}
+		
 		return nextView;
 	}
 

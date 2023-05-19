@@ -28,12 +28,9 @@ public class mainpage_WritePostCon implements controller {
 		String start_dt = request.getParameter("start_dt");
 		String end_dt = request.getParameter("end_dt");
 		int recruit_count = Integer.parseInt(request.getParameter("recruit_count"));
-		HttpSession session = request.getSession();
-		User user = (User)session.getAttribute("user");
 		
 		Board dto = new Board();
 		dto.setPrj_category(prj_category);
-		dto.setId(user.getNickname());
 		dto.setPrj_name(prj_name);
 		dto.setPost(post);
 		dto.setStatus(status);

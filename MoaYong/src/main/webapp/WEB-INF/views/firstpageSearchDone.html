@@ -139,18 +139,10 @@ body {
 		<br>
 
 		<button type="submit">Submit</button>
-<<<<<<< HEAD
-	
-
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 	</form>
 	</dialog>
 
 
-<<<<<<< HEAD
-	<!-- reset modal-->
-=======
 	<!-- reset modal-->
 	<dialog id="reset">
 	<form action="searchInfo.do" method="post">
@@ -158,50 +150,33 @@ body {
 		<label for="reset-id ">ID::</label> <input type="text" id="id"
 			name="id" required><br> <label for="reset-email">Email:</label>
 		<input type="email" id="reset-email" name="email" required><br>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 
-	<dialog id="reset">
-	<form>
-		<label for="username">ID:</label> <input type="text" id="username"
-			name="username" required><br> <label for="reset-email">Email:</label>
-		<input type="email" id="reset-email" name="reset-email" required><br>
 		<button type="submit">Submit</button>
 
 	</form>
 	</dialog>
 
 
+
+
+
 	<div class="main">
-		<h1>Login</h1>
+		
+		<h1>비밀번호 찾기 완료/재설정하기</h1>
+		
+		
 
 
-		<form action="login.do" method="post">
-			<div id="result-area">ID</div>
-			<input type="text" class="user-input" name="id">
-
-			<div id="chance-area">Password</div>
-			<input type="text" class="user-input" name="pw">
-		</form>
-
-		<div class="button-area">
-
-			<button id="login-button">Login</button>
-			<br> <br>
-
-			<button id="sign-button">회원가입</button>
-
-			<button id="reset-button">회원찾기</button>
-
-		</div>
+		<button><a href="goFirstpage.do">메인으로</a>></button>
+		
 	</div>
 
+
+
+
+
+
 	<script>
-		var joinCom = '${joinComplete}';
-	 	if (  joinCom === "회원가입 완료!"){
-	 		alert("회원가입 완료!");
-	 	}
-	
-	
 		$('#sign-button').on('click', function() {
 			sign.showModal();
 		});

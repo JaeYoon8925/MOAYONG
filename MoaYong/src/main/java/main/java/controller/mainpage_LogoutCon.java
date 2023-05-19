@@ -5,14 +5,18 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class mainpage_GoBoardCon implements controller {
+public class mainpage_LogoutCon implements controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 마이페이지 누르면 마이페이지로 넘어감
-		return "mypage";
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session= request.getSession();
+		session.removeAttribute("user");
+		String nextView ="redirect:/goFirstpage.do";
+		return nextView;
 	}
 
 }
