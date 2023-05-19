@@ -31,36 +31,40 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <!-- ajax 비동기 통신에 필요-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
 <noscript>
-	<link rel="stylesheet" href="/assets/css/noscript.css" />
+	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
 
 
 </head>
 
+<% User user=(User) session.getAttribute("user"); System.out.println(user); %>
+
+<nav id="nav">
+	<ul>
+		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
+		<li><a href="goMain.do" classs="active">게시판</a></li>
+		<li><a href="go(프로젝트메인가칭).do">프로젝트 관리</a></li>
+
+		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
+		<li><a href="goMypage.do">마이페이지</a></li>
+
+		<% if (user !=null) { %>
+		<button type="submit" id="logout-btn">
+			<a href="logout.do">로그아웃</a>
+		</button>
+		<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
+		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+		<% } %>
+
+	</ul>
+</nav>
 
 <body class="is-preload">
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-
-		<div id="topheader">
-			<a><c items="${user}" var="user">${user.nickname}님</a>
-			<form action="logout.do">
-				<!-- 수정해야함 href -->
-				<button type="submit" id="logout-btn">로그아웃</button>
-			</form>
-			<form action="goMypage.do">
-				<!-- 수정해야함 href -->
-				<button type="submit" id="mypage-btn">마이페이지</button>
-				<a href="index.html">
-			</form>
-			<div class="image">
-				<img src="/images/pic01.jpg" alt="" />
-			</div>
-			</a>
-		</div>
 
 		<!-- Header -->
 		<header id="header">
@@ -75,16 +79,20 @@
 			<section id="content" class="main">
 				<form action="searchPost.do" methond="post">
 					<table border="1">
-						<tr>
-							<td><select name="prj_category" class="col-6">
-									<option value="" selected disabled>카테고리 검색</option>
-									<option value="모두" type="text">모두보기</option>
-									<option value="프로그래밍" type="text">프로그래밍</option>
-									<option value="전시회" type="text">전시회</option>
-									<option value="게임" type="text">게임</option>
-									<option value="스터디" type="text">스터디</option>
-							</select> <input type="text" name="prj_name" class="col-6"></td>
-						</tr>
+						<div class="col-3 col-12-xsmall" style="display: flex;">
+							<select name="prj_category" class="col-6" style="display: flex;">
+								<option value="" selected disabled>카테고리 검색</option>
+								<option value="모두" type="text">모두보기</option>
+								<option value="프로그래밍" type="text">프로그래밍</option>
+								<option value="전시회" type="text">전시회</option>
+								<option value="게임" type="text">게임</option>
+								<option value="스터디" type="text">스터디</option>
+							</select>
+						</div>
+						<div class="col-3 col-12-xsmall" style="display: flex;">
+							<input type="text" name="prj_name" class="col-6"
+								style="display: flex;">
+						</div>
 					</table>
 					<!--      <button type="submit" id="open">최신순</button> -->
 					<!--      <button type="submit" id="close">마감임박순</button> -->
@@ -113,7 +121,8 @@
 										<td>${searchPost.prj_category }</td>
 										<td>${searchPost.status }</td>
 										<td><a
-											href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a></td>
+											href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
+										</td>
 										<td>${searchPost.t_id}</td>
 										<td>${searchPost.post_dt}</td>
 										<td>${searchPost.end_dt}</td>
@@ -127,7 +136,8 @@
 										<td>${list.prj_seq }</td>
 										<td>${list.prj_category }</td>
 										<td>${list.status }</td>
-										<td><a href="viewPostContent.do?prj_seq=${list.prj_seq}">${list.prj_name}</a></td>
+										<td><a href="viewPostContent.do?prj_seq=${list.prj_seq}">${list.prj_name}</a>
+										</td>
 										<td>${list.t_id}</td>
 										<td>${list.post_dt}</td>
 										<td>${list.end_dt}</td>
@@ -142,22 +152,13 @@
 				</table>
 				<br> <br> <a href="goWritePost.do"><button id="writer">글쓰기</button></a>
 
-				<%
-				BoardDAO paging = new BoardDAO();
-				int count = paging.getBoardCount(); //게시판 전체 글 개수 가져오기
-				int pageSize = 10; //한 페이지 보여줄 글 개수 설정
-
-				//현페이지 번호 가져오기
-				String pageNum = request.getParameter("pageNum");
-				//파라미터가 없으면 "1"로 설정
-				if (pageNum == null) {
-					pageNum = "1";
-				}
-
-				int currentPage = Integer.parseInt(pageNum);
-				int startRow = (currentPage - 1) * pageSize + 1;
-				int endRow = currentPage * pageSize;
-				%>
+				<% BoardDAO paging=new BoardDAO(); 
+				int count=paging.getBoardCount(); //게시판 전체 글 개수 가져오기 
+				int pageSize=10; //한 페이지 보여줄 글 개수 설정 //현페이지 번호 가져오기 String
+												pageNum=request.getParameter("pageNum"); //파라미터가 없으면 "1" 로 설정 if
+												(pageNum==null) { pageNum="1" ; } int
+												currentPage=Integer.parseInt(pageNum); int startRow=(currentPage - 1) *
+												pageSize + 1; int endRow=currentPage * pageSize; %>
 				<h1>
 					boarder/list.jsp [전체 글개수 :
 					<%=count%>]
@@ -165,52 +166,35 @@
 
 				<!-- 페이지 이동 버튼 -->
 				<div>
-					<%
-					int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
-					int pageBlock = 10;
-					int startPage = (currentPage - 1) / pageBlock * pageBlock + 1;
-					int endPage = Math.min(startPage + pageBlock - 1, pageCount);
-					%>
-					<%
-					if (startPage > pageBlock) {
-					%>
+					<% int pageCount=count / pageSize + (count % pageSize==0 ? 0 : 1);
+														int pageBlock=10; int startPage=(currentPage - 1) / pageBlock *
+														pageBlock + 1; int endPage=Math.min(startPage + pageBlock - 1,
+														pageCount); %>
+					<% if (startPage> pageBlock) {
+															%>
 					<form action="GoListPage.do" methond="post">
 						<a href="GoListPage.do?pageNum=<%=startPage - pageBlock%>">[이전]</a>
 					</form>
-					<%
-					}
-					%>
+					<% } %>
 
-					<%
-					for (int i = startPage; i <= endPage; i++) {
-					%>
-					<%
-					if (i == currentPage) {
-					%>
+					<% for (int i=startPage; i <=endPage; i++) { %>
+					<% if (i==currentPage) { %>
 					<%=i%>
-					<%
-					} else {
-					%>
+					<% } else { %>
 					<form action="GoListPage.do" method="post">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit"><%=i%></button>
+						<button type="submit">
+							<%=i%>
+						</button>
 					</form>
-					<%
-					}
-					%>
-					<%
-					}
-					%>
+					<% } %>
+					<% } %>
 
-					<%
-					if (endPage < pageCount) {
-					%>
+					<% if (endPage < pageCount) { %>
 					<form action="GoListPage.do" methond="post">
 						<a href="GoListPage.do?pageNum=<%=startPage + pageBlock%>">[다음]</a>
 					</form>
-					<%
-					}
-					%>
+					<% } %>
 				</div>
 
 
