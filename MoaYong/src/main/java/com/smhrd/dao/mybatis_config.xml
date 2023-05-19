@@ -4,25 +4,25 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<properties resource="main/java/dao/db.properties"></properties>
+	<properties resource="/com/smhrd/dao/db.properties"></properties>
 	<!-- <property name="driver value".." ==>${driver} -->
 
-<environments default="development">
-  <environment id="development">
-    <transactionManager type="JDBC">
-    </transactionManager>
-    <dataSource type="POOLED">
-      <property name="driver" value="${driver}"/>
-      <property name="url" value="${url}"/>
-      <property name="username" value="${username}"/>
-      <property name="password" value="${password}"/>
-    </dataSource>
-  </environment>
-</environments>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC">
+			</transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
 
-<mappers>
-  <mapper resource="main/java/dao/BoardMapper.xml"/>
-  <mapper resource="main/java/dao/UserMapper.xml"/>
-  <mapper resource="main/java/dao/ProjectManageMapper.xml" />
-</mappers>
+	<mappers>
+		<mapper resource="/com/smhrd/dao/BoardMapper.xml" />
+		<mapper resource="/com/smhrd/dao/UserMapper.xml" />
+		<mapper resource="/com/smhrd/dao/ProjectManageMapper.xml" />
+	</mappers>
 </configuration>
