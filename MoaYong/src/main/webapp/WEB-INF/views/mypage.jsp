@@ -190,26 +190,21 @@
 										<!-- <li>Dolor pulvinar magna etiam.</li>
 										<li>Sagittis sed lorem adipiscing.</li>
 										<li>Felis enim etiam feugiat.</li> -->
-										<% List<Project> partinList = (List<Project>)request.getAttribute("partinList");
+										<% List<Project> partinList = (List<Project>)request.getAttribute("partinList"); %>
 										
-										 for(int i=0;i<partinList.size(); i++)
-										 {
-										%>
-											<li>${partinList.get(i).prj_name}</li>
-										<% } %>
-										
+										<%for(Project vo : partinList){ %>
+										<li><%=vo.getPrj_name() %>
+										<%} %>
 									</ul>
 								</li>
 								<li><span class="icon major style3 fa-copy"></span>
 									<h3>진행 중인 프로젝트</h3>
 									<ul class="alt">
-										<% List<Project> ingList = (List<Project>)request.getAttribute("ingList");
+										<% List<Project> ingList = (List<Project>)request.getAttribute("ingList");%>
 										
-										for(int i=0;i<ingList.size(); i++)
-										{					
-										%>
-											<li>${ingList.get(i).prj_name}</li>
-										<% } %>
+										<%for(Project vo : ingList){ %>
+										<li><%=vo.getPrj_name() %>
+										<%} %>
 										
 									</ul> <!-- 이 사람의 진행 중 프로젝트 리스트 전부 보기 -->
 								</li>
@@ -217,9 +212,11 @@
 									<h3>완료된 프로젝트</h3>
 								
 									<ul class="alt">
-										<li>Dolor pulvinar magna etiam.</li>
-										<li>Sagittis sed lorem adipiscing.</li>
-										<li>Felis enim etiam feugiat.</li>
+										<% List<Project> endList = (List<Project>)request.getAttribute("endList");%>
+										
+										<%for(Project vo : endList){ %>
+										<li><%=vo.getPrj_name() %>
+										<%} %>
 									</ul> <!-- 이 사람의 완료 프로젝트 리스트 전부 보기 -->
 								</li>
 							</ul>
