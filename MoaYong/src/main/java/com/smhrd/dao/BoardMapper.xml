@@ -13,17 +13,23 @@
 		ORDER BY t.post_dt DESC
 	</select>
 
-	<select id="searchPost" resultType="com.smhrd.entity.Board"
-		parameterType="com.smhrd.entity.Board">
-		SELECT *
-		FROM T_PROJECT
-		WHERE prj_category = #{prj_category}
-		<choose>
-			<when test="prj_name != null and !prj_name.equals('')">
-				AND prj_name LIKE '%' || #{prj_name} || '%'
-			</when>
-		</choose>
-	</select>
+<select id="searchPost" resultType="com.smhrd.entity.Board">
+<choose>
+<when test="prj_category == '모두'">
+select * from t_project order by post_dt</when>
+<otherwise>
+select * from t_project
+<where>
+<if test="prj_category != null and !prj_category.equals('')">
+prj_category = #{prj_category}</if>
+<if test="prj_name != null and !prj_name.equals('')">
+<if test="prj_category != null and !prj_category.equals('')">
+and</if>
+prj_name like '%' || #{prj_name} || '%'</if>
+</where>
+</otherwise>
+</choose>
+</select>
 
 	<select id="viewPostContent" resultType="com.smhrd.entity.Board"
 		parameterType="com.smhrd.entity.Board">
