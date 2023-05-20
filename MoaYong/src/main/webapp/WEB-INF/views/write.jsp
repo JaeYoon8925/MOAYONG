@@ -117,10 +117,13 @@
 							<td>
 								<div id="date">날짜정보입력</div>
 								<div style="float: left; max-width: none;">
-									시작일 : <input type="date">
+									인원모집 마감일 : <input type="date" name="deadline_dt">
 								</div>
 								<div style="float: left; max-width: none;">
-									마감일 : <input type="date">
+									프로젝트 시작일 : <input type="date" name="start_dt">
+								</div>
+								<div style="float: left; max-width: none;">
+									프로젝트 종료일 : <input type="date" name="end_dt">
 								</div>
 							</td>
 						</tr>
