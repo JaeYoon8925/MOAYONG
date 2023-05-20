@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.entity.Project"%>
+<%@page import="java.util.List"%>
 <%@ page import="com.smhrd.entity.User" %>
 	<!-- page import="main.java.entity.Board" -->
 	<!-- import="main.java.entity.캘린더 데이터 엔터티"%> -->
@@ -182,26 +184,38 @@
 							</header>
 							<ul class="features">
 								<li><span class="icon solid major style1 fa-code"></span>
-									<h3>게시한 프로젝트</h3>
-									<p>이 사람이 올린 프로젝트 들이에용.</p>
+									<h3>참가신청 한 프로젝트</h3>
+							
 									<ul class="alt">
-										<li>Dolor pulvinar magna etiam.</li>
+										<!-- <li>Dolor pulvinar magna etiam.</li>
 										<li>Sagittis sed lorem adipiscing.</li>
-										<li>Felis enim etiam feugiat.</li>
+										<li>Felis enim etiam feugiat.</li> -->
+										<% List<Project> partinList = (List<Project>)request.getAttribute("partinList");
+										
+										 for(int i=0;i<partinList.size(); i++)
+										 {
+										%>
+											<li>${partinList.get(i).prj_name}</li>
+										<% } %>
+										
 									</ul>
 								</li>
 								<li><span class="icon major style3 fa-copy"></span>
-									<h3>참여 중 프로젝트</h3>
-									<p>이 사람이 참여 중 프로젝트들이에용.</p>
+									<h3>진행 중인 프로젝트</h3>
 									<ul class="alt">
-										<li>Dolor pulvinar magna etiam.</li>
-										<li>Sagittis sed lorem adipiscing.</li>
-										<li>Felis enim etiam feugiat.</li>
+										<% List<Project> ingList = (List<Project>)request.getAttribute("ingList");
+										
+										for(int i=0;i<ingList.size(); i++)
+										{					
+										%>
+											<li>${ingList.get(i).prj_name}</li>
+										<% } %>
+										
 									</ul> <!-- 이 사람의 진행 중 프로젝트 리스트 전부 보기 -->
 								</li>
 								<li><span class="icon major style5 fa-gem"></span>
-									<h3>완료 프로젝트</h3>
-									<p>이 사람이 완료한 프로젝트들이에용.</p>
+									<h3>완료된 프로젝트</h3>
+								
 									<ul class="alt">
 										<li>Dolor pulvinar magna etiam.</li>
 										<li>Sagittis sed lorem adipiscing.</li>
