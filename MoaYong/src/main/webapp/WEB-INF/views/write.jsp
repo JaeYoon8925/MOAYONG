@@ -131,7 +131,7 @@
 							<td>
 								<div
 									style="float: left; max-width: none; margin: 12.5px 38px 0px 0px; padding-right: 15px;">
-									제목 :</div> <input name="title" type="text" placeholder="제목을 입력하세요"
+									제목 :</div> <input name="prj_name" type="text" placeholder="제목을 입력하세요"
 								style="float: left; width: 70%;">
 							</td>
 						</tr>
