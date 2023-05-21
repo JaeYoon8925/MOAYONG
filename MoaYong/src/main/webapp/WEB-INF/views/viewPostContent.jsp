@@ -299,7 +299,7 @@
 					success : function(response) {
 						alert('참가신청 완료');
 					},
-					error : function(xhr, status, error) {
+					error : function(e) {
 						alert('참가신청 실패');
 					}
 				});
