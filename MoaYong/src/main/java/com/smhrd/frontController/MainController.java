@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.controller.mypage_goProfileUpdateCon;
-import com.smhrd.controller.mypage_ProfileUpdate;
+import com.smhrd.controller.party_joinCountCon;
+import com.smhrd.controller.party_joinDisCountCon;
+import com.smhrd.controller.party_joinListCon;
+import com.smhrd.controller.party_joinNoCon;
+import com.smhrd.controller.party_joinOkCon;
 import com.smhrd.controller.ProjectManageCon;
 import com.smhrd.controller.content_uploadReplyCon;
 import com.smhrd.controller.controller;
@@ -65,13 +68,19 @@ public class MainController extends HttpServlet {
 		mappings.put("/logout.do", new mainpage_LogoutCon()); // 로그아웃
 		mappings.put("/goPrj.do", new ProjectManageCon());
 		// 마이페이지 내부 기능
-		mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
-		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
+		// mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
+		// mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
 		// 댓글기능
 		mappings.put("/uploadReply.do", new content_uploadReplyCon());
 		mappings.put("/afterReply.do", new reply_viewPostContent_afterReplyCon());
 		// 참가기능
 		mappings.put("/joinParty.do", new party_joinPartyCon());
+		mappings.put("/joinList.do", new party_joinListCon());
+		mappings.put("/joinOk.do", new party_joinOkCon());
+		mappings.put("/joinNo.do", new party_joinNoCon());
+		mappings.put("/joinCount.do", new party_joinCountCon());
+		mappings.put("/joinDisCount.do", new party_joinDisCountCon());
+
 	}
 
 	private static final long serialVersionUID = 1L;
