@@ -114,8 +114,7 @@
 										</h2>
 									</header>
 									<p>
-										<%=user.getSelf_intro()%><br> self_intro가 아니라 comment로
-											회원테이블에 컬럼추가 요망 이후 위 스트립을 user.getComment() 로 변경
+										<%=user.getSelf_intro()%><br> 
 									</p>
 
 									<ul class="actions">
@@ -162,9 +161,10 @@
 												</div>
 											</div>
 											<!-- /Modal -->
-											<a href="goMypage">
-												<button type="button" class="button primary"
-													href="GoSetProfile">수정하기</button>
+											<a href="goProfileUpdate.do">
+												<button type="button" class="button primary">
+												수정하기
+												</button>
 											</a>
 
 										</li>
@@ -186,24 +186,21 @@
 								<li><span class="icon solid major style1 fa-code"></span>
 									<h3>참가신청 한 프로젝트</h3>
 							
-									<ul class="alt">
-										<!-- <li>Dolor pulvinar magna etiam.</li>
-										<li>Sagittis sed lorem adipiscing.</li>
-										<li>Felis enim etiam feugiat.</li> -->
+									<ul class="alt" style="height: 300px; overflow: auto">
 										<% List<Project> partinList = (List<Project>)request.getAttribute("partinList"); %>
-										
+										<!-- ${vo.prj_seq}가 현재 null 값이 나옴 -->
 										<%for(Project vo : partinList){ %>
-										<li><%=vo.getPrj_name() %>
+										<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
 										<%} %>
 									</ul>
-								</li>
+								
 								<li><span class="icon major style3 fa-copy"></span>
 									<h3>진행 중인 프로젝트</h3>
-									<ul class="alt">
+									<ul class="alt" style="height: 300px; overflow: auto">
 										<% List<Project> ingList = (List<Project>)request.getAttribute("ingList");%>
-										
 										<%for(Project vo : ingList){ %>
-										<li><%=vo.getPrj_name() %>
+										<!-- 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔 -->
+										<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name() %></a></li>
 										<%} %>
 										
 									</ul> <!-- 이 사람의 진행 중 프로젝트 리스트 전부 보기 -->
@@ -211,11 +208,11 @@
 								<li><span class="icon major style5 fa-gem"></span>
 									<h3>완료된 프로젝트</h3>
 								
-									<ul class="alt">
+									<ul class="alt" style="height: 300px; overflow: auto">
 										<% List<Project> endList = (List<Project>)request.getAttribute("endList");%>
-										
 										<%for(Project vo : endList){ %>
-										<li><%=vo.getPrj_name() %>
+										<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
+										<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name() %></a></li>
 										<%} %>
 									</ul> <!-- 이 사람의 완료 프로젝트 리스트 전부 보기 -->
 								</li>

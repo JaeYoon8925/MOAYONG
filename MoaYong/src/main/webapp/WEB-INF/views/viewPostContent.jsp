@@ -99,50 +99,50 @@
 
 
 				<!-- 폼 태그 -->
-					<table>
-						<tr>
-							<td>
-								<div style="float: left; max-width: none;">카테고리 :
-									${viewPostContent.prj_category}</div>
-								<div style="float: left; margin-left: 30%; max-width: none;">
-									상태 : ${viewPostContent.status}</div>
-								<div style="float: right; max-width: none;">글 번호 :
-									${viewPostContent.prj_seq}</div>
+				<table>
+					<tr>
+						<td>
+							<div style="float: left; max-width: none;">카테고리 :
+								${viewPostContent.prj_category}</div>
+							<div style="float: left; margin-left: 30%; max-width: none;">
+								상태 : ${viewPostContent.status}</div>
+							<div style="float: right; max-width: none;">글 번호 :
+								${viewPostContent.prj_seq}</div>
 
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div style="max-width: none;">인원모집 마감일 :
-									${viewPostContent.deadline_dt}</div>
-								<div style="float: left; max-width: none;">프로젝트 시작일 :
-									${viewPostContent.start_dt}</div>
-								<div style="float: right; max-width: none;">프로젝트 종료일 :
-									${viewPostContent.end_dt}</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div
-									style="float: left; max-width: none; margin: 12.5px 38px 0px 0px; padding-right: 15px;">
-									제목 : ${viewPostContent.prj_name}</div> <!-- <input name="prj_name" type="text" placeholder="제목을 입력하세요"
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="max-width: none;">인원모집 마감일 :
+								${viewPostContent.deadline_dt}</div>
+							<div style="float: left; max-width: none;">프로젝트 시작일 :
+								${viewPostContent.start_dt}</div>
+							<div style="float: right; max-width: none;">프로젝트 종료일 :
+								${viewPostContent.end_dt}</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="float: left; max-width: none; margin: 12.5px 38px 0px 0px; padding-right: 15px;">
+								제목 : ${viewPostContent.prj_name}</div> <!-- <input name="prj_name" type="text" placeholder="제목을 입력하세요"
 								style="float: left; width: 70%;"> -->
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div
-									style="float: left; max-width: none; margin-top: 12.5px; padding-right: 15px;">
-									모집현황 : ${viewPostContent.join_count} /
-									${viewPostContent.recruit_count}</div> <!-- <div
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="float: left; max-width: none; margin-top: 12.5px; padding-right: 15px;">
+								모집현황 : ${viewPostContent.join_count} /
+								${viewPostContent.recruit_count}</div> <!-- <div
 									style="float: right; max-width: none; margin-top: 12.5px; padding-right: 15px;">
 									이미지 첨부 : <input type="file" style="float: right;"> <br>
 								</div> -->
-							</td>
-						</tr>
-					</table>
+						</td>
+					</tr>
+				</table>
 
-					<!-- <table>
+				<!-- <table>
 						<tr>
 							<td><select id="font">
 									<option value="default">글씨체</option>
@@ -163,26 +163,26 @@
 						</tr>
 					</table> -->
 
-					지도부분 시작
-					<div id="map"
-						style="width: 400x; height: 300px; margin-bottom: 20px;"></div>
-					지도부분 끝
-					<table>
-						<tr>
-							<td style="padding: 50px 0px 50px 0px;">
-								${viewPostContent.post}</td>
-						</tr>
-					</table>
-					<!-- <div>
+				지도부분 시작
+				<div id="map"
+					style="width: 400x; height: 300px; margin-bottom: 20px;"></div>
+				지도부분 끝
+				<table>
+					<tr>
+						<td style="padding: 50px 0px 50px 0px;">
+							${viewPostContent.post}</td>
+					</tr>
+				</table>
+				<!-- <div>
 						<button id="mapBtn" type="button"
 							style="float: left; margin-right: 15px;">검색</button>
 						<input type="text" id="mapSearch" placeholder="지도 검색어를 입력하세요"
 							style="float: left; width: 22.5%;">
 					</div> -->
 
-					<script type="text/javascript"
-						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
-					<script>
+				<script type="text/javascript"
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
+				<script>
 										var mapContainer = document.getElementById('map'); // 지도를 표시할 div
 										var mapOption = {
 											center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
@@ -222,7 +222,7 @@
 						name="t_id" value="${user.t_id}">
 					<button type="button" id="joinButton">참가신청</button>
 				</form>
-				
+
 				<!--  댓글 리스트  -->
 				<c:forEach items="${viewReply}" var="reply">
 					<li>작성자 : ${reply.t_id}</li>
@@ -241,34 +241,34 @@
 				</form>
 
 				<!-- 작성자 본인에게만 보이게 시작 -->
-					<form action="goModifyPost.do" method="post">
-						<input type="hidden" name="prj_seq"
-							value="${viewPostContent.prj_seq}"> <input type="hidden"
-							name="prj_category" value="${viewPostContent.prj_category}">
-						<input type="hidden" name="deadline_dt"
-							value="${viewPostContent.deadline_dt }"> <input
-							type="hidden" name="start_dt"
-							value="${viewPostContent.start_dt }"> <input
-							type="hidden" name="end_dt" value="${viewPostContent.end_dt}">
-						<input type="hidden" name="prj_name"
-							value="${viewPostContent.prj_name}"> <input type="hidden"
-							name="recruit_count" value="${viewPostContent.recruit_count}">
-						<input type="hidden" name="post" value="${viewPostContent.post}">
-						<button type="submit" id="Modifybtn"
-							style="float: right; max-width: none;">수정d</button>
-					</form>
+				<form action="goModifyPost.do" method="post">
+					<input type="hidden" name="prj_seq"
+						value="${viewPostContent.prj_seq}"> <input type="hidden"
+						name="prj_category" value="${viewPostContent.prj_category}">
+					<input type="hidden" name="deadline_dt"
+						value="${viewPostContent.deadline_dt }"> <input
+						type="hidden" name="start_dt" value="${viewPostContent.start_dt }">
+					<input type="hidden" name="end_dt"
+						value="${viewPostContent.end_dt}"> <input type="hidden"
+						name="prj_name" value="${viewPostContent.prj_name}"> <input
+						type="hidden" name="recruit_count"
+						value="${viewPostContent.recruit_count}"> <input
+						type="hidden" name="post" value="${viewPostContent.post}">
+					<button type="submit" id="Modifybtn"
+						style="float: right; max-width: none;">수정d</button>
+				</form>
 
-					<form action="deletePost.do">
-						<input type="hidden" name="prj_seq"
-							value="${viewPostContent.prj_seq}">
-						<button type="submit" id="deletebtn"
-							style="float: right; max-width: none; margin-left: 5%;">삭제</button>
-					</form>
-					<!-- 작성자 본인에게만 보이게 끝 -->
+				<form action="deletePost.do">
+					<input type="hidden" name="prj_seq"
+						value="${viewPostContent.prj_seq}">
+					<button type="submit" id="deletebtn"
+						style="float: right; max-width: none; margin-left: 5%;">삭제</button>
+				</form>
+				<!-- 작성자 본인에게만 보이게 끝 -->
 
-					<!-- <a><c items="${user}" var="user">${user.nickname}님</a> -->
+				<!-- <a><c items="${user}" var="user">${user.nickname}님</a> -->
 
-					
+
 
 
 				<!-- 스크립트 태그 -->
@@ -299,7 +299,7 @@
 					success : function(response) {
 						alert('참가신청 완료');
 					},
-					error : function(e) {
+					error : function(xhr, status, error) {
 						alert('참가신청 실패');
 					}
 				});

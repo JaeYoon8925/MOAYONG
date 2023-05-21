@@ -31,4 +31,11 @@ public class UserDAO {
 		session.close();
 		return searchInfo;
 	}
+
+	public int profileUpdate(User dto) {
+		SqlSession session = factory.openSession(true);
+		int profileUpdate = session.update("profileUpdate",dto);
+		session.close();
+		return profileUpdate;
+	}
 }

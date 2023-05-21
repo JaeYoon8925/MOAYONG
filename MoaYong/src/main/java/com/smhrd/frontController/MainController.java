@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.mypage_goProfileUpdateCon;
+import com.smhrd.controller.mypage_ProfileUpdate;
 import com.smhrd.controller.ProjectManageCon;
 import com.smhrd.controller.content_uploadReplyCon;
 import com.smhrd.controller.controller;
@@ -39,7 +41,7 @@ public class MainController extends HttpServlet {
 
 	public void init() throws ServletException {
 		System.out.println("생성됨");
-		
+
 		mappings = new HashMap<String, controller>();
 
 		// fistpage
@@ -62,6 +64,9 @@ public class MainController extends HttpServlet {
 		mappings.put("/goMypage.do", new mainpage_GoMypageCon()); // 마이페이지가기
 		mappings.put("/logout.do", new mainpage_LogoutCon()); // 로그아웃
 		mappings.put("/goPrj.do", new ProjectManageCon());
+		// 마이페이지 내부 기능
+		mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
+		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
 		// 댓글기능
 		mappings.put("/uploadReply.do", new content_uploadReplyCon());
 		mappings.put("/afterReply.do", new reply_viewPostContent_afterReplyCon());
