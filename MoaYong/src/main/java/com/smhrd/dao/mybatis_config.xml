@@ -24,5 +24,7 @@
 		<mapper resource="/com/smhrd/dao/BoardMapper.xml" />
 		<mapper resource="/com/smhrd/dao/UserMapper.xml" />
 		<mapper resource="/com/smhrd/dao/ProjectManageMapper.xml" />
+		<mapper resource="/com/smhrd/dao/ReplyMapper.xml"/>
+		<mapper resource="/com/smhrd/dao/JoinPartyMapper.xml"/>
 	</mappers>
 </configuration>

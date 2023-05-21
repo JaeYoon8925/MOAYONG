@@ -54,6 +54,8 @@
 
 
 
+
+
 	<!-- 맨 위에 있는 이동하는 네비게이션 -->
 	<nav id="nav">
 		<ul>
@@ -214,9 +216,31 @@
 									</script>
 
 
+				<form id="joinForm">
+					<input type="hidden" name="prj_seq"
+						value="${viewPostContent.prj_seq}"> <input type="hidden"
+						name="t_id" value="${user.t_id}">
+					<button type="button" id="joinButton">참가신청</button>
+				</form>
+				
+				<!--  댓글 리스트  -->
+				<c:forEach items="${viewReply}" var="reply">
+					<li>작성자 : ${reply.t_id}</li>
+					<li>작성내용 : ${reply.reply_comment}</li>
+					<li>작성일시 : ${reply.comment_dt}</li>
+				</c:forEach>
 
+				<!-- 작성자 본인에게만 보이게  -->
+				<form action="uploadReply.do" method="post">
+					<input type="hidden" name="prj_seq"
+						value="${viewPostContent.prj_seq }"> <input type="hidden"
+						name="t_id" value="${user.t_id }">
+					<textarea name="reply_comment" placeholder="내용을 입력해주세요."></textarea>
+					<br>
+					<button type="submit">댓글달기</button>
+				</form>
 
-					<!-- 작성자 본인에게만 보이게 시작 -->
+				<!-- 작성자 본인에게만 보이게 시작 -->
 					<form action="goModifyPost.do" method="post">
 						<input type="hidden" name="prj_seq"
 							value="${viewPostContent.prj_seq}"> <input type="hidden"
@@ -244,14 +268,7 @@
 
 					<!-- <a><c items="${user}" var="user">${user.nickname}님</a> -->
 
-					<form action="">
-						<textarea name="post" placeholder="내용을 입력해주세요."></textarea>
-						<br>
-						<button type="submit" id="register"
-							style="float: right; max-width: none;">댓글달기</button>
-					</form>
-
-
+					
 
 
 				<!-- 스크립트 태그 -->
@@ -264,13 +281,30 @@
 									registerbtn.addEventListener('click', () => {
 										alert("취소 완료")
 									})
+
 								</script>
 				<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 				<script type="text/javascript">
 								//var escBtn = document.getElementById("esc");
 								//escBtn.addEventListener('click', () => {
 								  //alert("취소 완료");
-								//});        
+								//});   
+																	//참가신청
+		$(document).ready(function() {
+			$('#joinButton').click(function() {
+				$.ajax({
+					url : 'joinParty.do',
+					type : 'POST',
+					data : $('#joinForm').serialize(),
+					success : function(response) {
+						alert('참가신청 완료');
+					},
+					error : function(xhr, status, error) {
+						alert('참가신청 실패');
+					}
+				});
+			});
+		});
 								</script>
 
 

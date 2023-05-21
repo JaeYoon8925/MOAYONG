@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.ProjectManageCon;
+import com.smhrd.controller.content_uploadReplyCon;
 import com.smhrd.controller.controller;
 import com.smhrd.controller.firstpage_GoFirstPageCon;
 import com.smhrd.controller.firstpage_GoMainCon;
@@ -28,6 +29,8 @@ import com.smhrd.controller.mainpage_SaveModifiedPostCon;
 import com.smhrd.controller.mainpage_SearchPost;
 import com.smhrd.controller.mainpage_WritePostCon;
 import com.smhrd.controller.mainpage_deletePostCon;
+import com.smhrd.controller.party_joinPartyCon;
+import com.smhrd.controller.reply_viewPostContent_afterReplyCon;
 
 @WebServlet("*.do")
 public class MainController extends HttpServlet {
@@ -59,6 +62,11 @@ public class MainController extends HttpServlet {
 		mappings.put("/goMypage.do", new mainpage_GoMypageCon()); // 마이페이지가기
 		mappings.put("/logout.do", new mainpage_LogoutCon()); // 로그아웃
 		mappings.put("/goPrj.do", new ProjectManageCon());
+		// 댓글기능
+		mappings.put("/uploadReply.do", new content_uploadReplyCon());
+		mappings.put("/afterReply.do", new reply_viewPostContent_afterReplyCon());
+		// 참가기능
+		mappings.put("/joinParty.do", new party_joinPartyCon());
 	}
 
 	private static final long serialVersionUID = 1L;
