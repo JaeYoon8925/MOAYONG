@@ -163,10 +163,10 @@
 						</tr>
 					</table> -->
 
-				지도부분 시작
+				<!--지도부분 시작-->
 				<div id="map"
 					style="width: 400x; height: 300px; margin-bottom: 20px;"></div>
-				지도부분 끝
+				<!--  지도부분 끝 -->
 				<table>
 					<tr>
 						<td style="padding: 50px 0px 50px 0px;">
@@ -180,40 +180,7 @@
 							style="float: left; width: 22.5%;">
 					</div> -->
 
-				<script type="text/javascript"
-					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
-				<script>
-										var mapContainer = document.getElementById('map'); // 지도를 표시할 div
-										var mapOption = {
-											center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
-											level: 8 // 지도 확대 레벨
-										};
-
-										var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
-
-										var geocoder = new kakao.maps.services.Geocoder();
-
-										var searchKeyword = document.getElementById('mapSearch');
-										var searchButton = document.getElementById('mapBtn');
-
-										searchButton.addEventListener('click', function () {
-											var keyword = searchKeyword.value;
-											geocoder.addressSearch(keyword, function (result, status) {
-												if (status === kakao.maps.services.Status.OK) {
-													var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-													map.setCenter(coords);
-													displayMarker(coords);
-												}
-											});
-										});
-
-										function displayMarker(coords) {
-											var marker = new kakao.maps.Marker({
-												map: map,
-												position: coords
-											});
-										}
-									</script>
+				
 
 
 				<form id="joinForm">
@@ -267,45 +234,6 @@
 				<!-- 작성자 본인에게만 보이게 끝 -->
 
 				<!-- <a><c items="${user}" var="user">${user.nickname}님</a> -->
-
-
-
-
-				<!-- 스크립트 태그 -->
-				<script>
-									// var registerbtn = document.getElementById("register");
-									// registerbtn.addEventListener('click', () => {
-									// alert("게시 완료")
-									// })
-									var registerbtn = document.getElementById("esc");
-									registerbtn.addEventListener('click', () => {
-										alert("취소 완료")
-									})
-
-								</script>
-				<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-				<script type="text/javascript">
-								//var escBtn = document.getElementById("esc");
-								//escBtn.addEventListener('click', () => {
-								  //alert("취소 완료");
-								//});   
-																	//참가신청
-		$(document).ready(function() {
-			$('#joinButton').click(function() {
-				$.ajax({
-					url : 'joinParty.do',
-					type : 'POST',
-					data : $('#joinForm').serialize(),
-					success : function(response) {
-						alert('참가신청 완료');
-					},
-					error : function(xhr, status, error) {
-						alert('참가신청 실패');
-					}
-				});
-			});
-		});
-								</script>
 
 
 
@@ -377,6 +305,80 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+	<!-- 스크립트 태그 -->
+				<script type="text/javascript"
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
+				<script>
+										var mapContainer = document.getElementById('map'); // 지도를 표시할 div
+										var mapOption = {
+											center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
+											level: 8 // 지도 확대 레벨
+										};
+
+										var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
+
+										var geocoder = new kakao.maps.services.Geocoder();
+
+										var searchKeyword = document.getElementById('mapSearch');
+										var searchButton = document.getElementById('mapBtn');
+
+										searchButton.addEventListener('click', function () {
+											var keyword = searchKeyword.value;
+											geocoder.addressSearch(keyword, function (result, status) {
+												if (status === kakao.maps.services.Status.OK) {
+													var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+													map.setCenter(coords);
+													displayMarker(coords);
+												}
+											});
+										});
+
+										function displayMarker(coords) {
+											var marker = new kakao.maps.Marker({
+												map: map,
+												position: coords
+											});
+										}
+									</script>
+				
+				
+				
+				
+				
+				<script>
+									// var registerbtn = document.getElementById("register");
+									// registerbtn.addEventListener('click', () => {
+									// alert("게시 완료")
+									// })
+									// var registerbtn = document.getElementById("esc");
+									// registerbtn.addEventListener('click', () => {
+									//	alert("취소 완료")
+									//})
+
+								</script>
+				<script type="text/javascript">
+								// var escBtn = document.getElementById("esc");
+								//escBtn.addEventListener('click', () => {
+								  //alert("취소 완료");
+						//});   
+																			//참가신청
+		$(document).ready(function() {
+			$('#joinButton').click(function() {
+				$.ajax({
+					url : 'joinParty.do',
+					type : 'POST',
+					data : $('#joinForm').serialize(),
+					success : function(response) {
+						alert('참가신청 완료');
+					},
+					error : function(xhr, status, error) {
+						alert('참가신청 실패');
+					}
+				});
+			});
+		});
+								</script>
 
 </body>
 

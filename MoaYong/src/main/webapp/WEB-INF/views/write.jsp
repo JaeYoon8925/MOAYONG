@@ -186,48 +186,7 @@
       <div id="map" style="width: 300px; height: 200px;"></div>
     </div>
   
-    <script>
-      var mapOption = {
-        center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
-        level: 8 // 지도 확대 레벨
-      };
-  
-      var map = new kakao.maps.Map(document.getElementById('map'), mapOption); // 지도 생성
-  
-      var geocoder = new kakao.maps.services.Geocoder();
-  
-      var searchKeyword = document.getElementById('mapSearch');
-      var searchButton = document.getElementById('mapBtn');
-      var mapInsertButton = document.getElementById('mapinsert');
-      var mapContainer = document.getElementById('mapContainer');
-  
-      searchButton.addEventListener('click', function() {
-        var keyword = searchKeyword.value;
-        geocoder.addressSearch(keyword, function(result, status) {
-          if (status === kakao.maps.services.Status.OK) {
-            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-            map.setCenter(coords);
-            displayMarker(coords);
-          }
-        });
-      });
-  
-      mapInsertButton.addEventListener('click', function() {
-        if (mapContainer.style.display === 'none') {
-          mapContainer.style.display = 'block';
-          map.relayout();
-        } else {
-          mapContainer.style.display = 'none';
-        }
-      });
-  
-      function displayMarker(coords) {
-        var marker = new kakao.maps.Marker({
-          map: map,
-          position: coords
-        });
-      }
-    </script>
+    
 
 					<br> <br>
 					<textarea name="post" placeholder="내용을 입력해주세요."></textarea>
@@ -242,19 +201,7 @@
 
 
 
-				<!-- 스크립트 태그 -->
-				<script>
-									// var registerbtn = document.getElementById("register");
-									// registerbtn.addEventListener('click', () => {
-									// alert("게시 완료")
-									// })
-									var registerbtn = document.getElementById("esc");
-									registerbtn.addEventListener('click', () => {
-										alert("취소 완료")
-									})
-								</script>
-
-
+				
 
 
 
@@ -324,6 +271,65 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+	<!-- 지도 -->
+	<script>
+      var mapOption = {
+        center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
+        level: 8 // 지도 확대 레벨
+      };
+  
+      var map = new kakao.maps.Map(document.getElementById('map'), mapOption); // 지도 생성
+  
+      var geocoder = new kakao.maps.services.Geocoder();
+  
+      var searchKeyword = document.getElementById('mapSearch');
+      var searchButton = document.getElementById('mapBtn');
+      var mapInsertButton = document.getElementById('mapinsert');
+      var mapContainer = document.getElementById('mapContainer');
+  
+      searchButton.addEventListener('click', function() {
+        var keyword = searchKeyword.value;
+        geocoder.addressSearch(keyword, function(result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            map.setCenter(coords);
+            displayMarker(coords);
+          }
+        });
+      });
+  
+      mapInsertButton.addEventListener('click', function() {
+        if (mapContainer.style.display === 'none') {
+          mapContainer.style.display = 'block';
+          map.relayout();
+        } else {
+          mapContainer.style.display = 'none';
+        }
+      });
+  
+      function displayMarker(coords) {
+        var marker = new kakao.maps.Marker({
+          map: map,
+          position: coords
+        });
+      }
+      
+      <!-- 스크립트 태그 -->
+		<script>
+							// var registerbtn = document.getElementById("register");
+							// registerbtn.addEventListener('click', () => {
+							// alert("게시 완료")
+							// })
+							var registerbtn = document.getElementById("esc");
+							registerbtn.addEventListener('click', () => {
+								alert("취소 완료")
+							})
+						</script>
+
+
+      
+    </script>
 
 </body>
 
