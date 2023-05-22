@@ -158,7 +158,8 @@ System.out.println(user);
 												<div class="btn-group btn-group-sm">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br> 칭호2 이름
+												<br>
+												칭호2 이름
 												<div class="btn-group btn-group-sm">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
@@ -195,7 +196,7 @@ System.out.println(user);
 					<li><span stlye="width:196px height:196px "></span>
 						<h3>참가신청 한 프로젝트</h3>
 
-						<ul class="alt" style="height: 300px; overflow: auto">
+						<ul class="alt" style="height: 300px; overflow: auto" >
 							<%
 							List<Project> partinList = (List<Project>) request.getAttribute("partinList");
 							%>
@@ -278,7 +279,11 @@ System.out.println(user);
 				<header class="major">
 					<h2>자기소개란</h2>
 					<p>
-						<%=user.getSelf_intro()%>
+					상세 정보<br>
+					상세 경력<br>
+					대충 엄청 대단한 경력1<br>
+					대충 엄청난 경력2<br>
+					대충 멋진 경력3<br>
 					</p>
 				</header>
 				<footer class="major">

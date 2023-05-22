@@ -99,12 +99,9 @@ System.out.println(user);
 						<form action="SendMessage.do" method="POST">
 							<div class="row gtr-uniform">
 								<br>
-								<div class="col-7">
-									<input type="text" name="" id="RECEIVER_ID"
+								<div class="col-12">
+									<input type="text" name="RECEIVER_ID" id="RECEIVER_ID"
 										placeholder="수신자 ID" />
-								</div>
-								<div class="col-7">
-									<input type="text" name="" id="nickname" placeholder="쪽지 제목" />
 								</div>
 								<div class="col-12">
 									<textarea name="MSG_CONTENT" id="MSG_CONTENT"
