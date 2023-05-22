@@ -20,6 +20,7 @@ public class ProjectManageCon implements controller {
 
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
+		
 		if (user != null) {
 			String t_id = user.getT_id();
 
@@ -36,6 +37,7 @@ public class ProjectManageCon implements controller {
 			System.out.println("Cex");
 
 		}
+		
 		return "prj";
 	}
 }

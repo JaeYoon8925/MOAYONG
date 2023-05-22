@@ -86,7 +86,7 @@ body {
 
 #login-button {
 	background-color: rgb(255, 255, 255);
-	width: 200px;
+	width: 300px;
 	height: 50px;
 }
 

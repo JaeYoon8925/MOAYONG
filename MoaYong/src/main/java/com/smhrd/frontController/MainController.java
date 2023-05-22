@@ -24,6 +24,10 @@ import com.smhrd.controller.firstpage_JoinCon;
 import com.smhrd.controller.firstpage_LoginCon;
 import com.smhrd.controller.firstpage_NoticePwCon;
 import com.smhrd.controller.firstpage_SearchInfoCon;
+import com.smhrd.controller.mainNav_GoMypagePrjList;
+import com.smhrd.controller.mainNav_GoPrjGant;
+import com.smhrd.controller.mainNav_MypagePrjList;
+import com.smhrd.controller.mainNav_PrjGant;
 import com.smhrd.controller.mainpage_GoListPageCon;
 import com.smhrd.controller.mainpage_GoModifyPostCon;
 import com.smhrd.controller.mainpage_GoMypageCon;
@@ -34,6 +38,10 @@ import com.smhrd.controller.mainpage_SaveModifiedPostCon;
 import com.smhrd.controller.mainpage_SearchPost;
 import com.smhrd.controller.mainpage_WritePostCon;
 import com.smhrd.controller.mainpage_deletePostCon;
+import com.smhrd.controller.mypage_ProfileUpdate;
+import com.smhrd.controller.mypage_SendMessage;
+import com.smhrd.controller.mypage_goProfileUpdateCon;
+import com.smhrd.controller.mypage_goSendMessageCon;
 import com.smhrd.controller.party_joinPartyCon;
 import com.smhrd.controller.reply_viewPostContent_afterReplyCon;
 
@@ -68,8 +76,24 @@ public class MainController extends HttpServlet {
 		mappings.put("/logout.do", new mainpage_LogoutCon()); // 로그아웃
 		mappings.put("/goPrj.do", new ProjectManageCon());
 		// 마이페이지 내부 기능
-		// mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
-		// mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
+		mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
+		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
+		mappings.put("/goSendMessage.do", new mypage_goSendMessageCon());
+		mappings.put("/SendMessage.do", new mypage_SendMessage());
+
+		
+		// 메인nav 내부 기능
+		mappings.put("/GomypagePrjList.do", new mainNav_GoMypagePrjList());
+		mappings.put("/mypagePrjList.do", new mainNav_MypagePrjList());
+		
+		
+		// 프로젝트 세부 페이지 내부 기능
+		mappings.put("/GoPrjGant.do", new mainNav_GoPrjGant());
+		mappings.put("/PrjGant.do", new mainNav_PrjGant());
+		
+		
+		
+		
 		// 댓글기능
 		mappings.put("/uploadReply.do", new content_uploadReplyCon());
 		mappings.put("/afterReply.do", new reply_viewPostContent_afterReplyCon());
