@@ -190,7 +190,7 @@
 								<input type="text" class="user-input" name="pw">
 
 								<div class="button-area" style="height: 150px;">
-									<button id="login-button">Login</button>
+									<button type="submit" id="login-button">Login</button>
 									<button type="button" id="sign-button"  style=" min-width:unset; width:140px !important; display: inline-block !important;">회원가입</button>
 									<button type="button" id="reset-button" style=" min-width:unset; width:140px !important; display: inline-block !important;">회원찾기</button>
 								</div>
