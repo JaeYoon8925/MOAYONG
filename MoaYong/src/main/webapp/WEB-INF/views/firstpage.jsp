@@ -191,8 +191,8 @@
 
 								<div class="button-area" style="height: 150px;">
 									<button id="login-button">Login</button>
-									<button id="sign-button"  style=" min-width:unset; width:140px !important; display: inline-block !important;">회원가입</button>
-									<button id="reset-button" style=" min-width:unset; width:140px !important; display: inline-block !important;">회원찾기</button>
+									<button type="button" id="sign-button"  style=" min-width:unset; width:140px !important; display: inline-block !important;">회원가입</button>
+									<button type="button" id="reset-button" style=" min-width:unset; width:140px !important; display: inline-block !important;">회원찾기</button>
 								</div>
 								<!-- <button id="sign-button" style="display:flex;">회원가입</button>
 								<button id="reset-button" style="display:flex;">회원찾기</button> -->
