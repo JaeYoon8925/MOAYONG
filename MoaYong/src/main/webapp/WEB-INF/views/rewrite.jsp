@@ -150,6 +150,11 @@
 									style="float: right; max-width: none; margin-top: 12.5px; padding-right: 15px;">
 									이미지 첨부 : <input type="file" style="float: right;"> <br>
 								</div>
+								<div
+									style="float: right; max-width: none; margin-top: 12.5px; padding-right: 15px;">
+									지도 첨부 :
+									<button id="mapinsert" type="button">지도 첨부</button>
+								</div>
 							</td>
 						</tr>
 					</table>
@@ -175,51 +180,58 @@
 						</tr>
 					</table> -->
 
+					<div id="mapContainer" style="display: none;">
+						<div>
+							<input type="text" id="mapSearch" placeholder="지도 검색어를 입력하세요">
+							<button id="mapBtn" type="button">검색</button>
+						</div>
 
-					<div id="map"
-						style="width: 400x; height: 300px; margin-bottom: 20px;"></div>
-					<div>
-						<button id="mapBtn" type="button"
-							style="float: left; margin-right: 15px;">검색</button>
-						<input type="text" id="mapSearch" placeholder="지도 검색어를 입력하세요"
-							style="float: left; width: 22.5%;">
-						<!-- 지도 저장할 컬럼 없어요 ㅜㅜ -->
+						<div id="map" style="width: 300px; height: 200px;"></div>
 					</div>
 
-					<script type="text/javascript"
-						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
 					<script>
-										var mapContainer = document.getElementById('map'); // 지도를 표시할 div
-										var mapOption = {
-											center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
-											level: 8 // 지도 확대 레벨
-										};
+      var mapOption = {
+        center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
+        level: 8 // 지도 확대 레벨
+      };
+  
+      var map = new kakao.maps.Map(document.getElementById('map'), mapOption); // 지도 생성
+  
+      var geocoder = new kakao.maps.services.Geocoder();
+  
+      var searchKeyword = document.getElementById('mapSearch');
+      var searchButton = document.getElementById('mapBtn');
+      var mapInsertButton = document.getElementById('mapinsert');
+      var mapContainer = document.getElementById('mapContainer');
+  
+      searchButton.addEventListener('click', function() {
+        var keyword = searchKeyword.value;
+        geocoder.addressSearch(keyword, function(result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            map.setCenter(coords);
+            displayMarker(coords);
+          }
+        });
+      });
+  
+      mapInsertButton.addEventListener('click', function() {
+        if (mapContainer.style.display === 'none') {
+          mapContainer.style.display = 'block';
+          map.relayout();
+        } else {
+          mapContainer.style.display = 'none';
+        }
+      });
+  
+      function displayMarker(coords) {
+        var marker = new kakao.maps.Marker({
+          map: map,
+          position: coords
+        });
+      }
+    </script>
 
-										var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
-
-										var geocoder = new kakao.maps.services.Geocoder();
-
-										var searchKeyword = document.getElementById('mapSearch');
-										var searchButton = document.getElementById('mapBtn');
-
-										searchButton.addEventListener('click', function () {
-											var keyword = searchKeyword.value;
-											geocoder.addressSearch(keyword, function (result, status) {
-												if (status === kakao.maps.services.Status.OK) {
-													var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-													map.setCenter(coords);
-													displayMarker(coords);
-												}
-											});
-										});
-
-										function displayMarker(coords) {
-											var marker = new kakao.maps.Marker({
-												map: map,
-												position: coords
-											});
-										}
-									</script>
 
 
 					<br> <br>
