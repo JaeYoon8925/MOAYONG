@@ -19,6 +19,10 @@ public class mainpage_GoViewPostContent implements controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String prjSeqStr = request.getParameter("prj_seq");
+		
+		
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
 		
 		Board dto = new Board();
