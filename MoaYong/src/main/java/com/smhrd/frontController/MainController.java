@@ -24,6 +24,10 @@ import com.smhrd.controller.firstpage_JoinCon;
 import com.smhrd.controller.firstpage_LoginCon;
 import com.smhrd.controller.firstpage_NoticePwCon;
 import com.smhrd.controller.firstpage_SearchInfoCon;
+import com.smhrd.controller.mainNav_GoMypagePrjList;
+import com.smhrd.controller.mainNav_GoPrjGant;
+import com.smhrd.controller.mainNav_MypagePrjList;
+import com.smhrd.controller.mainNav_PrjGant;
 import com.smhrd.controller.mainpage_GoListPageCon;
 import com.smhrd.controller.mainpage_GoModifyPostCon;
 import com.smhrd.controller.mainpage_GoMypageCon;
@@ -35,7 +39,9 @@ import com.smhrd.controller.mainpage_SearchPost;
 import com.smhrd.controller.mainpage_WritePostCon;
 import com.smhrd.controller.mainpage_deletePostCon;
 import com.smhrd.controller.mypage_ProfileUpdate;
+import com.smhrd.controller.mypage_SendMessage;
 import com.smhrd.controller.mypage_goProfileUpdateCon;
+import com.smhrd.controller.mypage_goSendMessageCon;
 import com.smhrd.controller.party_joinPartyCon;
 import com.smhrd.controller.reply_viewPostContent_afterReplyCon;
 
@@ -73,7 +79,7 @@ public class MainController extends HttpServlet {
 		mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
 		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
 		mappings.put("/goSendMessage.do", new mypage_goSendMessageCon());
-//		mappings.put("/SendMessage.do", new mypage_SendMessage());
+		mappings.put("/SendMessage.do", new mypage_SendMessage());
 
 		
 		// 메인nav 내부 기능

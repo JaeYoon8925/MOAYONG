@@ -98,43 +98,30 @@ System.out.println(user);
 						<h2>쪽지쓰기</h2>
 						<form action="SendMessage.do" method="POST">
 							<div class="row gtr-uniform">
-
 								<br>
 								<div class="col-7">
 									<input type="text" name="" id="RECEIVER_ID"
 										placeholder="수신자 ID" />
 								</div>
-
 								<div class="col-7">
 									<input type="text" name="" id="nickname" placeholder="쪽지 제목" />
 								</div>
-
-
 								<div class="col-12">
 									<textarea name="MSG_CONTENT" id="MSG_CONTENT"
 										placeholder="내용 입력" rows="6"></textarea>
 								</div>
-
 								<div class="col-12">
 									<ul class="actions">
-
-
 										<!-- 첨부할 파일 -->
 										<div>
 											<input type="file" value="이미지 업로드" />
 										</div>
-
 										<li><input type="submit" value="보내기" class="primary" /></li>
 						</form>
-
 						<li>
 							<button onclick="goBack()">취소</button>
 						</li>
-
-
 						<!-- 메인으로 -->
-
-
 						</ul>
 					</div>
 				</div>
