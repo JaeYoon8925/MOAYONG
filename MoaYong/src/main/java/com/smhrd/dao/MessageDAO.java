@@ -17,6 +17,7 @@ public class MessageDAO {
 
 	public int send(Message dto) {
 		SqlSession session = factory.openSession(true);
+		
 		System.out.println("MessageDAO에 담긴 내용 : " + dto.getSender_id());
 		System.out.println("MessageDAO에 담긴 내용 : " + dto.getReceiver_id());
 		System.out.println("MessageDAO에 담긴 내용 : " + dto.getMsg_content());
