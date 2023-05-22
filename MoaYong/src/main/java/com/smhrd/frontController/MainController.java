@@ -54,7 +54,6 @@ public class MainController extends HttpServlet {
 		System.out.println("생성됨");
 
 		mappings = new HashMap<String, controller>();
-
 		// fistpage
 		mappings.put("/goFirstpage.do", new firstpage_GoFirstPageCon()); // 첫 화면 가는거.
 		mappings.put("/login.do", new firstpage_LoginCon()); // 로그인

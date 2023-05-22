@@ -57,11 +57,7 @@ System.out.println(user);
 		<li><a href="goMain.do" class="active">게시판</a></li>
 
 		<!-- 프로젝트페이지의 gant.jsp로-->
-<<<<<<< HEAD
-		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
-=======
 		<li><a href="GomypagePrjList.do">프로젝트 관리</a></li>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>
@@ -162,7 +158,8 @@ System.out.println(user);
 												<div class="btn-group btn-group-sm">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br> 칭호2 이름
+												<br>
+												칭호2 이름
 												<div class="btn-group btn-group-sm">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
@@ -196,230 +193,13 @@ System.out.println(user);
 					<h2>Project</h2>
 				</header>
 				<ul class="features">
-<<<<<<< HEAD
-					<li><span class="icon solid major style1 fa-code"></span>
-=======
 					<li><span stlye="width:196px height:196px "></span>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 						<h3>참가신청 한 프로젝트</h3>
 
-						<ul class="alt" style="height: 300px; overflow: auto">
+						<ul class="alt" style="height: 300px; overflow: auto" >
 							<%
 							List<Project> partinList = (List<Project>) request.getAttribute("partinList");
 							%>
-<<<<<<< HEAD
-							<!-- ${vo.prj_seq}가 현재 null 값이 나옴 -->
-							<%
-							for (Project vo : partinList) {
-							%>
-							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
-							<%
-							}
-							%>
-						</ul>
-					<li><span class="icon major style3 fa-copy"></span>
-						<h3>진행 중인 프로젝트</h3>
-						<ul class="alt" style="height: 300px; overflow: auto">
-							<%
-							List<Project> ingList = (List<Project>) request.getAttribute("ingList");
-							%>
-							<%
-							for (Project vo : ingList) {
-							%>
-							<!-- 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔 -->
-							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
-							<button
-								onclick='location.href="joinList.do?prj_seq=<%=vo.getPrj_seq()%>"'>참가신청현황보기</button>
-							<%
-							}
-							%>
-
-						</ul> <!-- 이 사람의 진행 중 프로젝트 리스트 전부 보기 --></li>
-					<li><span class="icon major style5 fa-gem"></span>
-						<h3>완료된 프로젝트</h3>
-
-						<ul class="alt" style="height: 300px; overflow: auto">
-							<%
-							List<Project> endList = (List<Project>) request.getAttribute("endList");
-							%>
-							<%
-							for (Project vo : endList) {
-							%>
-							<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
-							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
-							<%
-							}
-							%>
-						</ul> <!-- 이 사람의 완료 프로젝트 리스트 전부 보기 --></li>
-				</ul>
-				<footer class="major">
-					<h3>빈 공간이에용</h3>
-				</footer>
-
-
-			</section>
-
-			<!-- Second Section -->
-			<section id="second" class="main special">
-				<header class="major">
-					<h2>Calendar</h2>
-					<p>개인 일정이에용</p>
-				</header>
-
-				<!-- 캘린더 API -->
-
-				<div id='calendar'></div>
-
-				<br>
-
-				<p class="content">캘린더 아래에 메모를 적을 수 있어용</p>
-				<footer class="major">
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">메모하기</a></li>
-						<li><a href="calendarfix.html" class="button primary">일정추가</a></li>
-					</ul>
-				</footer>
-			</section>
-
-			<!-- Get Started -->
-			<section id="cta" class="main special">
-				<header class="major">
-					<h2>자기소개란</h2>
-					<p>
-						<%=user.getSelf_intro()%>
-					</p>
-				</header>
-				<footer class="major">
-					<ul class="actions special">
-						<!-- 자기 소개를 수정할 수 있는 새로운 페이지로? 아니면 그냥 여기서 처리? / goSelf_intro -->
-						<li><a href="generic.html" class="button"></a></li>
-						<li><a href="generic.html" class="button primary">Learn
-								More</a></li>
-					</ul>
-				</footer>
-			</section>
-
-
-			<!-- 알람 -->
-			<section id="Alert" class="main special">
-				<header class="major">
-					<h2>알람 / 쪽지 등이 나올 공간이에용</h2>
-
-
-					<!-- if문으로 출력할거라 코드가 압축될거에용-->
-					<table>
-						<thead>
-							<tr>
-								<th>보낸 사람</th>
-								<th>제목</th>
-								<th>보낸 일자(년월일까지만?)</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Item One</td>
-								<td><a href="viewmessage.html">Ante turpis integer
-										aliquet porttitor.</a></td>
-								<td>29.99</td>
-							</tr>
-							<tr>
-								<td>Item Two</td>
-								<td>Vis ac commodo adipiscing arcu aliquet.</td>
-								<td>19.99</td>
-							</tr>
-							<tr>
-								<td>Item Three</td>
-								<td>Morbi faucibus arcu accumsan lorem.</td>
-								<td>29.99</td>
-							</tr>
-							<tr>
-								<td>Item Four</td>
-								<td>Vitae integer tempus condimentum.</td>
-								<td>19.99</td>
-							</tr>
-							<tr>
-								<td>Item Five</td>
-								<td>Ante turpis integer aliquet porttitor.</td>
-								<td>29.99</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="2"></td>
-								<td>100.00</td>
-							</tr>
-						</tfoot>
-					</table>
-
-
-
-				</header>
-				<footer class="major">
-					<ul class="actions special">
-						<li><a href="sendmessage.html" class="button">쪽지 보내기</a></li>
-						<li><a href="generic.html" class="button primary">모두 읽음처리</a></li>
-					</ul>
-				</footer>
-			</section>
-
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Aliquam sed mauris</h2>
-				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
-					consequat magna adipiscing tempus etiam dolore veroeros. eget
-					dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
-					erat egestas velit, vitae tincidunt odio.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn More</a></li>
-				</ul>
-			</section>
-			<section>
-				<h2>Etiam feugiat</h2>
-				<dl class="alt">
-					<dt>Address</dt>
-					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-					<dt>Phone</dt>
-					<dd>(000) 000-0000 x 0000</dd>
-					<dt>Email</dt>
-					<dd>
-						<a href="#">information@untitled.tld</a>
-					</dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter alt"><span
-							class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-facebook-f alt"><span
-							class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram alt"><span
-							class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github alt"><span
-							class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon brands fa-dribbble alt"><span
-							class="label">Dribbble</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">
-				&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
-			</p>
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-</body>
-
-</html>
-=======
 							<%
 							for (Project vo : partinList) {
 							%>
@@ -499,7 +279,11 @@ System.out.println(user);
 				<header class="major">
 					<h2>자기소개란</h2>
 					<p>
-						<%=user.getSelf_intro()%>
+					상세 정보<br>
+					상세 경력<br>
+					대충 엄청 대단한 경력1<br>
+					대충 엄청난 경력2<br>
+					대충 멋진 경력3<br>
 					</p>
 				</header>
 				<footer class="major">
@@ -652,4 +436,3 @@ System.out.println(user);
 </body>
 
 </html>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
