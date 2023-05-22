@@ -201,11 +201,186 @@
 						<!-- Wrapper -->
 						<div id="wrapper">
 
+<<<<<<< HEAD
+							<body>
+								<div class="wrapper">
+									<button id="addPersonButton">인원추가</button>
+									<div class="header">
+										<h2>레이드</h2>
+									</div>
+									<div class="gantt">
+										<div class="gantt__row gantt__row--months">
+											<div class="gantt__row-first"></div>
+											<div class="span_wrap">
+												<span>Jan</span><span>Feb</span><span>Mar</span>
+												<span>Apr</span><span>May</span><span>Jun</span>
+												<span>Jul</span><span>Aug</span><span>Sep</span>
+												<span>Oct</span><span>Nov</span><span>Dec</span>
+											</div>
+
+										</div>
+										<div class="gantt__row gantt__row--lines" data-month="5">
+											<span></span><span></span><span></span>
+											<span></span><span></span><span></span>
+											<span></span><span class="marker"></span><span></span>
+											<span></span><span></span><span></span>
+										</div>
+										<div class="gantt__row">
+											<div class="gantt__row-first">
+												가
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 2/7; background-color: #2ecaac;">아주아주 긴 내용</li>
+											</ul>
+										</div>
+										<div class="gantt__row gantt__row--empty">
+											<div class="gantt__row-first">
+												나
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 2/6; background-color: #2ecaac;">긴 내용</li>
+											</ul>
+										</div>
+										<div class="gantt__row">
+											<div class="gantt__row-first">
+												다
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 3/7; background-color: #2ecaac;">내용</li>
+											</ul>
+										</div>
+										<div class="gantt__row gantt__row--empty">
+											<div class="gantt__row-first">
+												라
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 4/8; background-color: #2ecaac;">내용</li>
+											</ul>
+										</div>
+										<div class="gantt__row gantt__row--empty">
+											<div class="gantt__row-first">
+												마
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 5/9; background-color: #2ecaac;">내용</li>
+											</ul>
+										</div>
+										<div class="gantt__row">
+											<div class="gantt__row-first">
+												바
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 6/10; background-color: #2ecaac;">내용내용</li>
+											</ul>
+										</div>
+										<div class="gantt__row">
+											<div class="gantt__row-first">
+												사
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 7/11; background-color: #54c6f9;">대충 긴내용</li>
+											</ul>
+										</div>
+
+										<div class="gantt__row">
+											<div class="gantt__row-first">
+												아
+											</div>
+											<ul class="gantt__row-bars">
+												<li style="grid-column: 8/12; background-color: #ff6252;">소재고갈</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+					</div>
+
+					<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Aliquam sed mauris</h2>
+							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing
+								tempus etiam
+								dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
+								erat
+								egestas velit, vitae tincidunt odio.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Etiam feugiat</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd><a href="#">information@untitled.tld</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span
+											class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span
+											class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span
+											class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a>
+								</li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span
+											class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+				</div>
+
+				<!--  
+		top_btn
+		바로는 안보이고 아래로 어느정도 스크롤을 내려야 버튼이 표시됌 
+	-->
+				<div>
+					<a href="#header" id="top_btn"><img src="/images/icon_to_top.png" title="위로 가기"></a>
+				</div>
+
+
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+								<script>
+									let seq = 0;
+
+									document.addEventListener('DOMContentLoaded', function () {
+										const addPersonButton = document.getElementById('addPersonButton');
+										addPersonButton.addEventListener('click', function () {
+											seq++;
+											const personName = prompt('이름을 입력하세요');
+											if (!personName) return;
+											const value = prompt('내용을 입력해 주세요');
+											if (!value) return;
+											const start_Date = Number(prompt('시작월을 선택하세요 : (1 ~ 12)'));
+											if (!start_Date || isNaN(start_Date) || start_Date < 1 || start_Date > 12) {
+												alert('잘못된 시작일 입니다.');
+												return;
+											}
+											const end_Date = Number(prompt('종료월을 기입하세요: (1 ~12)'));
+											if (!end_Date || isNaN(end_Date) || end_Date < 1 || end_Date > 12) {
+												alert('잘못된 종료일 입니다.');
+												return;
+											}
+=======
 							<!-- Header -->
 							<header id="header" style="padding-top: 6em;">
 								<h1 style="margin-top: 40px;">MoaYong</h1>
 								<p>프로젝트 게시판이에용</p>
 							</header>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 
 
 							<!-- 이동하지 않는 서브 네비  -->
@@ -456,6 +631,9 @@
 
 										</script>
 
+<<<<<<< HEAD
+			</body>
+=======
 							</div>
 
 							<!-- Footer -->
@@ -522,5 +700,6 @@
 						<script src="assets/js/main.js"></script>
 
 					</body>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 
 				</html>
