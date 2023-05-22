@@ -19,6 +19,7 @@ public class mainNav_GoMypagePrjList implements controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		
 		HttpSession session=request.getSession();
 		User user = (User)session.getAttribute("user");
 		

@@ -15,8 +15,7 @@ public class mainNav_PrjGant implements controller {
 			throws ServletException, IOException {
 
 		// seq에 맞는 프로젝트 간트 페이지로 이동하는 기능.
-		
-		
+		// ViewPostContent 에서 버튼 하나 추가해서 거기에 이용할 예정
 		
 		
 		return null;

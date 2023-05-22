@@ -97,6 +97,7 @@
 										<%} %>
 									</ul>
 								
+								
 								<li><span stlye="width:196px height:196px "></span>
 									<h3>진행 중인 프로젝트</h3>
 									<ul class="alt" style="height: 300px; overflow: auto">

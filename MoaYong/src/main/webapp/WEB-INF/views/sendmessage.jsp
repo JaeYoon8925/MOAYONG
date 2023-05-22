@@ -110,7 +110,6 @@ System.out.println(user);
 								</div>
 
 
-
 								<div class="col-12">
 									<textarea name="MSG_CONTENT" id="MSG_CONTENT"
 										placeholder="내용 입력" rows="6"></textarea>

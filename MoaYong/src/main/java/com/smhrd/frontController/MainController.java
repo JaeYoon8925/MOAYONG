@@ -74,6 +74,7 @@ public class MainController extends HttpServlet {
 		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
 		mappings.put("/goSendMessage.do", new mypage_goSendMessageCon());
 //		mappings.put("/SendMessage.do", new mypage_SendMessage());
+
 		
 		// 메인nav 내부 기능
 		mappings.put("/GomypagePrjList.do", new mainNav_GoMypagePrjList());

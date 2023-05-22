@@ -18,6 +18,7 @@ public class mypage_goProfileUpdateCon implements controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		
 		return "ProfileUpdate"; // 게시글 보여주는 JSP 파일의 경로
 	}
 

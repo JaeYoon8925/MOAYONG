@@ -13,7 +13,6 @@ public class mainNav_MypagePrjList implements controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		
 		
 		return null;
