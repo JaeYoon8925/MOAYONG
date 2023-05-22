@@ -315,16 +315,14 @@
         });
       }
       
-      <!-- 스크립트 태그 -->
-		<script>
 							// var registerbtn = document.getElementById("register");
 							// registerbtn.addEventListener('click', () => {
 							// alert("게시 완료")
 							// })
-							var registerbtn = document.getElementById("esc");
-							registerbtn.addEventListener('click', () => {
-								alert("취소 완료")
-							})
+							//var registerbtn = document.getElementById("esc");
+							//registerbtn.addEventListener('click', () => {
+							//	alert("취소 완료")
+							//})
 						</script>
 
 
