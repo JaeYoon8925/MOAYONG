@@ -116,6 +116,24 @@
 			#reset-button:hover {
 				background-color: rgb(200, 200, 200);
 			}
+			      #close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    #reset {
+        position: relative;
+    }
+
+    #close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+			
+			
 		</style>
 	</head>
 
@@ -143,39 +161,44 @@
 					<!-- Content -->
 					<section id="content" class="main" style="margin-top: 100%;">
 						<!--modal-->
+    <!-- sign modal-->
+    <dialog id="sign">
+        <span id="close-modal" onclick="document.getElementById('sign').close()">X</span> <!-- Close icon -->
+        <form action="join.do" method="post">
+            <label for="username">ID:</label>
+            <input type="text" id="username" name="t_id" required><br>
+            <button type="submit">중복검사</button>
+            <br>
+    
+            <label for="password">Pw:</label>
+            <input type="password" id="password" name="pw" required><br>
+    
+            <label for="email">email:</label>
+            <input type="text" id="email" name="email" required><br>
+    
+            <label for="nickname">Nick:</label>
+            <input type="text" id="nickname" name="nickname" required><br>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
 
-						<!-- sign modal-->
-						<dialog id="sign">
-							<form action="join.do" method="post">
-								<label for="username">ID:</label> <input type="text" id="username" name="t_id"
-									required><br>
 
-								<button type="submit">중복검사</button>
-								<br> <label for="password">Pw:</label> <input type="password" id="password" name="pw"
-									required><br> <label for="email">email:</label> <input type="text" id="email"
-									name="email" require><br>
+    </dialog>
+    <!-- reset modal-->
 
-								<labelfor="nickname">Nick:</label> <input type="text" id="nickname" name="nickname"
-										required>
-									<br>
-
-									<button type="submit">Submit</button>
-							</form>
-						</dialog>
-
-
-						<!-- reset modal-->
-						<dialog id="reset">
-							<form action="searchInfo.do" method="post">
-
-								<label for="reset-id ">ID::</label> <input type="text" id="id" name="t_id" required><br>
-								<label for="reset-email">Email:</label>
-								<input type="email" id="reset-email" name="email" required><br>
-
-								<button type="submit">Submit</button>
-
-							</form>
-						</dialog>
+    <dialog id="reset">
+        <form action="searchInfo.do" method="post">
+            <span id="close-modal" onclick="document.getElementById('reset').close()">X</span> <!-- Close icon -->
+           
+            <label for="reset-id">ID:</label>
+            <input type="text" id="id" name="t_id" required><br>
+            <label for="reset-email">Email:</label>
+            <input type="email" id="reset-email" name="email" required><br>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
 
 
 						<div class="main2">
