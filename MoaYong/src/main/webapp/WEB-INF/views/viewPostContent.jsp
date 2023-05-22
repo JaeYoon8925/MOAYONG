@@ -33,7 +33,7 @@
 <!-- ajax 비동기 통신에 필요-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- js파일 경로-->
-<script src="index.js"></script>
+<script src="assets/js/index.js"></script>
 <!-- 프리셋 html로 작업 후 변경 필요-->
 <link rel="stylesheet" href="assets/css/main.css" />
 <noscript>
