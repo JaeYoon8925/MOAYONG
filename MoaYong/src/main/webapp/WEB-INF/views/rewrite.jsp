@@ -103,7 +103,7 @@
 								<div style="float: left; max-width: none; width: 15%;">
 									<select name="prj_category" class="col-12"
 										style="display: flex;">
-										<option value="" selected disabled>카테고리 선택</option>
+										<option value="" selected disabled>${viewPostContent.prj_category}</option>
 										<option value="프로그래밍" type="text">프로그래밍</option>
 										<option value="전시회" type="text">전시회</option>
 										<option value="게임" type="text">게임</option>
