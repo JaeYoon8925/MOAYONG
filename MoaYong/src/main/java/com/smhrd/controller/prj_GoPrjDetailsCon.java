@@ -2,7 +2,6 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,14 +14,15 @@ import com.smhrd.dao.BoardDAO;
 import com.smhrd.entity.Board;
 import com.smhrd.entity.User;
 
-public class mainpage_GoModifyPostCon implements controller {
+public class prj_GoPrjDetailsCon implements controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		// 로그인정보 로드
 		String prjSeqStr = request.getParameter("prj_seq");
-		
+
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
 
 		Board dto = new Board();
@@ -45,9 +45,10 @@ public class mainpage_GoModifyPostCon implements controller {
 		request.setAttribute("viewPostContentDt2", end_dt);
 		request.setAttribute("viewPostContentDt3", deadline_dt);
 		request.setAttribute("viewPostContent", info);
-		
-		return "rewrite"; // 게시글 보여주는 JSP 파일의 경로
 
+		request.setAttribute("viewPostContent", info);
+
+		return "PrjDetails";
 	}
 
 }

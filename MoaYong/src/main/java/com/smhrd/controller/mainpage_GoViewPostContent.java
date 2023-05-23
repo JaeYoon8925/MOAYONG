@@ -35,9 +35,7 @@ public class mainpage_GoViewPostContent implements controller {
 		        
         request.setAttribute("viewPostContent", info);
         HttpSession session= request.getSession();
-        User user = (User) session.getAttribute("user");
-		session.setAttribute("user", user);
-		
+        
 		Reply dtoo = new Reply();
 		dtoo.setPrj_seq(prj_seq);
 		

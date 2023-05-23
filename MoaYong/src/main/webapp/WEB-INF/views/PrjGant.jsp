@@ -187,30 +187,24 @@
 User user = (User) session.getAttribute("user");
 System.out.println(user);
 %>
-<!-- 맨 위에 있는 이동하는 네비게이션 -->
 
+<!-- 맨 위에 있는, 이동하는 네비게이션 -->
 <nav id="nav">
 	<ul>
-		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
-		<li><a href="goMain.do" classs="active">게시판</a></li>
-		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
-
-		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
+		<li><a href="goMain.do">게시판</a></li>
+		<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
 		<li><a href="goMypage.do">마이페이지</a></li>
-
+		<li><a href="GoPrjGant.do" class="active">프로젝트 세부</a></li>
 		<%
 		if (user != null) {
 		%>
 		<button type="submit" id="logout-btn">
 			<a href="logout.do">로그아웃</a>
 		</button>
-		<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
 		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 		<%
 		}
 		%>
-
-
 	</ul>
 </nav>
 
@@ -232,10 +226,12 @@ System.out.println(user);
 		<nav id="nav">
 			<ul>
 				<!-- 각자 페이지로 이동하는 기능  -->
-				<li><a href="간트차트로" class="active">간트차트</a></li>
-				<li><a href="세부임무로">세부임무</a></li>
-				<li><a href="산출물로">산출물</a></li>
-				<li style="float: right;"><a href="셋업"><img
+				<li><a
+					href="GoPrjDetails.do?prj_seq=${viewPostContent.prj_seq}"
+					>세부임무</a></li>
+				<li><a href="GoPrjGant.do?prj_seq=${viewPostContent.prj_seq}" class="active" >간트차트</a></li>
+				<li><a href="GoPrjOutput.do?prj_seq=${viewPostContent.prj_seq}">산출물</a></li>
+				<li style="float: right;"><a href="viewPostContent.do?prj_seq=${viewPostContent.prj_seq}"><img
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnxA7tm7xkKByRkkmlzNfZWvgfytkw-OYN_A&usqp=CAU"
 						width=40px; height=40px></a></li>
 			</ul>
@@ -250,7 +246,7 @@ System.out.println(user);
 
 				<body>
 					<div class="wrapper">
-						<button id="addPersonButton">인원추가</button>
+						<button id="addPersonButton" style="float: right;">인원추가</button>
 						<div class="header">
 							<h2>진행상황</h2>
 						</div>

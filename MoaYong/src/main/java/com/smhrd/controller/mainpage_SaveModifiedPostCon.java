@@ -18,13 +18,16 @@ public class mainpage_SaveModifiedPostCon implements controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
+		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
 		String prj_category = request.getParameter("prj_category");
 		String prj_name=request.getParameter("prj_name");
 		String post = request.getParameter("post");
 		String status = request.getParameter("status");
+		
 		Date deadline_dt;
 		try {
 		    deadline_dt = dateFormat.parse(request.getParameter("deadline_dt"));

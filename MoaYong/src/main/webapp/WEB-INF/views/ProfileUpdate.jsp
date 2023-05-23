@@ -46,6 +46,24 @@ User user = (User) session.getAttribute("user");
 System.out.println(user);
 %>
 
+<!-- 맨 위에 있는, 이동하는 네비게이션 -->
+<nav id="nav">
+	<ul>
+		<li><a href="goMain.do" class="active">게시판</a></li>
+		<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
+		<li><a href="goMypage.do">마이페이지</a></li>
+		<%
+		if (user != null) {
+		%>
+		<button type="submit" id="logout-btn">
+			<a href="logout.do">로그아웃</a>
+		</button>
+		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+		<%
+		}
+		%>
+	</ul>
+</nav>
 
 <body class="is-preload">
 
