@@ -56,28 +56,23 @@
 
 
 
-	<!-- 맨 위에 있는 이동하는 네비게이션 -->
+	<!-- 맨 위에 있는, 이동하는 네비게이션 -->
 	<nav id="nav">
 		<ul>
-			<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
-			<li><a href="goMain.do" classs="active">게시판</a></li>
-			<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
-
-			<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
+			<li><a href="goMain.do" class="active">게시판</a></li>
+			<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
 			<li><a href="goMypage.do">마이페이지</a></li>
-
+			<li><a href="GoPrjDetails.do?prj_seq=${viewPostContent.prj_seq}">프로젝트 세부</a></li>
 			<%
 			if (user != null) {
 			%>
 			<button type="submit" id="logout-btn">
 				<a href="logout.do">로그아웃</a>
 			</button>
-			<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
 			<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 			<%
 			}
 			%>
-
 		</ul>
 	</nav>
 
@@ -180,7 +175,7 @@
 							style="float: left; width: 22.5%;">
 					</div> -->
 
-				
+
 
 
 				<form id="joinForm">
@@ -305,64 +300,66 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	
+
 	<!-- 스크립트 태그 -->
-				<script type="text/javascript"
-					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
-				<script>
-										var mapContainer = document.getElementById('map'); // 지도를 표시할 div
-										var mapOption = {
-											center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
-											level: 8 // 지도 확대 레벨
-										};
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b7264945f08eec5af71755a23a6285&libraries=services"></script>
+	<script>
+		var mapContainer = document.getElementById('map'); // 지도를 표시할 div
+		var mapOption = {
+			center : new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
+			level : 8
+		// 지도 확대 레벨
+		};
 
-										var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
 
-										var geocoder = new kakao.maps.services.Geocoder();
+		var geocoder = new kakao.maps.services.Geocoder();
 
-										var searchKeyword = document.getElementById('mapSearch');
-										var searchButton = document.getElementById('mapBtn');
+		var searchKeyword = document.getElementById('mapSearch');
+		var searchButton = document.getElementById('mapBtn');
 
-										searchButton.addEventListener('click', function () {
-											var keyword = searchKeyword.value;
-											geocoder.addressSearch(keyword, function (result, status) {
-												if (status === kakao.maps.services.Status.OK) {
-													var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-													map.setCenter(coords);
-													displayMarker(coords);
-												}
-											});
-										});
+		searchButton.addEventListener('click', function() {
+			var keyword = searchKeyword.value;
+			geocoder.addressSearch(keyword,
+					function(result, status) {
+						if (status === kakao.maps.services.Status.OK) {
+							var coords = new kakao.maps.LatLng(result[0].y,
+									result[0].x);
+							map.setCenter(coords);
+							displayMarker(coords);
+						}
+					});
+		});
 
-										function displayMarker(coords) {
-											var marker = new kakao.maps.Marker({
-												map: map,
-												position: coords
-											});
-										}
-									</script>
-				
-				
-				
-				
-				
-				<script>
-									// var registerbtn = document.getElementById("register");
-									// registerbtn.addEventListener('click', () => {
-									// alert("게시 완료")
-									// })
-									// var registerbtn = document.getElementById("esc");
-									// registerbtn.addEventListener('click', () => {
-									//	alert("취소 완료")
-									//})
+		function displayMarker(coords) {
+			var marker = new kakao.maps.Marker({
+				map : map,
+				position : coords
+			});
+		}
+	</script>
 
-								</script>
-				<script type="text/javascript">
-								// var escBtn = document.getElementById("esc");
-								//escBtn.addEventListener('click', () => {
-								  //alert("취소 완료");
-						//});   
-																			//참가신청
+
+
+
+
+	<script>
+		// var registerbtn = document.getElementById("register");
+		// registerbtn.addEventListener('click', () => {
+		// alert("게시 완료")
+		// })
+		// var registerbtn = document.getElementById("esc");
+		// registerbtn.addEventListener('click', () => {
+		//	alert("취소 완료")
+		//})
+	</script>
+	<script type="text/javascript">
+		// var escBtn = document.getElementById("esc");
+		//escBtn.addEventListener('click', () => {
+		//alert("취소 완료");
+		//});   
+		//참가신청
 		$(document).ready(function() {
 			$('#joinButton').click(function() {
 				$.ajax({
@@ -378,7 +375,7 @@
 				});
 			});
 		});
-								</script>
+	</script>
 
 </body>
 

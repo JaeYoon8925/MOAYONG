@@ -50,30 +50,22 @@ User user = (User) session.getAttribute("user");
 System.out.println(user);
 %>
 
-
+<!-- 맨 위에 있는, 이동하는 네비게이션 -->
 <nav id="nav">
 	<ul>
-		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
-		<li><a href="goMain.do" class="active">게시판</a></li>
-
-		<!-- 프로젝트페이지의 gant.jsp로-->
-		<li><a href="GomypagePrjList.do">프로젝트 관리</a></li>
-
-		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
-		<li><a href="goMypage.do">마이페이지</a></li>
-
+		<li><a href="goMain.do" >게시판</a></li>
+		<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
+		<li><a href="goMypage.do" class="active">마이페이지</a></li>
 		<%
 		if (user != null) {
 		%>
 		<button type="submit" id="logout-btn">
 			<a href="logout.do">로그아웃</a>
 		</button>
-		<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
 		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 		<%
 		}
 		%>
-
 	</ul>
 </nav>
 
@@ -103,11 +95,11 @@ System.out.println(user);
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li><a href="#intro" class="active">Introduction</a></li>
-				<li><a href="#first">Project</a></li>
-				<li><a href="#second">Calendar</a></li>
-				<li><a href="#cta">Profile</a></li>
-				<li><a href="#Alert">Alert</a></li>
+				<li><a href="#intro" class="active">소개</a></li>
+				<li><a href="#first">프로젝트</a></li>
+				<li><a href="#second">캘린더</a></li>
+				<li><a href="#cta">프로필</a></li>
+				<li><a href="#Alert">쪽지</a></li>
 				<!--  -->
 			</ul>
 		</nav>
@@ -237,8 +229,7 @@ System.out.println(user);
 							for (Project vo : endList) {
 							%>
 							<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
-							<li><a
-								href="viewPostContent.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a></li>
+							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
 							<%
 							}
 							%>
@@ -304,7 +295,7 @@ System.out.println(user);
 								<tr>
 									<th>보낸 사람</th>
 									<th>내용</th>
-									<th>보낸 일자(년월일까지만?)</th>
+									<th>보낸 일자</th>
 								</tr>
 							</thead>
 								<%
@@ -314,9 +305,9 @@ System.out.println(user);
 								for (Message vo : MessageList) {
 								%>
 							<tbody>
-								<td><%=vo.getSender_id()%></td>
-								<td><a href="ViewMessage.do?msg_seq=<%=vo.getMsg_seq()%>"><%=vo.getMsg_content()%></a></td>
-								<td><%=vo.getMsg_dt()%></td>
+								<td colspan="2"><%=vo.getSender_id()%></td>
+								<td colspan="7"><a href="ViewMessage.do?msg_seq=<%=vo.getMsg_seq()%>"><%=vo.getMsg_content()%></a></td>
+								<td colspan="3"><%=vo.getMsg_dt()%></td>
 							</tbody>
 								<%
 								}
@@ -324,7 +315,6 @@ System.out.println(user);
 							<tfoot>
 								<tr>
 									<td colspan="2"></td>
-									<td>100.00</td>
 								</tr>
 							</tfoot>
 						</table>

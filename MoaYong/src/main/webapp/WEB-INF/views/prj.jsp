@@ -49,27 +49,22 @@ System.out.println(user);
 %>
 
 
+<!-- 맨 위에 있는, 이동하는 네비게이션 -->
 <nav id="nav">
 	<ul>
-		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
 		<li><a href="goMain.do" class="active">게시판</a></li>
-		<li><a href="go(프로젝트메인가칭).do">프로젝트 관리</a></li>
-
-		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
+		<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
 		<li><a href="goMypage.do">마이페이지</a></li>
-
 		<%
 		if (user != null) {
 		%>
 		<button type="submit" id="logout-btn">
 			<a href="logout.do">로그아웃</a>
 		</button>
-		<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
 		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 		<%
 		}
 		%>
-
 	</ul>
 </nav>
 
