@@ -222,7 +222,7 @@
 						value="${viewPostContent.recruit_count}"> <input
 						type="hidden" name="post" value="${viewPostContent.post}">
 					<button type="submit" id="Modifybtn"
-						style="float: right; max-width: none;">수정d</button>
+						style="float: right; max-width: none;">수정</button>
 				</form>
 
 				<form action="deletePost.do">
