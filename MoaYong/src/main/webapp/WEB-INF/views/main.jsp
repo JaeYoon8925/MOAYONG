@@ -202,18 +202,18 @@ System.out.println(user);
 					<%
 					if (i == currentPage) {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left;">
+					<form action="GoListPage.do" method="post" style="float: left; width:44px; min-width:unset !important;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist" style=" width:44px">
+						<button type="submit" id="pagelist" style=" width:44px; min-width:unset !important; margin-right: 30px; padding: 0px !important;">
 							<%=i%>
 						</button>
 					</form>
 					<%
 					} else {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left; width:44px">
+					<form action="GoListPage.do" method="post" style="float: left; width:44px; min-width:unset !important;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist" style=" width:44px">
+						<button type="submit" id="pagelist" style=" width:44px; min-width:unset !important; margin-right: 30px; padding: 0px !important">
 							<%=i%>
 						</button>
 					</form>
@@ -227,7 +227,7 @@ System.out.println(user);
 					<%
 					if (endPage < pageCount) {
 					%>
-					<form action="GoListPage.do" methond="post" style="float: left;">
+					<form action="GoListPage.do" methond="post" style="float: left; min-width: none !important;">
 						<a href="GoListPage.do?pageNum=<%=startPage + pageBlock%>">[다음]</a>
 					</form>
 					<%
