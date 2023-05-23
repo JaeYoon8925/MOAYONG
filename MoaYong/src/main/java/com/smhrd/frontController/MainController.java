@@ -40,8 +40,10 @@ import com.smhrd.controller.mainpage_WritePostCon;
 import com.smhrd.controller.mainpage_deletePostCon;
 import com.smhrd.controller.mypage_ProfileUpdate;
 import com.smhrd.controller.mypage_SendMessage;
+import com.smhrd.controller.mypage_ViewMessage;
 import com.smhrd.controller.mypage_goProfileUpdateCon;
 import com.smhrd.controller.mypage_goSendMessageCon;
+import com.smhrd.controller.mypage_goViewMessage;
 import com.smhrd.controller.party_joinPartyCon;
 import com.smhrd.controller.reply_viewPostContent_afterReplyCon;
 
@@ -79,6 +81,8 @@ public class MainController extends HttpServlet {
 		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
 		mappings.put("/goSendMessage.do", new mypage_goSendMessageCon());
 		mappings.put("/SendMessage.do", new mypage_SendMessage());
+		mappings.put("/goViewMessage.do", new mypage_goViewMessage());
+		mappings.put("/ViewMessage.do", new mypage_ViewMessage());
 
 		
 		// 메인nav 내부 기능

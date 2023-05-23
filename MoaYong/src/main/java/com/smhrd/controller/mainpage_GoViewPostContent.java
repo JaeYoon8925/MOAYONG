@@ -22,8 +22,9 @@ public class mainpage_GoViewPostContent implements controller {
 		
 		String prjSeqStr = request.getParameter("prj_seq");
 		
-		
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
+		
+		
 		
 		Board dto = new Board();
 		dto.setPrj_seq(prj_seq);

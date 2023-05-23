@@ -195,6 +195,7 @@ System.out.println(user);
 		<li><a href="goMain.do" classs="active">게시판</a></li>
 		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
 
+<<<<<<< HEAD
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>
 
@@ -294,6 +295,119 @@ System.out.println(user);
 							<li style="grid-column: 8/12; background-color: #ff6252;">소재고갈</li>
 						</ul>
 					</div>
+=======
+<<<<<<< HEAD
+							<body>
+  <div class="wrapper">
+    <button id="addPersonButton">인원추가</button>
+    <div class="header">
+      <h2>진행상황</h2>
+    </div>
+    <div class="gantt">
+      <div class="gantt__row gantt__row--months">
+        <div class="gantt__row-first"></div>
+      <div class="span_wrap">
+         <span>Jan</span><span>Feb</span><span>Mar</span>
+         <span>Apr</span><span>May</span><span>Jun</span>
+         <span>Jul</span><span>Aug</span><span>Sep</span>
+         <span>Oct</span><span>Nov</span><span>Dec</span>
+      </div>
+        
+      </div>
+      <div class="gantt__row gantt__row--lines" data-month="5">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span class="marker"></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="gantt__row">
+        <div class="gantt__row-first">
+          a
+        </div>
+        <ul class="gantt__row-bars">
+          <li style="grid-column: 1/3; background-color: #ff6252;">기획서 확인 및 계획 수립</li>
+          <li style="grid-column: 9/12; background-color: #2ecaac;">재윤팀 서포트</li>
+        </ul>
+      </div>
+      <div class="gantt__row gantt__row--empty">
+        <div class="gantt__row-first">
+          b
+        </div>
+        <ul class="gantt__row-bars">
+         <li style="grid-column: 2/6; background-color: #2ecaac;">팀 구성 및 초기 작업</li>
+      <li style="grid-column: 8/11; background-color: #54c6f9;">작엄 마무리 및 테스트</li>
+      </ul>
+      </div>
+      <div class="gantt__row">
+        <div class="gantt__row-first">
+          c
+        </div>
+        <ul class="gantt__row-bars">
+          <li style="grid-column: 3/7; background-color: #ff6252;">작업1차</li>
+          <li style="grid-column: 9/12; background-color: #54c6f9;">마감 및 평가진헹</li>
+        </ul>
+      </div>
+      <div class="gantt__row gantt__row--empty">
+        <div class="gantt__row-first">
+          d
+        </div>
+        <ul class="gantt__row-bars">
+         <li style="grid-column: 5/9; background-color: #ff6252;">작업 2차</li>
+      <li style="grid-column: 1/2; background-color: #2ecaac;">작업환경 준비</li>
+      <li style="grid-column: 10/12; background-color: #2ecaac;">클로징</li>
+      </ul>
+      </div>
+      <div class="gantt__row gantt__row--empty">
+        <div class="gantt__row-first">
+          e
+        </div>
+        <ul class="gantt__row-bars">
+         <li style="grid-column: 1/12; background-color: #ff6252;">지시감독</li>
+      </ul>
+      </div>
+     
+    </div>
+  </div>
+					<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Aliquam sed mauris</h2>
+							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing
+								tempus etiam
+								dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
+								erat
+								egestas velit, vitae tincidunt odio.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Etiam feugiat</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd><a href="#">information@untitled.tld</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span
+											class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span
+											class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span
+											class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a>
+								</li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span
+											class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 				</div>
 			</div>
 	</div>

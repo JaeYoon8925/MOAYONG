@@ -17,27 +17,30 @@ public class MessageDAO {
 
 	public int send(Message dto) {
 		SqlSession session = factory.openSession(true);
-		
-		System.out.println("MessageDAO에 담긴 내용 : " + dto.getSender_id());
-		System.out.println("MessageDAO에 담긴 내용 : " + dto.getReceiver_id());
-		System.out.println("MessageDAO에 담긴 내용 : " + dto.getMsg_content());
-		
 		int row = session.insert("send", dto);
-		
-		System.out.println("sql문 실행하고 돌아와줄래? ㅇㅇ");
-		System.out.println(row+": 로우 받아와줄래? ㅇㅇ");
-		
 		session.close();
 		return row;
 	}
+
+	public List<Message> MessageList(Message dto2) {
+		SqlSession session = factory.openSession(true);
+		List<Message> MessageList = session.selectList("MessageList", dto2 );
+		session.close();
+		return MessageList;
+	}
+	
+	public Message viewmessage(Message dto) {
+		SqlSession session = factory.openSession(true);
+		Message viewmessage = session.selectOne("viewmessage", dto);
+		session.close();
+		return viewmessage;
+	}
+
 }
 
 // 메세지 리스트 (수정 아예 안했음 아직 ㅇㅇ)
 //	public List<Board> list() {
-//		SqlSession session = factory.openSession(true);
-//		List<Board> list = session.selectList("list");
-//		session.close();
-//		return list;
+//		
 //	}
 
 // 메세지 조회하기 
