@@ -195,7 +195,6 @@ System.out.println(user);
 		<li><a href="goMain.do" classs="active">게시판</a></li>
 		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
 
-<<<<<<< HEAD
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>
 
@@ -571,7 +570,6 @@ System.out.println(user);
 
 
 
-				<<<<<<<
 			</body>
 	</div>
 
@@ -678,7 +676,7 @@ System.out.println(user);
 							`;
 													gantt.appendChild(newRow);
 												});
-												document.addEventListener('DOMContentLoaded', function () {
+											document.addEventListener('DOMContentLoaded', function () {
 													const nameElements = document.querySelectorAll('.gantt__row-text');
 
 													nameElements.forEach(function (nameElement) {
@@ -690,7 +688,7 @@ System.out.println(user);
 															if (!start_Date || isNaN(start_Date) || start_Date < 1 || start_Date > 12) {
 																alert('잘못된 시작일 입니다.');
 																return;
-															}
+									}
 															const end_Date = Number(prompt('종료월을 선택하세요: (1 ~12)'));
 															if (!end_Date || isNaN(end_Date) || end_Date < 1 || end_Date > 12) {
 																alert('잘못된 종료일 입니다.');
