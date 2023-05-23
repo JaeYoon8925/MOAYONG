@@ -223,7 +223,6 @@ System.out.println(user);
 	<!-- Wrapper -->
 	<div id="wrapper">
 
-		<<<<<<< HEAD
 		<body>
 			<div class="wrapper">
 				<button id="addPersonButton">인원추가</button>
@@ -295,8 +294,6 @@ System.out.println(user);
 							<li style="grid-column: 8/12; background-color: #ff6252;">소재고갈</li>
 						</ul>
 					</div>
-=======
-<<<<<<< HEAD
 							<body>
   <div class="wrapper">
     <button id="addPersonButton">인원추가</button>
@@ -407,7 +404,6 @@ System.out.println(user);
 						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/AZJo.git
 				</div>
 			</div>
 	</div>
@@ -481,7 +477,7 @@ System.out.println(user);
 			<li><a href="간트차트로" class="active">간트차트</a></li>
 			<li><a href="세부임무로">세부임무</a></li>
 			<li><a href="산출물로">산출물</a></li>
-			<li style="float: right;"><a href="셋업">수정하기</a></li>
+			<li style="float: right;"><a href="셋업"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnxA7tm7xkKByRkkmlzNfZWvgfytkw-OYN_A&usqp=CAU" width=40px; height=40px ></a></li>
 		</ul>
 
 	</nav>
