@@ -17,35 +17,28 @@
 -->
 <html>
 <style>
- /* select 요소에 대한 스타일 */
-  #evalu {
+  /* select 스타일 */
+  select {
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     color: #333;
     width: 200px;
-    /* 추가적인 스타일 속성을 여기에 추가하세요 */
   }
 
-  /* div 요소에 대한 스타일 */
-  #evalu1 {
-    margin-top: 20px;
-    /* 추가적인 스타일 속성을 여기에 추가하세요 */
+  /* li 스타일 */
+  #evalu1 li {
+    display: inline-block;
+    margin-right: 10px;
   }
 
-  /* li 요소에 대한 스타일 */
-  #evalu2 {
-    list-style: none;
-    /* 추가적인 스타일 속성을 여기에 추가하세요 */
-  }
-
-  /* a 요소에 대한 스타일 */
+  /* 링크 스타일 */
   #evaluateLink {
+    color: #007bff;
     text-decoration: none;
-    color: #333;
-    /* 추가적인 스타일 속성을 여기에 추가하세요 */
+    font-weight: bold;
   }
 
 
