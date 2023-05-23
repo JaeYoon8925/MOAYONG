@@ -229,6 +229,7 @@ System.out.println(user);
 							<button onclick='location.href="eval_leader.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀장평가</button>
 							<button onclick='location.href="eval_participant.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀원평가</button>
 							<%}	%>
+							
 						</ul> <!-- 이 사람의 완료 프로젝트 리스트 전부 보기 --></li>
 				</ul>
 				<footer class="major">
