@@ -33,6 +33,7 @@ public class content_uploadReplyCon implements controller {
 		request.getSession().setAttribute("prj_seq", prj_seq);
 		return "redirect:/afterReply.do";
 		
+		
 
 	}
 

@@ -53,30 +53,24 @@
 
 
 
-	<!-- 맨 위에 있는 이동하는 네비게이션 -->
-	<nav id="nav">
-		<ul>
-			<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
-			<li><a href="goMain.do" classs="active">게시판</a></li>
-			<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
-
-			<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
-			<li><a href="goMypage.do">마이페이지</a></li>
-
-			<%
-			if (user != null) {
-			%>
-			<button type="submit" id="logout-btn">
-				<a href="logout.do">로그아웃</a>
-			</button>
-			<!-- 원래는 개인별 db에 저장된 이미지의 경로로 개인의 프로필 사진을 불러와야하지만 일단 이미지 절대경로로 로드-->
-			<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-			<%
-			}
-			%>
-
-		</ul>
-	</nav>
+	<!-- 맨 위에 있는, 이동하는 네비게이션 -->
+<nav id="nav">
+	<ul>
+		<li><a href="goMain.do" class="active">게시판</a></li>
+		<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
+		<li><a href="goMypage.do">마이페이지</a></li>
+		<%
+		if (user != null) {
+		%>
+		<button type="submit" id="logout-btn">
+			<a href="logout.do">로그아웃</a>
+		</button>
+		<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+		<%
+		}
+		%>
+	</ul>
+</nav>
 
 	<header id="header">
 		<p></p>
@@ -96,14 +90,14 @@
 
 
 				<!-- 폼 태그 -->
-				<form action="writePost.do" method="post">
+				<form action="savePost.do" method="post">
 					<table>
 						<tr>
 							<td>
 								<div style="float: left; max-width: none; width: 15%;">
 									<select name="prj_category" class="col-12"
 										style="display: flex;">
-										<option value="" selected disabled>카테고리 선택</option>
+										<option value="" selected disabled>${viewPostContent.prj_category}</option>
 										<option value="프로그래밍" type="text">프로그래밍</option>
 										<option value="전시회" type="text">전시회</option>
 										<option value="게임" type="text">게임</option>
@@ -115,6 +109,7 @@
 						</tr>
 						<tr>
 							<td>
+							<input type="hidden" name="prj_seq" value="${viewPostContent.prj_seq}">
 								<div id="date">날짜정보입력</div>
 								<div style="float: left; max-width: none;">
 									인원모집 마감일 : <input type="date" name="deadline_dt"
@@ -192,7 +187,8 @@
 
 
 					<br> <br>
-					<textarea name="post">${viewPostContent.post}</textarea>
+					<textarea name="post">${viewPostContent.post}
+					</textarea>
 					<br>
 					<button type="submit" id="chanbtn"
 						style="float: right; max-width: none;">수정완료</button>
@@ -287,7 +283,8 @@
 									})
 
 			</script>	
-			<script>	
+				<!-- 지도 -->
+	<script>
       var mapOption = {
         center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
         level: 8 // 지도 확대 레벨
@@ -328,8 +325,20 @@
           position: coords
         });
       }
-    </script>
+      
+							// var registerbtn = document.getElementById("register");
+							// registerbtn.addEventListener('click', () => {
+							// alert("게시 완료")
+							// })
+							//var registerbtn = document.getElementById("esc");
+							//registerbtn.addEventListener('click', () => {
+							//	alert("취소 완료")
+							//})
+						</script>
 
+
+      
+    </script>
 
 </body>
 

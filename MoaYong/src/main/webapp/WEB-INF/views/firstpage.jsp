@@ -87,15 +87,23 @@ body {
 #login-button {
 	background-color: rgb(255, 255, 255);
 	width: 300px;
-	height: 50px;
+	height: 55px;
+	text-align: center;
 }
 
 #sign-button {
 	background-color: rgb(255, 255, 255);
+	text-align: center;
+	margin-top:10px;
+	width:80px;
+	height:55px;
 }
 
 #reset-button {
 	background-color: rgb(255, 255, 255);
+	text-align: center;
+	width:80px;
+	height:55px;
 }
 
 #sign-button {
@@ -218,7 +226,6 @@ body {
 
 							<div class="button-area" style="height: 150px;">
 								<button type="submit" id="login-button">Login</button>
-								<br>
 								<br>
 
 								<button type="button" id="sign-button"

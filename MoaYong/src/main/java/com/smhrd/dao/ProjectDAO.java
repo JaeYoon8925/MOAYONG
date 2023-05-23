@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.entity.Board;
+import com.smhrd.entity.Message;
 import com.smhrd.entity.Project;
 
 public class ProjectDAO {
@@ -32,4 +33,7 @@ public class ProjectDAO {
 			session.close();
 			return list;
 		}
+
+
+
 }

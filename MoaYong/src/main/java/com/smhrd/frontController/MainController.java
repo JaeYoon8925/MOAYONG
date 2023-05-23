@@ -40,9 +40,13 @@ import com.smhrd.controller.mainpage_WritePostCon;
 import com.smhrd.controller.mainpage_deletePostCon;
 import com.smhrd.controller.mypage_ProfileUpdate;
 import com.smhrd.controller.mypage_SendMessage;
+import com.smhrd.controller.mypage_ViewMessage;
 import com.smhrd.controller.mypage_goProfileUpdateCon;
 import com.smhrd.controller.mypage_goSendMessageCon;
+import com.smhrd.controller.mypage_goViewMessage;
 import com.smhrd.controller.party_joinPartyCon;
+import com.smhrd.controller.prj_GoPrjDetailsCon;
+import com.smhrd.controller.prj_GoPrjOutputCon;
 import com.smhrd.controller.reply_viewPostContent_afterReplyCon;
 
 @WebServlet("*.do")
@@ -54,7 +58,6 @@ public class MainController extends HttpServlet {
 		System.out.println("생성됨");
 
 		mappings = new HashMap<String, controller>();
-
 		// fistpage
 		mappings.put("/goFirstpage.do", new firstpage_GoFirstPageCon()); // 첫 화면 가는거.
 		mappings.put("/login.do", new firstpage_LoginCon()); // 로그인
@@ -68,7 +71,7 @@ public class MainController extends HttpServlet {
 		mappings.put("/searchPost.do", new mainpage_SearchPost()); // 게시글 검색
 		mappings.put("/viewPostContent.do", new mainpage_GoViewPostContent()); // 클릭하면 게시글 내용 보이기
 		mappings.put("/deletePost.do", new mainpage_deletePostCon());
-		mappings.put("/goModifyPost.do", new mainpage_GoModifyPostCon()); // 게시글 수정 누르면 작동
+		mappings.put("/goModifyPost.do", new mainpage_GoModifyPostCon()); // 게시글 수정 rewrite임
 		mappings.put("/savePost.do", new mainpage_SaveModifiedPostCon());
 		mappings.put("/GoListPage.do", new mainpage_GoListPageCon());
 		// mainpage_기타
@@ -80,19 +83,20 @@ public class MainController extends HttpServlet {
 		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());
 		mappings.put("/goSendMessage.do", new mypage_goSendMessageCon());
 		mappings.put("/SendMessage.do", new mypage_SendMessage());
+		mappings.put("/goViewMessage.do", new mypage_goViewMessage());
+		mappings.put("/ViewMessage.do", new mypage_ViewMessage());
 
-		
 		// 메인nav 내부 기능
 		mappings.put("/GomypagePrjList.do", new mainNav_GoMypagePrjList());
 		mappings.put("/mypagePrjList.do", new mainNav_MypagePrjList());
-		
-		
-		// 프로젝트 세부 페이지 내부 기능
 		mappings.put("/GoPrjGant.do", new mainNav_GoPrjGant());
+
+		// 메인nav+프로젝트 세부에서 같이 사용
 		mappings.put("/PrjGant.do", new mainNav_PrjGant());
-		
-		
-		
+
+		// 프로젝트 세부 페이지 내부 기능
+		mappings.put("/GoPrjDetails.do", new prj_GoPrjDetailsCon());
+		mappings.put("/GoPrjOutput.do", new prj_GoPrjOutputCon());
 		
 		// 댓글기능
 		mappings.put("/uploadReply.do", new content_uploadReplyCon());

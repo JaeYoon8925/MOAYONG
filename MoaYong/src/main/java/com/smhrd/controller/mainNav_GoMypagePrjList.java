@@ -20,6 +20,7 @@ public class mainNav_GoMypagePrjList implements controller {
 
 		
 		HttpSession session=request.getSession();
+		
 		User user = (User)session.getAttribute("user");
 		
 		String t_id = user.getT_id();

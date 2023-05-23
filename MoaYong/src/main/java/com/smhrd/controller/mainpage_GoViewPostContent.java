@@ -22,8 +22,9 @@ public class mainpage_GoViewPostContent implements controller {
 		
 		String prjSeqStr = request.getParameter("prj_seq");
 		
-		
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
+		
+		
 		
 		Board dto = new Board();
 		dto.setPrj_seq(prj_seq);
@@ -34,9 +35,7 @@ public class mainpage_GoViewPostContent implements controller {
 		        
         request.setAttribute("viewPostContent", info);
         HttpSession session= request.getSession();
-        User user = (User) session.getAttribute("user");
-		session.setAttribute("user", user);
-		
+        
 		Reply dtoo = new Reply();
 		dtoo.setPrj_seq(prj_seq);
 		

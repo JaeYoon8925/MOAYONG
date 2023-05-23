@@ -1,10 +1,7 @@
 <%@ page import="com.smhrd.entity.User"%>
-<!-- page import="main.java.entity.Board" -->
-<!-- import="main.java.entity.캘린더 데이터 엔터티"%> -->
-<!-- import="main.java.entity.쪽지테이블 엔터티"%> -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE HTML>
 <!--
@@ -15,10 +12,8 @@
 <html>
 
 <head>
-<title>쪽지 보내기</title>
-<meta charset="utf-8" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<title>viewMessage</title>
+<meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script
@@ -38,20 +33,19 @@
 <!-- ajax 비동기 통신에 필요-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- js파일 경로-->
-<script src="index.js"></script>
-<!-- 프리셋 -->
+<script src="assets/js/index.js"></script>
+<!-- 프리셋 html로 작업 후 변경 필요-->
 <link rel="stylesheet" href="assets/css/main.css" />
 <noscript>
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
+
 </head>
 
-<!-- 유저정보 받아오기-->
 <%
-User user = (User) session.getAttribute("user");
-System.out.println(user);
-%>
-<!-- 맨 위에 있는 이동하는 네비게이션 -->
+	User user = (User) session.getAttribute("user");
+	System.out.println(user);
+	%>
 
 <!-- 맨 위에 있는, 이동하는 네비게이션 -->
 <nav id="nav">
@@ -72,60 +66,46 @@ System.out.println(user);
 	</ul>
 </nav>
 
-
 <body class="is-preload">
 	<!-- Wrapper -->
 	<div id="wrapper">
-
 		<!-- Header -->
 		<header id="header">
-			<h1>쪽지 보내기</h1>
+			<h1>쪽지 보기</h1>
 		</header>
-
 		<!-- Main -->
 		<div id="main">
-
 			<!-- Content -->
 			<section id="content" class="main">
-
-				<div class="spotlight">
-					<div class="content">
-						<h2>쪽지쓰기</h2>
-						<form action="SendMessage.do" method="POST">
-							<div class="row gtr-uniform">
-								<br>
-								<div class="col-12">
-									<input type="text" name="RECEIVER_ID" id="RECEIVER_ID"
-										placeholder="수신자 ID" />
-								</div>
-								<div class="col-12">
-									<textarea name="MSG_CONTENT" id="MSG_CONTENT"
-										placeholder="내용 입력" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<!-- 첨부할 파일 -->
-										<div>
-											<input type="file" value="이미지 업로드" />
-										</div>
-										<li><input type="submit" value="보내기" class="primary" /></li>
-						</form>
-						<li>
-							<button onclick="goBack()">취소</button>
-						</li>
-						<!-- 메인으로 -->
-						</ul>
-					</div>
+				<h3>MOAYONG</h3>
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>보낸 사람 : ${viewmessage.sender_id}</th>
+								<th>보낸 시간 : ${viewmessage.msg_dt}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="3"><br> ${viewmessage.msg_content} <br> <br> <br>
+									<br> <br> <br> <br></td>
+							</tr>
+						</tbody>
+						
+					</table>
 				</div>
+				<a href="goMypage.do" class="button"> 뒤로가기 </a>
+
+
+				<!-- 프로필 사진 클래스명 image에서 photo로 변경(css파일 선택자도 함께) 변경 -->
+				<!-- 일단 이미지 크기는 높이 폭 모두 16em-->
 		</div>
-		<!-- 프로필 사진 클래스명 image에서 photo로 변경(css파일 선택자도 함께) 변경 -->
-		<!-- 일단 이미지 크기는 높이 폭 모두 16em-->
-	</div>
 
-	<section></section>
+		<section></section>
 
 
-	</section>
+		</section>
 
 	</div>
 
@@ -174,14 +154,6 @@ System.out.println(user);
 	</div>
 
 	<!-- Scripts -->
-	<script>
-		function goBack() {
-			window.history.back(); // 뒤로가기 기능 실행
-		}
-	</script>
-
-
-
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

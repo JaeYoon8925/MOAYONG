@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="main/java/dao/BoardDAO">
+<mapper namespace="main/java/dao/MessageDAO">
 
-	<insert id="write" parameterType="com.smhrd.entity.Board">
-		insert into T_project
-		values(prj_seq.nextval,#{t_id},#{prj_category},#{prj_name},#{post},'모집중',#{deadline_dt},#{start_dt},#{end_dt},#{recruit_count},0,null,sysdate,null)
-	</insert>
+	<insert id="send" parameterType="com.smhrd.entity.Message">
+    insert into T_MESSAGE
+    values ( MSG_SEQ.nextval, #{sender_id}, #{receiver_id}, #{msg_content}, sysdate, '1', '0')
+</insert>
 
-	<select id="list" resultType="com.smhrd.entity.Board">
-		SELECT t.*, TO_CHAR(t.post_dt,
-		'YYYY-MM-DD') AS format_post_dt
-		FROM T_project t
-		ORDER BY t.post_dt DESC
+	<select id="MessageList" resultType="com.smhrd.entity.Message" >
+		SELECT * 
+		FROM t_message
+		where receiver_id = #{receiver_id}
+		ORDER BY msg_dt DESC
 	</select>
 
-	<select id="searchPost" resultType="com.smhrd.entity.Board">
+	<select id="viewmessage"
+		resultType="com.smhrd.entity.Message"
+		parameterType="com.smhrd.entity.Message">
+		select *
+		from t_message
+		where msg_seq = #{msg_seq}
+	</select>
+	
+	
+</mapper>
+	
+<!-- 
+
+	<select id="searchPost" resultType="com.smhrd.entity.Message">
 		<choose>
 			<when test="prj_category == '모두'">
 				select * from t_project order by post_dt
@@ -36,16 +49,9 @@
 		</choose>
 	</select>
 
-	<select id="viewPostContent" resultType="com.smhrd.entity.Board"
-		parameterType="com.smhrd.entity.Board">
-		select *
-		from T_PROJECT
-		where prj_seq = #{prj_seq}
-	</select>
 
 
-
-	<update id="updatePost" parameterType="com.smhrd.entity.Board">
+	<update id="updatePost" parameterType="com.smhrd.entity.Message">
 		update t_project
 		set
 		prj_category = #{prj_category},
@@ -62,7 +68,7 @@
 		= #{prj_seq}
 	</update>
 
-	<delete id="deletePost" parameterType="com.smhrd.entity.Board">
+	<delete id="deletePost" parameterType="com.smhrd.entity.Message">
 		delete from t_project
 		where prj_seq=#{prj_seq}
 	</delete>
@@ -72,8 +78,8 @@
 		T_project
 	</select>
 
-	<select id="ListPage" resultType="com.smhrd.entity.Board"
-		parameterType="com.smhrd.entity.Board">
+	<select id="ListPage" resultType="com.smhrd.entity.Message"
+		parameterType="com.smhrd.entity.Message">
 		SELECT *
 		FROM (
 		SELECT rownum AS rn, p.*
@@ -88,6 +94,5 @@
 		AND sub.rn &lt;= ${prj_seq} * 10
 		ORDER BY sub.rn
 	</select>
+ -->
 
-
-</mapper>
