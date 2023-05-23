@@ -18,6 +18,10 @@ public class party_joinNoCon implements controller {
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
 		String t_id = request.getParameter("t_id");
 		
+		System.out.println("참가거절 t_id: "+t_id);
+		System.out.println("참가거절 prj_seq : "+prj_seq);
+		System.out.println("참가거절 p_seq : "+p_seq);
+		
 		JoinParty dto = new JoinParty();
 		dto.setP_seq(p_seq);
 		dto.setPrj_seq(prj_seq);
@@ -25,6 +29,12 @@ public class party_joinNoCon implements controller {
 		
 		JoinPartyDAO dao = new JoinPartyDAO();
 		int row = dao.joinNo(dto);
+		
+		if(row>0) {
+			System.out.println("참가NO 반영됨");			
+		}else {
+			System.out.println("참가NO 반영안됨");	
+		}
 		return null;
 	}
 

@@ -27,5 +27,6 @@
 		<mapper resource="/com/smhrd/dao/ReplyMapper.xml"/>
 		<mapper resource="/com/smhrd/dao/JoinPartyMapper.xml"/>
 		<mapper resource="/com/smhrd/dao/MessageMapper.xml"/>
+		<mapper resource="/com/smhrd/dao/EvaluationMapper.xml"/>
 	</mappers>
 </configuration>

@@ -222,17 +222,13 @@ System.out.println(user);
 						<h3>완료된 프로젝트</h3>
 
 						<ul class="alt" style="height: 300px; overflow: auto">
-							<%
-							List<Project> endList = (List<Project>) request.getAttribute("endList");
-							%>
-							<%
-							for (Project vo : endList) {
-							%>
+							<%	List<Project> endList = (List<Project>) request.getAttribute("endList");%>
+							<%	for (Project vo : endList) {%>
 							<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
 							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
-							<%
-							}
-							%>
+							<button onclick='location.href="eval_leader.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀장평가</button>
+							<button onclick='location.href="eval_participant.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀원평가</button>
+							<%}	%>
 						</ul> <!-- 이 사람의 완료 프로젝트 리스트 전부 보기 --></li>
 				</ul>
 				<footer class="major">

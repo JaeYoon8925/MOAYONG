@@ -15,6 +15,10 @@ import com.smhrd.controller.party_joinDisCountCon;
 import com.smhrd.controller.party_joinListCon;
 import com.smhrd.controller.party_joinNoCon;
 import com.smhrd.controller.party_joinOkCon;
+import com.smhrd.controller.Eval_Submit_leaderCon;
+import com.smhrd.controller.Eval_Submit_participant;
+import com.smhrd.controller.Eval_leaderCon;
+import com.smhrd.controller.Eval_test_con;
 import com.smhrd.controller.ProjectManageCon;
 import com.smhrd.controller.content_uploadReplyCon;
 import com.smhrd.controller.controller;
@@ -97,7 +101,7 @@ public class MainController extends HttpServlet {
 		// 프로젝트 세부 페이지 내부 기능
 		mappings.put("/GoPrjDetails.do", new prj_GoPrjDetailsCon());
 		mappings.put("/GoPrjOutput.do", new prj_GoPrjOutputCon());
-		
+
 		// 댓글기능
 		mappings.put("/uploadReply.do", new content_uploadReplyCon());
 		mappings.put("/afterReply.do", new reply_viewPostContent_afterReplyCon());
@@ -108,6 +112,12 @@ public class MainController extends HttpServlet {
 		mappings.put("/joinNo.do", new party_joinNoCon());
 		mappings.put("/joinCount.do", new party_joinCountCon());
 		mappings.put("/joinDisCount.do", new party_joinDisCountCon());
+		// 평가하기 기능(팀원)
+		mappings.put("/eval_participant.do", new Eval_test_con());// 평가페이지로 가기
+		mappings.put("/submit_eval_participant.do", new Eval_Submit_participant()); // 평가 데이터 넘겨서 처리
+		// 평가하기 기능(팀장)
+		mappings.put("/eval_leader.do", new Eval_leaderCon());// 팀장평가페이지 가기
+		mappings.put("/submit_eval_leader.do", new Eval_Submit_leaderCon());
 
 	}
 

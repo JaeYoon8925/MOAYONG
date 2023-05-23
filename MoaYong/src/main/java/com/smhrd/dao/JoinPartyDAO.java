@@ -15,9 +15,9 @@ public class JoinPartyDAO {
 		SqlSession session = factory.openSession(true);
 		int row = session.insert("joinParty",dto);
 		session.close();
-		return row;
-		
+		return row;	
 	}
+	
 	public List<JoinParty> joinList(JoinParty dto){
 		SqlSession session = factory.openSession(true);
 		List<JoinParty> joinList = session.selectList("joinList",dto);
@@ -25,6 +25,7 @@ public class JoinPartyDAO {
 		return joinList;
 	}
 	
+	//joinOk
 	public int joinOk(JoinParty dto) {
 		SqlSession session = factory.openSession(true);
 		int row = session.update("joinOk",dto);
@@ -38,7 +39,26 @@ public class JoinPartyDAO {
 		session.close();
 		return row;
 	}
+	
+	public int joinCount(JoinParty dto) {
+		SqlSession session = factory.openSession(true);
+		int row = session.update("joinCount",dto);
+		session.close();
+		return row;
+	}
+	public int joinDisCount(JoinParty dto) {
+		SqlSession session = factory.openSession(true);
+		int row = session.update("joinDisCount",dto);
+		session.close();
+		return row;
+	}
+	//안씀
+	public int eval_submit_participant(JoinParty dto) {
+		SqlSession session = factory.openSession(true);
+		int row = session.update("eval_submit_participant", dto);
+		session.close();
+		return row;
+	}
 }
-
 
 

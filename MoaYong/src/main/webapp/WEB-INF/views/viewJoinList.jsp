@@ -96,9 +96,9 @@
 				<td><%=vo.getT_id()%></td>
 				<td><span id="join_ok_<%=vo.getT_id()%>"><%=vo.getJoin_ok()%></span></td>
 				<td><button
-						onclick="joinOk(<%=vo.getP_seq()%>, <%=vo.getPrj_seq()%>, '<%=vo.getT_id()%>');">수락</button></td>
+						onclick="joinOk(<%=vo.getP_seq()%>, <%=vo.getPrj_seq()%>, '<%=vo.getT_id()%>','<%=vo.getJoin_ok()%>');">수락</button></td>
 				<td><button
-						onclick="joinNo(<%=vo.getP_seq()%>, <%=vo.getPrj_seq()%>, '<%=vo.getT_id()%>');">거절</button></td>
+						onclick="joinNo(<%=vo.getP_seq()%>, <%=vo.getPrj_seq()%>, '<%=vo.getT_id()%>','<%=vo.getJoin_ok()%>');">거절</button></td>
 			</tr>
 			<% }%>
 			<% } else { %>
@@ -118,9 +118,9 @@
 			var url = 'joinCount.do';
 			
 			var data = 'prj_seq=' + encodeURIComponent(prj_seq) +
-			  		   '&t_id=' + encodeURIComponent(t_id) +
-			  		   '$join_ok' + + encodeURIComponent(join_ok);
-			console.log(data);
+					   '&join_ok=' + encodeURIComponent(join_ok) +
+			  		   '&t_id=' + encodeURIComponent(t_id) ;
+			console.log("join count data : "+ data);
 			tq.open('POST', url, true);
 			tq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 			tq.onreadystatechange = function() {
@@ -137,48 +137,53 @@
 		}
 		
 
-			function callJoinOk(p_seq, prj_seq, t_id) {
-				var tq = new XMLHttpRequest();
-				var url = 'joinOk.do';
+		function callJoinOk(p_seq, prj_seq, t_id) {
+			var tq = new XMLHttpRequest();
+			var url = 'joinOk.do'; 
 
-				var data = 'p_seq=' + encodeURIComponent(p_seq) +
-		  		           '&prj_seq=' + encodeURIComponent(prj_seq) +
-			               '&t_id=' + encodeURIComponent(t_id);
-
-				tq.open('POST', url, true);
-				tq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-				tq.onreadystatechange = function() {
-					if (tq.readyState === XMLHttpRequest.DONE) {
-						if (tq.status === 200) {
-							document.getElementById('join_ok_' + t_id).innerText = '참가수락';
-							console.log("joinOk.do 호출 성공");
-						} else {
-						  console.log("joinOk.do 호출 실패");
-						}
+			var data = 'p_seq=' + encodeURIComponent(p_seq) +
+					   '&prj_seq=' + encodeURIComponent(prj_seq) +
+					   '&t_id=' + encodeURIComponent(t_id);
+			console.log("call join ok var data : " + data);
+			tq.open('POST', url, true);
+			tq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			tq.onreadystatechange = function() {
+				if (tq.readyState === XMLHttpRequest.DONE) {
+					if (tq.status === 200) {
+						console.log("call join ok status : "+tq.status);
+						console.log("call join ok data : "+data);
+						document.getElementById('join_ok_' + t_id).innerText = '참가수락';
+						console.log("joinOk.do 호출 성공");
+					} else {
+						console.log("joinOk.do 호출 실패");
 					}
-				};
-				tq.send(data);
+				}
+			};
+			tq.send(data);
 			}
 
-			function joinNo(p_seq, prj_seq, t_id) {
+			function joinNo(p_seq, prj_seq, t_id, join_ok) {
 				var tq = new XMLHttpRequest();
 				var url = 'joinDisCount.do'; 
 
-				var data = 'prj_seq=' + encodeURIComponent(prj_seq);
+				var data = 'prj_seq=' + encodeURIComponent(prj_seq)+
+						   '&join_ok=' + encodeURIComponent(join_ok)+
 				           '&t_id=' + encodeURIComponent(t_id);
-
+				console.log("joinno var data : "+data);
 				tq.open('POST', url, true);
 				tq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 				tq.onreadystatechange = function() {
 					if (tq.readyState === XMLHttpRequest.DONE) {
 						if (tq.status === 200) {
-							console.log("join_count 업데이트 성공");
+							console.log("join no stats : "+ tq.status);
+							console.log("join_Discount 업데이트 성공");
 							callJoinNo(p_seq, prj_seq, t_id);
 						}else{
 							console.log("join_count 업데이트 실패");
 						}
 					}
 				};
+				console.log("join no data : "+data);
 				tq.send(data);
 			}
 
@@ -189,12 +194,13 @@
 				var data = 'p_seq=' + encodeURIComponent(p_seq) +
 						   '&prj_seq=' + encodeURIComponent(prj_seq) +
 						   '&t_id=' + encodeURIComponent(t_id);
-
+				console.log("call join no var data : "+data);
 				tq.open('POST', url, true);
 				tq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 				tq.onreadystatechange = function() {
 					if (tq.readyState === XMLHttpRequest.DONE) {
 						if (tq.status === 200) {
+							console.log("call join no stats : "+ tq.status);
 							document.getElementById('join_ok_' + t_id).innerText = '참가거절';
 							console.log("joinNo.do 호출 성공");
 						} else {
@@ -202,6 +208,7 @@
 						}
 					}
 				};
+				console.log("call join no data : " + data);
 				tq.send(data);
 				}
 		</script>

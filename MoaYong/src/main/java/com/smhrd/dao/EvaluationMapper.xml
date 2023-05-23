@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com/smhrd/dao/EvaluationDAO">
+
+<select id="view_leader" resultType="com.smhrd.entity.Project">
+select t_id,prj_seq from t_project where prj_seq=#{prj_seq}
+</select>
+
+<update id="submit_eval_leader" parameterType="com.smhrd.entity.Evaluation">
+insert into T_evaluation values(ev_seq.nextval, #{t_id}, #{ev_rating}, sysdate, #{prj_seq},#{leader_id})
+</update>
+
+
+
+
+</mapper>
