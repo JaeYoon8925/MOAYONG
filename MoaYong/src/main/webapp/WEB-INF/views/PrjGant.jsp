@@ -194,6 +194,7 @@ System.out.println(user);
 		<!-- <div class="logo"><img src="/images/pic01.jpg" alt="" /></div> -->
 		<li><a href="goMain.do" classs="active">게시판</a></li>
 		<li><a href="GoPrjGant.do">프로젝트 관리</a></li>
+
 		<!-- 로그인한 계정의 마이페이지로 이동이 되어야함. -->
 		<li><a href="goMypage.do">마이페이지</a></li>
 
@@ -314,6 +315,54 @@ System.out.println(user);
 				</body>
 		</div>
 
+
+
+
+
+			</body>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<section>
+			<h2>Aliquam sed mauris</h2>
+			<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
+				consequat magna adipiscing tempus etiam dolore veroeros. eget
+				dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
+				erat egestas velit, vitae tincidunt odio.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Learn More</a></li>
+			</ul>
+		</section>
+		<section>
+			<h2>Etiam feugiat</h2>
+			<dl class="alt">
+				<dt>Address</dt>
+				<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+				<dt>Phone</dt>
+				<dd>(000) 000-0000 x 0000</dd>
+				<dt>Email</dt>
+				<dd>
+					<a href="#">information@untitled.tld</a>
+				</dd>
+			</dl>
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter alt"><span
+						class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f alt"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram alt"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-github alt"><span
+						class="label">GitHub</span></a></li>
+				<li><a href="#" class="icon brands fa-dribbble alt"><span
+						class="label">Dribbble</span></a></li>
+			</ul>
+		</section>
+		<p class="copyright">
+			&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+		</p>
+	</footer>
 		<!-- Footer -->
 		<footer id="footer">
 			<section>
@@ -417,7 +466,7 @@ System.out.println(user);
 							`;
 													gantt.appendChild(newRow);
 												});
-												document.addEventListener('DOMContentLoaded', function () {
+											document.addEventListener('DOMContentLoaded', function () {
 													const nameElements = document.querySelectorAll('.gantt__row-text');
 
 													nameElements.forEach(function (nameElement) {
@@ -429,7 +478,7 @@ System.out.println(user);
 															if (!start_Date || isNaN(start_Date) || start_Date < 1 || start_Date > 12) {
 																alert('잘못된 시작일 입니다.');
 																return;
-															}
+									}
 															const end_Date = Number(prompt('종료월을 선택하세요: (1 ~12)'));
 															if (!end_Date || isNaN(end_Date) || end_Date < 1 || end_Date > 12) {
 																alert('잘못된 종료일 입니다.');
