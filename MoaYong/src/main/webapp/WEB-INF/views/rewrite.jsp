@@ -287,7 +287,8 @@
 									})
 
 			</script>	
-			<script>	
+				<!-- 지도 -->
+	<script>
       var mapOption = {
         center: new kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심좌표 (서울시청)
         level: 8 // 지도 확대 레벨
@@ -328,8 +329,20 @@
           position: coords
         });
       }
-    </script>
+      
+							// var registerbtn = document.getElementById("register");
+							// registerbtn.addEventListener('click', () => {
+							// alert("게시 완료")
+							// })
+							//var registerbtn = document.getElementById("esc");
+							//registerbtn.addEventListener('click', () => {
+							//	alert("취소 완료")
+							//})
+						</script>
 
+
+      
+    </script>
 
 </body>
 

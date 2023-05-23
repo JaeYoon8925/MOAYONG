@@ -17,6 +17,42 @@
 -->
 <html>
 <style>
+ /* select 요소에 대한 스타일 */
+  #evalu {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333;
+    width: 200px;
+    /* 추가적인 스타일 속성을 여기에 추가하세요 */
+  }
+
+  /* div 요소에 대한 스타일 */
+  #evalu1 {
+    margin-top: 20px;
+    /* 추가적인 스타일 속성을 여기에 추가하세요 */
+  }
+
+  /* li 요소에 대한 스타일 */
+  #evalu2 {
+    list-style: none;
+    /* 추가적인 스타일 속성을 여기에 추가하세요 */
+  }
+
+  /* a 요소에 대한 스타일 */
+  #evaluateLink {
+    text-decoration: none;
+    color: #333;
+    /* 추가적인 스타일 속성을 여기에 추가하세요 */
+  }
+
+
+
+
+
+
 .wrapper {
 	display: grid;
 	grid-template-columns: auto repeat(12, 1fr);
@@ -215,6 +251,8 @@ System.out.println(user);
 </nav>
 
 <body class="is-preload">
+
+
 	<%
 	List<Project> partinList = (List<Project>) request.getAttribute("partinList");
 	%>
@@ -224,7 +262,7 @@ System.out.println(user);
 
 		<!-- Header -->
 		<header id="header" style="padding-top: 6em;">
-			<h1 style="margin-top: 40px;font-weight: 800">MOAYONG</h1>
+			<h1 style="margin-top: 40px; font-weight: 800">MOAYONG</h1>
 		</header>
 
 
@@ -247,7 +285,22 @@ System.out.println(user);
 
 			<!-- Content -->
 			<section id="content" class="main">
-
+				<body>
+				
+					<!-- 여기가 수정된 곳 -->
+					<select id="evalu">
+						<%
+						for (Project vo : partinList) {
+						%>
+						<option value="eval.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></option>
+						<%
+						}
+						%>
+					</select>
+					<div id="evalu1">
+						<li id="evalu2"><a href="eval_participant.do" id="evaluateLink">평가하기</a></li>
+					</div>
+					<!-- 여기까지 수정완료 -->
 				<body>
 					<div class="wrapper">
 						<button id="addPersonButton">인원추가</button>
@@ -290,7 +343,7 @@ System.out.println(user);
 								<ul class="gantt__row-bars">
 									<li style="grid-column: 3/7; background-color: #ff6252;">작업1차</li>
 									<li style="grid-column: 9/12; background-color: #54c6f9;">마감
-										및 평가진헹</li>
+										및 평가진행</li>
 								</ul>
 							</div>
 							<div class="gantt__row gantt__row--empty">
@@ -314,80 +367,75 @@ System.out.println(user);
 					</div>
 				</body>
 		</div>
+</body>
+</div>
 
+</footer>
+<!-- Footer -->
+<footer id="footer">
+	<section>
+		<h2>Aliquam sed mauris</h2>
+		<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
+			consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus
+			mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat
+			egestas velit, vitae tincidunt odio.</p>
+		<ul class="actions">
+			<li><a href="#" class="button">Learn More</a></li>
+		</ul>
+	</section>
+	<section>
+		<h2>Etiam feugiat</h2>
+		<dl class="alt">
+			<dt>Address</dt>
+			<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+			<dt>Phone</dt>
+			<dd>(000) 000-0000 x 0000</dd>
+			<dt>Email</dt>
+			<dd>
+				<a href="#">information@untitled.tld</a>
+			</dd>
+		</dl>
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-twitter alt"><span
+					class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f alt"><span
+					class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram alt"><span
+					class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon brands fa-github alt"><span
+					class="label">GitHub</span></a></li>
+			<li><a href="#" class="icon brands fa-dribbble alt"><span
+					class="label">Dribbble</span></a></li>
+		</ul>
+	</section>
+	<p class="copyright">
+		&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+	</p>
+</footer>
 
+</div>
 
-
-
-			</body>
-	</div>
-
-	</footer>
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Aliquam sed mauris</h2>
-				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
-					consequat magna adipiscing tempus etiam dolore veroeros. eget
-					dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
-					erat egestas velit, vitae tincidunt odio.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">Learn More</a></li>
-				</ul>
-			</section>
-			<section>
-				<h2>Etiam feugiat</h2>
-				<dl class="alt">
-					<dt>Address</dt>
-					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-					<dt>Phone</dt>
-					<dd>(000) 000-0000 x 0000</dd>
-					<dt>Email</dt>
-					<dd>
-						<a href="#">information@untitled.tld</a>
-					</dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter alt"><span
-							class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-facebook-f alt"><span
-							class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram alt"><span
-							class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github alt"><span
-							class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon brands fa-dribbble alt"><span
-							class="label">Dribbble</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">
-				&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
-			</p>
-		</footer>
-
-	</div>
-
-	<!--  
+<!--  
 		top_btn
 		바로는 안보이고 아래로 어느정도 스크롤을 내려야 버튼이 표시됌 
 	-->
-	<div>
-		<a href="#header" id="top_btn"><img src="/images/icon_to_top.png"
-			title="위로 가기"></a>
-	</div>
+<div>
+	<a href="#header" id="top_btn"><img src="/images/icon_to_top.png"
+		title="위로 가기"></a>
+</div>
 
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 
-	<script>
+<script>
 											let seq = 0;
 
 											document.addEventListener('DOMContentLoaded', function () {
@@ -522,7 +570,7 @@ System.out.println(user);
 
 
 										</script>
-	<script>
+<script>
 	
 document.getElementById("evaluateLink").addEventListener("click", function(event) {
                                event.preventDefault(); // 기존 링크 동작 취소

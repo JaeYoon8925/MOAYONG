@@ -104,7 +104,7 @@
 										<% List<Project> ingList = (List<Project>)request.getAttribute("ingList");%>
 										<%for(Project vo : ingList){ %>
 										<!-- 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔 -->
-										<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name() %></a></li>
+										<li ><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name() %></a></li>
 										<button onclick='location.href="joinList.do?prj_seq=<%=vo.getPrj_seq() %>"'>참가신청현황보기</button>
 										<%} %>
 										
