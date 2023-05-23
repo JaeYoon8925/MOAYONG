@@ -222,349 +222,98 @@ System.out.println(user);
 	<!-- Wrapper -->
 	<div id="wrapper">
 
-		<body>
-			<div class="wrapper">
-				<button id="addPersonButton">인원추가</button>
-				<div class="header">
-					<h2>레이드</h2>
-				</div>
-				<div class="gantt">
-					<div class="gantt__row gantt__row--months">
-						<div class="gantt__row-first"></div>
-						<div class="span_wrap">
-							<span>Jan</span><span>Feb</span><span>Mar</span> <span>Apr</span><span>May</span><span>Jun</span>
-							<span>Jul</span><span>Aug</span><span>Sep</span> <span>Oct</span><span>Nov</span><span>Dec</span>
+		<!-- Header -->
+		<header id="header" style="padding-top: 6em;">
+			<h1 style="margin-top: 40px;font-weight: 800">MOAYONG</h1>
+		</header>
+
+
+		<!-- 이동하지 않는 서브 네비  -->
+		<nav id="nav">
+			<ul>
+				<!-- 각자 페이지로 이동하는 기능  -->
+				<li><a href="간트차트로" class="active">간트차트</a></li>
+				<li><a href="세부임무로">세부임무</a></li>
+				<li><a href="산출물로">산출물</a></li>
+				<li style="float: right;"><a href="셋업"><img
+						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnxA7tm7xkKByRkkmlzNfZWvgfytkw-OYN_A&usqp=CAU"
+						width=40px; height=40px></a></li>
+			</ul>
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Content -->
+			<section id="content" class="main">
+
+				<body>
+					<div class="wrapper">
+						<button id="addPersonButton">인원추가</button>
+						<div class="header">
+							<h2>진행상황</h2>
 						</div>
+						<div class="gantt">
+							<div class="gantt__row gantt__row--months">
+								<div class="gantt__row-first"></div>
+								<div class="span_wrap">
+									<span>Jan</span><span>Feb</span><span>Mar</span> <span>Apr</span><span>May</span><span>Jun</span>
+									<span>Jul</span><span>Aug</span><span>Sep</span> <span>Oct</span><span>Nov</span><span>Dec</span>
+								</div>
 
-					</div>
-					<div class="gantt__row gantt__row--lines" data-month="5">
-						<span></span><span></span><span></span> <span></span><span></span><span></span>
-						<span></span><span class="marker"></span><span></span> <span></span><span></span><span></span>
-					</div>
-					<div class="gantt__row">
-						<div class="gantt__row-first">가</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 2/7; background-color: #2ecaac;">아주아주
-								긴 내용</li>
-						</ul>
-					</div>
-					<div class="gantt__row gantt__row--empty">
-						<div class="gantt__row-first">나</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 2/6; background-color: #2ecaac;">긴
-								내용</li>
-						</ul>
-					</div>
-					<div class="gantt__row">
-						<div class="gantt__row-first">다</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 3/7; background-color: #2ecaac;">내용</li>
-						</ul>
-					</div>
-					<div class="gantt__row gantt__row--empty">
-						<div class="gantt__row-first">라</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 4/8; background-color: #2ecaac;">내용</li>
-						</ul>
-					</div>
-					<div class="gantt__row gantt__row--empty">
-						<div class="gantt__row-first">마</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 5/9; background-color: #2ecaac;">내용</li>
-						</ul>
-					</div>
-					<div class="gantt__row">
-						<div class="gantt__row-first">바</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 6/10; background-color: #2ecaac;">내용내용</li>
-						</ul>
-					</div>
-					<div class="gantt__row">
-						<div class="gantt__row-first">사</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 7/11; background-color: #54c6f9;">대충
-								긴내용</li>
-						</ul>
-					</div>
-
-					<div class="gantt__row">
-						<div class="gantt__row-first">아</div>
-						<ul class="gantt__row-bars">
-							<li style="grid-column: 8/12; background-color: #ff6252;">소재고갈</li>
-						</ul>
-					</div>
-							<body>
-  <div class="wrapper">
-    <button id="addPersonButton">인원추가</button>
-    <div class="header">
-      <h2>진행상황</h2>
-    </div>
-    <div class="gantt">
-      <div class="gantt__row gantt__row--months">
-        <div class="gantt__row-first"></div>
-      <div class="span_wrap">
-         <span>Jan</span><span>Feb</span><span>Mar</span>
-         <span>Apr</span><span>May</span><span>Jun</span>
-         <span>Jul</span><span>Aug</span><span>Sep</span>
-         <span>Oct</span><span>Nov</span><span>Dec</span>
-      </div>
-        
-      </div>
-      <div class="gantt__row gantt__row--lines" data-month="5">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span class="marker"></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="gantt__row">
-        <div class="gantt__row-first">
-          a
-        </div>
-        <ul class="gantt__row-bars">
-          <li style="grid-column: 1/3; background-color: #ff6252;">기획서 확인 및 계획 수립</li>
-          <li style="grid-column: 9/12; background-color: #2ecaac;">재윤팀 서포트</li>
-        </ul>
-      </div>
-      <div class="gantt__row gantt__row--empty">
-        <div class="gantt__row-first">
-          b
-        </div>
-        <ul class="gantt__row-bars">
-         <li style="grid-column: 2/6; background-color: #2ecaac;">팀 구성 및 초기 작업</li>
-      <li style="grid-column: 8/11; background-color: #54c6f9;">작엄 마무리 및 테스트</li>
-      </ul>
-      </div>
-      <div class="gantt__row">
-        <div class="gantt__row-first">
-          c
-        </div>
-        <ul class="gantt__row-bars">
-          <li style="grid-column: 3/7; background-color: #ff6252;">작업1차</li>
-          <li style="grid-column: 9/12; background-color: #54c6f9;">마감 및 평가진헹</li>
-        </ul>
-      </div>
-      <div class="gantt__row gantt__row--empty">
-        <div class="gantt__row-first">
-          d
-        </div>
-        <ul class="gantt__row-bars">
-         <li style="grid-column: 5/9; background-color: #ff6252;">작업 2차</li>
-      <li style="grid-column: 1/2; background-color: #2ecaac;">작업환경 준비</li>
-      <li style="grid-column: 10/12; background-color: #2ecaac;">클로징</li>
-      </ul>
-      </div>
-      <div class="gantt__row gantt__row--empty">
-        <div class="gantt__row-first">
-          e
-        </div>
-        <ul class="gantt__row-bars">
-         <li style="grid-column: 1/12; background-color: #ff6252;">지시감독</li>
-      </ul>
-      </div>
-     
-    </div>
-  </div>
-					<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing
-								tempus etiam
-								dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
-								erat
-								egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter alt"><span
-											class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f alt"><span
-											class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram alt"><span
-											class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a>
-								</li>
-								<li><a href="#" class="icon brands fa-dribbble alt"><span
-											class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
-				</div>
-			</div>
-	</div>
-
-	<!-- Footer -->
-	<footer id="footer">
-		<section>
-			<h2>Aliquam sed mauris</h2>
-			<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
-				consequat magna adipiscing tempus etiam dolore veroeros. eget
-				dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
-				erat egestas velit, vitae tincidunt odio.</p>
-			<ul class="actions">
-				<li><a href="#" class="button">Learn More</a></li>
-			</ul>
-		</section>
-		<section>
-			<h2>Etiam feugiat</h2>
-			<dl class="alt">
-				<dt>Address</dt>
-				<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-				<dt>Phone</dt>
-				<dd>(000) 000-0000 x 0000</dd>
-				<dt>Email</dt>
-				<dd>
-					<a href="#">information@untitled.tld</a>
-				</dd>
-			</dl>
-			<ul class="icons">
-				<li><a href="#" class="icon brands fa-twitter alt"><span
-						class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f alt"><span
-						class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram alt"><span
-						class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon brands fa-github alt"><span
-						class="label">GitHub</span></a></li>
-				<li><a href="#" class="icon brands fa-dribbble alt"><span
-						class="label">Dribbble</span></a></li>
-			</ul>
-		</section>
-		<p class="copyright">
-			&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
-		</p>
-	</footer>
-
-	</div>
-
-	<!--  
-		top_btn
-		바로는 안보이고 아래로 어느정도 스크롤을 내려야 버튼이 표시됌 
-	-->
-	<div>
-		<a href="#header" id="top_btn"><img src="/images/icon_to_top.png"
-			title="위로 가기"></a>
-	</div>
-
-
-
-	<!-- Header -->
-	<header id="header" style="padding-top: 6em;">
-		<h1 style="margin-top: 40px;">MoaYong</h1>
-		<p>프로젝트 게시판이에용</p>
-	</header>
-
-
-	<!-- 이동하지 않는 서브 네비  -->
-	<nav id="nav">
-		<ul>
-			<!-- 각자 페이지로 이동하는 기능  -->
-			<li><a href="간트차트로" class="active">간트차트</a></li>
-			<li><a href="세부임무로">세부임무</a></li>
-			<li><a href="산출물로">산출물</a></li>
-			<li style="float: right;"><a href="셋업"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnxA7tm7xkKByRkkmlzNfZWvgfytkw-OYN_A&usqp=CAU" width=40px; height=40px ></a></li>
-		</ul>
-
-	</nav>
-
-	
-
-
-	<!-- Main -->
-	<div id="main">
-
-		<!-- Content -->
-		<section id="content" class="main">
-
-			<body>
-				<div class="wrapper">
-					<button id="addPersonButton">인원추가</button>
-					<div class="header">
-						<h2>레이드</h2>
-					</div>
-					<div class="gantt">
-						<div class="gantt__row gantt__row--months">
-							<div class="gantt__row-first"></div>
-							<div class="span_wrap">
-								<span>Jan</span><span>Feb</span><span>Mar</span> <span>Apr</span><span>May</span><span>Jun</span>
-								<span>Jul</span><span>Aug</span><span>Sep</span> <span>Oct</span><span>Nov</span><span>Dec</span>
+							</div>
+							<div class="gantt__row gantt__row--lines" data-month="5">
+								<span></span><span></span><span></span> <span></span><span></span><span></span>
+								<span></span><span class="marker"></span><span></span> <span></span><span></span><span></span>
+							</div>
+							<div class="gantt__row">
+								<div class="gantt__row-first">a</div>
+								<ul class="gantt__row-bars">
+									<li style="grid-column: 1/3; background-color: #ff6252;">기획서
+										확인 및 계획 수립</li>
+									<li style="grid-column: 9/12; background-color: #2ecaac;">재윤팀
+										서포트</li>
+								</ul>
+							</div>
+							<div class="gantt__row gantt__row--empty">
+								<div class="gantt__row-first">b</div>
+								<ul class="gantt__row-bars">
+									<li style="grid-column: 2/6; background-color: #2ecaac;">팀
+										구성 및 초기 작업</li>
+									<li style="grid-column: 8/11; background-color: #54c6f9;">작엄
+										마무리 및 테스트</li>
+								</ul>
+							</div>
+							<div class="gantt__row">
+								<div class="gantt__row-first">c</div>
+								<ul class="gantt__row-bars">
+									<li style="grid-column: 3/7; background-color: #ff6252;">작업1차</li>
+									<li style="grid-column: 9/12; background-color: #54c6f9;">마감
+										및 평가진헹</li>
+								</ul>
+							</div>
+							<div class="gantt__row gantt__row--empty">
+								<div class="gantt__row-first">d</div>
+								<ul class="gantt__row-bars">
+									<li style="grid-column: 5/9; background-color: #ff6252;">작업
+										2차</li>
+									<li style="grid-column: 1/2; background-color: #2ecaac;">작업환경
+										준비</li>
+									<li style="grid-column: 10/12; background-color: #2ecaac;">클로징</li>
+								</ul>
+							</div>
+							<div class="gantt__row gantt__row--empty">
+								<div class="gantt__row-first">e</div>
+								<ul class="gantt__row-bars">
+									<li style="grid-column: 1/12; background-color: #ff6252;">지시감독</li>
+								</ul>
 							</div>
 
 						</div>
-						<div class="gantt__row gantt__row--lines" data-month="5">
-							<span></span><span></span><span></span> <span></span><span></span><span></span>
-							<span></span><span class="marker"></span><span></span> <span></span><span></span><span></span>
-						</div>
-						<div class="gantt__row">
-							<div class="gantt__row-first">가</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 2/7; background-color: #2ecaac;">아주아주
-									긴 내용</li>
-							</ul>
-						</div>
-						<div class="gantt__row gantt__row--empty">
-							<div class="gantt__row-first">나</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 2/6; background-color: #2ecaac;">긴
-									내용</li>
-							</ul>
-						</div>
-						<div class="gantt__row">
-							<div class="gantt__row-first">다</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 3/7; background-color: #2ecaac;">내용</li>
-							</ul>
-						</div>
-						<div class="gantt__row gantt__row--empty">
-							<div class="gantt__row-first">라</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 4/8; background-color: #2ecaac;">내용</li>
-							</ul>
-						</div>
-						<div class="gantt__row gantt__row--empty">
-							<div class="gantt__row-first">마</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 5/9; background-color: #2ecaac;">내용</li>
-							</ul>
-						</div>
-						<div class="gantt__row">
-							<div class="gantt__row-first">바</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 6/10; background-color: #2ecaac;">내용내용
-								</li>
-							</ul>
-						</div>
-						<div class="gantt__row">
-							<div class="gantt__row-first">사</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 7/11; background-color: #54c6f9;">대충
-									긴내용</li>
-							</ul>
-						</div>
-
-						<div class="gantt__row">
-							<div class="gantt__row-first">아</div>
-							<ul class="gantt__row-bars">
-								<li style="grid-column: 8/12; background-color: #ff6252;">소재고갈
-								</li>
-							</ul>
-						</div>
 					</div>
-				</div>
+				</body>
+		</div>
 
 
 
@@ -614,6 +363,47 @@ System.out.println(user);
 			&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
 		</p>
 	</footer>
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Aliquam sed mauris</h2>
+				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat
+					consequat magna adipiscing tempus etiam dolore veroeros. eget
+					dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula
+					erat egestas velit, vitae tincidunt odio.</p>
+				<ul class="actions">
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Etiam feugiat</h2>
+				<dl class="alt">
+					<dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd>
+					<dt>Email</dt>
+					<dd>
+						<a href="#">information@untitled.tld</a>
+					</dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter alt"><span
+							class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f alt"><span
+							class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram alt"><span
+							class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github alt"><span
+							class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon brands fa-dribbble alt"><span
+							class="label">Dribbble</span></a></li>
+				</ul>
+			</section>
+			<p class="copyright">
+				&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+			</p>
+		</footer>
 
 	</div>
 
