@@ -22,7 +22,7 @@
 		update T_PERSONAL_INFO
 		set pw = #{pw},
 		nickname = #{nickname}, 
-		self_intro = #{self_intro}
+		self_intro = #{self_intro, jdbcType=VARCHAR}
 		where t_id = #{t_id}
 	</update>
 

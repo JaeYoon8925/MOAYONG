@@ -35,10 +35,6 @@ public class mypage_SendMessage implements controller {
 		dto.setReceiver_id(RECEIVER_ID);
 		dto.setMsg_content(MSG_CONTENT);
 
-		System.out.println("Message dto에 담긴 내용 : " + dto.getSender_id());
-		System.out.println("Message dto에 담긴 내용 : " + dto.getReceiver_id());
-		System.out.println("Message dto에 담긴 내용 : " + dto.getMsg_content());
-
 		MessageDAO dao = new MessageDAO();
 		int row = dao.send(dto);
 		String nextView = "";

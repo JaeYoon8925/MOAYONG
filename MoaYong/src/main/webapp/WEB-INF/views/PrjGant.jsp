@@ -203,98 +203,76 @@
 
 <<<<<<< HEAD
 							<body>
-								<div class="wrapper">
-									<button id="addPersonButton">인원추가</button>
-									<div class="header">
-										<h2>레이드</h2>
-									</div>
-									<div class="gantt">
-										<div class="gantt__row gantt__row--months">
-											<div class="gantt__row-first"></div>
-											<div class="span_wrap">
-												<span>Jan</span><span>Feb</span><span>Mar</span>
-												<span>Apr</span><span>May</span><span>Jun</span>
-												<span>Jul</span><span>Aug</span><span>Sep</span>
-												<span>Oct</span><span>Nov</span><span>Dec</span>
-											</div>
-
-										</div>
-										<div class="gantt__row gantt__row--lines" data-month="5">
-											<span></span><span></span><span></span>
-											<span></span><span></span><span></span>
-											<span></span><span class="marker"></span><span></span>
-											<span></span><span></span><span></span>
-										</div>
-										<div class="gantt__row">
-											<div class="gantt__row-first">
-												가
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 2/7; background-color: #2ecaac;">아주아주 긴 내용</li>
-											</ul>
-										</div>
-										<div class="gantt__row gantt__row--empty">
-											<div class="gantt__row-first">
-												나
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 2/6; background-color: #2ecaac;">긴 내용</li>
-											</ul>
-										</div>
-										<div class="gantt__row">
-											<div class="gantt__row-first">
-												다
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 3/7; background-color: #2ecaac;">내용</li>
-											</ul>
-										</div>
-										<div class="gantt__row gantt__row--empty">
-											<div class="gantt__row-first">
-												라
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 4/8; background-color: #2ecaac;">내용</li>
-											</ul>
-										</div>
-										<div class="gantt__row gantt__row--empty">
-											<div class="gantt__row-first">
-												마
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 5/9; background-color: #2ecaac;">내용</li>
-											</ul>
-										</div>
-										<div class="gantt__row">
-											<div class="gantt__row-first">
-												바
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 6/10; background-color: #2ecaac;">내용내용</li>
-											</ul>
-										</div>
-										<div class="gantt__row">
-											<div class="gantt__row-first">
-												사
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 7/11; background-color: #54c6f9;">대충 긴내용</li>
-											</ul>
-										</div>
-
-										<div class="gantt__row">
-											<div class="gantt__row-first">
-												아
-											</div>
-											<ul class="gantt__row-bars">
-												<li style="grid-column: 8/12; background-color: #ff6252;">소재고갈</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-					</div>
-
+  <div class="wrapper">
+    <button id="addPersonButton">인원추가</button>
+    <div class="header">
+      <h2>진행상황</h2>
+    </div>
+    <div class="gantt">
+      <div class="gantt__row gantt__row--months">
+        <div class="gantt__row-first"></div>
+      <div class="span_wrap">
+         <span>Jan</span><span>Feb</span><span>Mar</span>
+         <span>Apr</span><span>May</span><span>Jun</span>
+         <span>Jul</span><span>Aug</span><span>Sep</span>
+         <span>Oct</span><span>Nov</span><span>Dec</span>
+      </div>
+        
+      </div>
+      <div class="gantt__row gantt__row--lines" data-month="5">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span class="marker"></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="gantt__row">
+        <div class="gantt__row-first">
+          a
+        </div>
+        <ul class="gantt__row-bars">
+          <li style="grid-column: 1/3; background-color: #ff6252;">기획서 확인 및 계획 수립</li>
+          <li style="grid-column: 9/12; background-color: #2ecaac;">재윤팀 서포트</li>
+        </ul>
+      </div>
+      <div class="gantt__row gantt__row--empty">
+        <div class="gantt__row-first">
+          b
+        </div>
+        <ul class="gantt__row-bars">
+         <li style="grid-column: 2/6; background-color: #2ecaac;">팀 구성 및 초기 작업</li>
+      <li style="grid-column: 8/11; background-color: #54c6f9;">작엄 마무리 및 테스트</li>
+      </ul>
+      </div>
+      <div class="gantt__row">
+        <div class="gantt__row-first">
+          c
+        </div>
+        <ul class="gantt__row-bars">
+          <li style="grid-column: 3/7; background-color: #ff6252;">작업1차</li>
+          <li style="grid-column: 9/12; background-color: #54c6f9;">마감 및 평가진헹</li>
+        </ul>
+      </div>
+      <div class="gantt__row gantt__row--empty">
+        <div class="gantt__row-first">
+          d
+        </div>
+        <ul class="gantt__row-bars">
+         <li style="grid-column: 5/9; background-color: #ff6252;">작업 2차</li>
+      <li style="grid-column: 1/2; background-color: #2ecaac;">작업환경 준비</li>
+      <li style="grid-column: 10/12; background-color: #2ecaac;">클로징</li>
+      </ul>
+      </div>
+      <div class="gantt__row gantt__row--empty">
+        <div class="gantt__row-first">
+          e
+        </div>
+        <ul class="gantt__row-bars">
+         <li style="grid-column: 1/12; background-color: #ff6252;">지시감독</li>
+      </ul>
+      </div>
+     
+    </div>
+  </div>
 					<!-- Footer -->
 					<footer id="footer">
 						<section>

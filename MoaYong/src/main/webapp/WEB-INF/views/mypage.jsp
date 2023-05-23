@@ -1,7 +1,7 @@
 <%@page import="com.smhrd.entity.Project"%>
 <%@page import="java.util.List"%>
 <%@ page import="com.smhrd.entity.User"%>
-<!-- page import="main.java.entity.Board" -->
+<%@ page import="com.smhrd.entity.Message"%>
 <!-- import="main.java.entity.캘린더 데이터 엔터티"%> -->
 <!-- import="main.java.entity.쪽지테이블 엔터티"%> -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -158,8 +158,7 @@ System.out.println(user);
 												<div class="btn-group btn-group-sm">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br>
-												칭호2 이름
+												<br> 칭호2 이름
 												<div class="btn-group btn-group-sm">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
@@ -196,7 +195,7 @@ System.out.println(user);
 					<li><span stlye="width:196px height:196px "></span>
 						<h3>참가신청 한 프로젝트</h3>
 
-						<ul class="alt" style="height: 300px; overflow: auto" >
+						<ul class="alt" style="height: 300px; overflow: auto">
 							<%
 							List<Project> partinList = (List<Project>) request.getAttribute("partinList");
 							%>
@@ -279,11 +278,8 @@ System.out.println(user);
 				<header class="major">
 					<h2>자기소개란</h2>
 					<p>
-					상세 정보<br>
-					상세 경력<br>
-					대충 엄청 대단한 경력1<br>
-					대충 엄청난 경력2<br>
-					대충 멋진 경력3<br>
+						상세 정보<br> 상세 경력<br> 대충 엄청 대단한 경력1<br> 대충 엄청난 경력2<br>
+						대충 멋진 경력3<br>
 					</p>
 				</header>
 				<footer class="major">
@@ -303,63 +299,28 @@ System.out.println(user);
 					<h2>알람 / 쪽지</h2>
 
 					<ul style="height: 500px; overflow: auto">
-						<!-- c:if문으로 출력할거라 코드가 압축될거에용-->
 						<table>
 							<thead>
 								<tr>
 									<th>보낸 사람</th>
-									<th>제목</th>
+									<th>내용</th>
 									<th>보낸 일자(년월일까지만?)</th>
 								</tr>
 							</thead>
+								<%
+								List<Message> MessageList = (List<Message>) request.getAttribute("MessageList");
+								%>
+								<%
+								for (Message vo : MessageList) {
+								%>
 							<tbody>
-								<tr>
-									<td>Item One</td>
-									<td><a href="viewmessage.html">Ante turpis integer
-											aliquet porttitor.</a></td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>Item Two</td>
-									<td>Vis ac commodo adipiscing arcu aliquet.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>Item Three</td>
-									<td>Morbi faucibus arcu accumsan lorem.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>Item Four</td>
-									<td>Vitae integer tempus condimentum.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>Item Five</td>
-									<td>Ante turpis integer aliquet porttitor.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>Item Two</td>
-									<td>Vis ac commodo adipiscing arcu aliquet.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>Item Three</td>
-									<td>Morbi faucibus arcu accumsan lorem.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>Item Four</td>
-									<td>Vitae integer tempus condimentum.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>Item Five</td>
-									<td>Ante turpis integer aliquet porttitor.</td>
-									<td>29.99</td>
-								</tr>
+								<td><%=vo.getSender_id()%></td>
+								<td><a href="ViewMessage.do?msg_seq=<%=vo.getMsg_seq()%>"><%=vo.getMsg_content()%></a></td>
+								<td><%=vo.getMsg_dt()%></td>
 							</tbody>
+								<%
+								}
+								%>
 							<tfoot>
 								<tr>
 									<td colspan="2"></td>
