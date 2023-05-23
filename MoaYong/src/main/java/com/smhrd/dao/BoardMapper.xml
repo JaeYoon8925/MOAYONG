@@ -4,7 +4,7 @@
 
 	<insert id="write" parameterType="com.smhrd.entity.Board">
 		insert into T_project
-		values(prj_seq.nextval,#{t_id},#{prj_category},#{prj_name},#{post},'모집중',#{deadline_dt},#{start_dt},#{end_dt},#{recruit_count},null,null,sysdate,null)
+		values(prj_seq.nextval,#{t_id},#{prj_category},#{prj_name},#{post},'모집중',#{deadline_dt},#{start_dt},#{end_dt},#{recruit_count},0,null,sysdate,null)
 	</insert>
 
 	<select id="list" resultType="com.smhrd.entity.Board">

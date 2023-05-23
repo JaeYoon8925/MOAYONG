@@ -48,12 +48,14 @@
 
 
 		<script>
-		function joinOk(p_seq, prj_seq, t_id) {
+		function joinOk(p_seq, prj_seq, t_id,join_ok) {
 			var tq = new XMLHttpRequest();
 			var url = 'joinCount.do';
 			
 			var data = 'prj_seq=' + encodeURIComponent(prj_seq) +
-			  		   '&t_id=' + encodeURIComponent(t_id);
+			  		   '&t_id=' + encodeURIComponent(t_id) +
+			  		   '$join_ok' + + encodeURIComponent(join_ok);
+			console.log(data);
 			tq.open('POST', url, true);
 			tq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 			tq.onreadystatechange = function() {
