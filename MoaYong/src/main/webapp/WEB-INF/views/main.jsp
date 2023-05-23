@@ -134,8 +134,8 @@ System.out.println(user);
 										<td>${searchPost.prj_seq }</td>
 										<td>${searchPost.prj_category }</td>
 										<td>${searchPost.status }</td>
-										<td><a
-											href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
+										<td>
+										<a href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
 										</td>
 										<td>${searchPost.t_id}</td>
 										<td>${searchPost.post_dt}</td>
@@ -305,7 +305,8 @@ System.out.println(user);
 	<script>
 		function logInputValue() {
 			var inputValue = document.getElementsByName("prj_name"[0].value);
-			console.log(inputValue);
+			console.log(
+					.inputValue);
 		};
 		const form = document.querySelector('form');
 		const rgisBtn = document.getElementById('rgis');
