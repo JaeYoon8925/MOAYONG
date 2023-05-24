@@ -128,6 +128,7 @@
          </tr>
       </thead>
       <tbody>
+      
          <%if (joinList != null) {%>
             <% for (JoinParty vo: joinList) {%>
          <tr>
