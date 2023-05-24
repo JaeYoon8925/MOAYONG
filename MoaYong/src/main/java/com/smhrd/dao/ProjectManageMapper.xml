@@ -6,15 +6,19 @@
 	<!-- 참가 신청한 프로젝트 -->
 	<select id="partin" parameterType="String"
 		resultType="com.smhrd.entity.Project">
-		select * 
-		from t_project 
-		where status = '모집중' 
-		and 
-		prj_seq = (select prj_seq 
-					 from t_participant 
-					where prj_seq=50 
-					  and t_id= #{t_id}
-					  and join_ok='참가신청' )
+		SELECT *
+FROM t_project
+WHERE status = '모집중' and 
+prj_seq IN (
+    SELECT prj_seq
+    FROM t_participant
+    WHERE t_id = 'a'
+)
+AND prj_seq IN (
+    SELECT prj_seq
+    FROM t_participant
+    WHERE join_ok = '참가신청'
+)
 	</select>
 
 
