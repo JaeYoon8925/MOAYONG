@@ -33,8 +33,6 @@ public class mainpage_GoMypageCon implements controller {
 			List<Project> partinList = dao.partin(t_id);
 			request.setAttribute("partinList", partinList);
 			
-			
-			
 			/*
 			 * List<Project> mytest = (List<Project>)request.getAttribute("partinList");
 			 * System.out.println(mytest.size() + "---------------------------");
@@ -43,19 +41,20 @@ public class mainpage_GoMypageCon implements controller {
 			List<Project> ingList = dao.ing(t_id);
 			request.setAttribute("ingList", ingList);
 
-			List<Project> mytest = (List<Project>) request.getAttribute("ingList");
-			System.out.println("ingList 테스트");
-			System.out.println(mytest.size() + "---------------------------");
+//			List<Project> mytest = (List<Project>) request.getAttribute("ingList");
+//			System.out.println("ingList 테스트");
+//			System.out.println(mytest.size() + "---------------------------");
 
 			List<Project> endList = dao.end(t_id);
 			request.setAttribute("endList", endList);
 
-			List<Project> mytest2 = (List<Project>) request.getAttribute("endList");
-			System.out.println("endList 테스트");
-			System.out.println(mytest2.size() + "=====================");
-			
 			List<Project> recruiting = dao.recruiting(t_id);
-			request.setAttribute("recruitingList", partinList);
+			request.setAttribute("recruitingList", recruiting);
+			
+//			List<Project> mytest2 = (List<Project>) request.getAttribute("endList");
+//			System.out.println("endList 테스트");
+//			System.out.println(mytest2.size() + "=====================");
+			
 			
 
 			System.out.println("Cex");

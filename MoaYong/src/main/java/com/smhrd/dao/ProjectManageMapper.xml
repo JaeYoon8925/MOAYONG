@@ -2,22 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="main/java/dao/ProjectDAO">
 
+
 	<!-- 참가 신청한 프로젝트 -->
 	<select id="partin" parameterType="String"
 		resultType="com.smhrd.entity.Project">
-		SELECT *
-		FROM T_project
-		WHERE T_ID = #{t_id}
-		AND status =
-		'모집중'
-		AND EXISTS (
-		SELECT *
-		FROM t_participant
-		WHERE t_id = #{t_id}
-		AND
-		JOIN_OK = '참가신청'
-		AND T_project.T_ID = t_participant.T_ID
-		)
+		select * 
+		from t_project 
+		where status = '모집중' 
+		and 
+		prj_seq = (select prj_seq 
+					 from t_participant 
+					where prj_seq=50 
+					  and t_id= #{t_id}
+					  and join_ok='참가신청' )
 	</select>
 
 
@@ -31,10 +28,10 @@
 	<!-- '내가' 모집 중인 프로젝트 -->
 	<select id="recruiting" parameterType="String"
 		resultType="com.smhrd.entity.Project">
-		select * 
-		from t_project 
-		where status = '모집중' 
-		  and t_id = #{t_id}
+		select *
+		from t_project
+		where status = '모집중'
+		and t_id = #{t_id}
 	</select>
 
 
