@@ -32,6 +32,9 @@ public class mainpage_GoMypageCon implements controller {
 
 			List<Project> partinList = dao.partin(t_id);
 			request.setAttribute("partinList", partinList);
+			
+			
+			
 			/*
 			 * List<Project> mytest = (List<Project>)request.getAttribute("partinList");
 			 * System.out.println(mytest.size() + "---------------------------");
@@ -50,6 +53,10 @@ public class mainpage_GoMypageCon implements controller {
 			List<Project> mytest2 = (List<Project>) request.getAttribute("endList");
 			System.out.println("endList 테스트");
 			System.out.println(mytest2.size() + "=====================");
+			
+			List<Project> recruiting = dao.recruiting(t_id);
+			request.setAttribute("recruitingList", partinList);
+			
 
 			System.out.println("Cex");
 

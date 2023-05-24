@@ -69,6 +69,7 @@ public class MainController extends HttpServlet {
 		mappings.put("/searchInfo.do", new firstpage_SearchInfoCon()); // 비밀번호? 아이디 찾기 ?
 		mappings.put("/noticePw.do", new firstpage_NoticePwCon());
 		mappings.put("/goMain.do", new firstpage_GoMainCon()); // 로그인 누르면 메인으로 넘어감
+		
 		// mainpage_게시글 부분
 		mappings.put("/goWritePost.do", new mainpage_GoWritePostCon()); // 글쓰기 클릭
 		mappings.put("/writePost.do", new mainpage_WritePostCon()); // 글쓰기
@@ -78,10 +79,12 @@ public class MainController extends HttpServlet {
 		mappings.put("/goModifyPost.do", new mainpage_GoModifyPostCon()); // 게시글 수정 rewrite임
 		mappings.put("/savePost.do", new mainpage_SaveModifiedPostCon());
 		mappings.put("/GoListPage.do", new mainpage_GoListPageCon());
+		
 		// mainpage_기타
 		mappings.put("/goMypage.do", new mainpage_GoMypageCon()); // 마이페이지가기
 		mappings.put("/logout.do", new mainpage_LogoutCon()); // 로그아웃
 		mappings.put("/goPrj.do", new ProjectManageCon());
+		
 		// 마이페이지 내부 기능
 		mappings.put("/goProfileUpdate.do", new mypage_goProfileUpdateCon());
 		mappings.put("/ProfileUpdate.do", new mypage_ProfileUpdate());

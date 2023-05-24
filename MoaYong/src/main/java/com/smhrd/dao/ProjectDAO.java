@@ -33,6 +33,13 @@ public class ProjectDAO {
 			session.close();
 			return list;
 		}
+		
+		public List<Project> recruiting(String userid){
+			SqlSession session =factory.openSession(true);
+			List<Project> list = session.selectList("recruiting", userid);
+			session.close();
+			return list;
+		}
 
 
 

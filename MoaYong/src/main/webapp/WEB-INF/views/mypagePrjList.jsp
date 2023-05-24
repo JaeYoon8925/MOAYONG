@@ -130,16 +130,17 @@ System.out.println(user);
 						<h3>모집 중인 프로젝트</h3>
 						<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
 							<%
-							//	List<Project> 모집중List = (List<Project>) request.getAttribute("모집중List");
+							List<Project> recruitingList = (List<Project>) request.getAttribute("recruitingList");
 							%>
 							<%
-							for (Project vo : ingList) {
+							for (Project vo : recruitingList ) {
 							%>
 							<li style="margin-bottom: 10px;"><a
 								href="GoPrjDetails.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a>
 							</li>
 							<button
 								onclick='location.href="joinList.do?prj_seq=<%=vo.getPrj_seq()%>"'>참가신청현황보기</button>
+
 							<%
 							}
 							%>

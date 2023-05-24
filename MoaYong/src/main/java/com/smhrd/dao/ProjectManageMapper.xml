@@ -5,19 +5,44 @@
 	<!-- 참가 신청한 프로젝트 -->
 	<select id="partin" parameterType="String"
 		resultType="com.smhrd.entity.Project">
-		select * from T_project where T_ID=#{t_id} and (status = '모집중' or status =
-		'모집완료')
-
+		SELECT *
+		FROM T_project
+		WHERE T_ID = #{t_id}
+		AND status =
+		'모집중'
+		AND EXISTS (
+		SELECT *
+		FROM t_participant
+		WHERE t_id = #{t_id}
+		AND
+		JOIN_OK = '참가신청'
+		AND T_project.T_ID = t_participant.T_ID
+		)
 	</select>
+
+
 	<!-- 진행 중인 프로젝트 -->
 	<select id="ing" parameterType="String"
 		resultType="com.smhrd.entity.Project">
-		select * from T_project where T_ID=#{t_id} and (status = '진행중')
+		select * from T_project where T_ID=#{t_id} and (status =
+		'진행중')
 	</select>
+
+	<!-- '내가' 모집 중인 프로젝트 -->
+	<select id="recruiting" parameterType="String"
+		resultType="com.smhrd.entity.Project">
+		select * 
+		from t_project 
+		where status = '모집중' 
+		  and t_id = #{t_id}
+	</select>
+
+
 	<!-- 종료 된 프로젝트 -->
 	<select id="end" parameterType="String"
 		resultType="com.smhrd.entity.Project">
-		select * from T_project where T_ID=#{t_id} and (status = '종료')
+		select * from T_project where T_ID=#{t_id} and (status =
+		'종료')
 	</select>
 
 
