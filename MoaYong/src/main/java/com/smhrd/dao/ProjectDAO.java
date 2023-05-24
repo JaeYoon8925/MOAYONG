@@ -41,6 +41,17 @@ public class ProjectDAO {
 			return list;
 		}
 
+		// 레이드 종료
+	public int raidEnd (int prj_seq) {
+		System.out.println("위치1");
+		SqlSession session = factory.openSession(true);
+		System.out.println("위치2");
+		int raidEnd = session.update("raidEnd", prj_seq);
+		System.out.println("위치3");
+		session.close();
+		System.out.println("위치4");
+		return raidEnd;
 
+	}
 
 }

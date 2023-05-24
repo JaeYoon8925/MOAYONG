@@ -51,6 +51,7 @@ import com.smhrd.controller.mypage_goViewMessage;
 import com.smhrd.controller.party_joinPartyCon;
 import com.smhrd.controller.prj_GoPrjDetailsCon;
 import com.smhrd.controller.prj_GoPrjOutputCon;
+import com.smhrd.controller.prj_PrjRaidEndCon;
 import com.smhrd.controller.reply_viewPostContent_afterReplyCon;
 
 @WebServlet("*.do")
@@ -104,7 +105,9 @@ public class MainController extends HttpServlet {
 		// 프로젝트 세부 페이지 내부 기능
 		mappings.put("/GoPrjDetails.do", new prj_GoPrjDetailsCon());
 		mappings.put("/GoPrjOutput.do", new prj_GoPrjOutputCon());
-
+		mappings.put("/PrjRaidEnd.do", new prj_PrjRaidEndCon()); // 레이드 종료
+		
+		
 		// 댓글기능
 		mappings.put("/uploadReply.do", new content_uploadReplyCon());
 		mappings.put("/afterReply.do", new reply_viewPostContent_afterReplyCon());
