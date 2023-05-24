@@ -129,8 +129,8 @@ System.out.println(user);
 										<td>${searchPost.prj_seq }</td>
 										<td>${searchPost.prj_category }</td>
 										<td>${searchPost.status }</td>
-										<td><a
-											href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
+										<td>
+										<a href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
 										</td>
 										<td>${searchPost.t_id}</td>
 										<td>${searchPost.post_dt}</td>
@@ -202,18 +202,18 @@ System.out.println(user);
 					<%
 					if (i == currentPage) {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left;">
+					<form action="GoListPage.do" method="post" style="float: left; width:44px; min-width:unset !important;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist" style=" width:44px">
+						<button type="submit" id="pagelist" style=" width:44px; min-width:unset !important; margin-right: 30px; padding: 0px !important;">
 							<%=i%>
 						</button>
 					</form>
 					<%
 					} else {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left; width:44px">
+					<form action="GoListPage.do" method="post" style="float: left; width:44px; min-width:unset !important;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist" style=" width:44px">
+						<button type="submit" id="pagelist" style=" width:44px; min-width:unset !important; margin-right: 30px; padding: 0px !important">
 							<%=i%>
 						</button>
 					</form>
@@ -227,7 +227,7 @@ System.out.println(user);
 					<%
 					if (endPage < pageCount) {
 					%>
-					<form action="GoListPage.do" methond="post" style="float: left;">
+					<form action="GoListPage.do" methond="post" style="float: left; min-width: none !important;">
 						<a href="GoListPage.do?pageNum=<%=startPage + pageBlock%>">[다음]</a>
 					</form>
 					<%
@@ -300,7 +300,8 @@ System.out.println(user);
 	<script>
 		function logInputValue() {
 			var inputValue = document.getElementsByName("prj_name"[0].value);
-			console.log(inputValue);
+			console.log(
+					.inputValue);
 		};
 		const form = document.querySelector('form');
 		const rgisBtn = document.getElementById('rgis');

@@ -58,7 +58,7 @@ body {
 	/* rgba(0~255, 0~255, 0~255, 0~1)
 		   a : 1에 가까워질수록 색깔이 선명해진다 */
 	background-color: rgb(255, 255, 255, 0.4) !important;
-	height: 550px !important;
+	height: 430px !important;
 	width: 400px !important;
 	padding: 50px !important;
 	border-radius: 50px !important;
@@ -76,7 +76,7 @@ body {
 }
 
 .user-input {
-	width: 200px;
+	width: 250px;
 	height: 30px;
 	border: 0;
 	font-weight: bold;
@@ -86,24 +86,24 @@ body {
 
 #login-button {
 	background-color: rgb(255, 255, 255);
-	width: 300px;
-	height: 55px;
+	width: 283px;
+	height: 45px;
 	text-align: center;
 }
 
 #sign-button {
 	background-color: rgb(255, 255, 255);
 	text-align: center;
-	margin-top:10px;
-	width:80px;
-	height:55px;
+	margin-top: 10px;
+	width: 30px;
+	height: 45px;
 }
 
 #reset-button {
 	background-color: rgb(255, 255, 255);
 	text-align: center;
-	width:80px;
-	height:55px;
+	width: 30px;
+	height: 45px;
 }
 
 #sign-button {
@@ -149,6 +149,10 @@ body {
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
+}
+
+h1 {
+	font-weight: bold;
 }
 </style>
 </head>
