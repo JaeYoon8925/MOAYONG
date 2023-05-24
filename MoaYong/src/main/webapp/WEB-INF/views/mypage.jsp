@@ -53,7 +53,7 @@ System.out.println(user);
 <!-- 맨 위에 있는, 이동하는 네비게이션 -->
 <nav id="nav">
 	<ul>
-		<li><a href="goMain.do" >게시판</a></li>
+		<li><a href="goMain.do">게시판</a></li>
 		<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
 		<li><a href="goMypage.do" class="active">마이페이지</a></li>
 		<%
@@ -183,78 +183,84 @@ System.out.println(user);
 				<header class="major">
 					<h2>Project</h2>
 				</header>
-				<ul class="features" style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; list-style: none; padding: 0;">
-		<li style="margin: 10px; width: 300px;">
-			<h3>참가신청 한 프로젝트</h3>
-			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
-				<%
-				List<Project> partinList = (List<Project>) request.getAttribute("partinList");
-				%>
-				<%
-				for (Project vo : partinList) {
-				%>
-				<li style="margin-bottom: 10px;"><a href="viewPostContent.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a></li>
-				<%
-				}
-				%>
-			</ul>
-		</li>
-		<li style="margin: 10px; width: 300px;">
-			<h3>진행 중인 프로젝트</h3>
-			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+				<ul class="features"
+					style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; list-style: none; padding: 0;">
+					<li style="margin: 10px; width: 300px;">
+						<h3>참가신청 한 프로젝트</h3>
+						<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+							<%
+							List<Project> partinList = (List<Project>) request.getAttribute("partinList");
+							%>
+							<%
+							for (Project vo : partinList) {
+							%>
+							<li style="margin-bottom: 10px;"><a
+								href="viewPostContent.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a></li>
+							<%
+							}
+							%>
+						</ul>
+					</li>
+					<li style="margin: 10px; width: 300px;">
+						<h3>진행 중인 프로젝트</h3>
+						<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+							<%
+							List<Project> ingList = (List<Project>) request.getAttribute("ingList");
+							%>
+							<%
+							for (Project vo : ingList) {
+							%>
+							<li style="margin-bottom: 10px;"><a
+								href="GoPrjDetails.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a>
+							</li>
+							<%
+							}
+							%>
+						</ul>
+					</li>
+					<li style="margin: 10px; width: 300px;">
+						<h3>모집 중인 프로젝트</h3>
+						<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+							<%
+							//	List<Project> 모집중List = (List<Project>) request.getAttribute("모집중List");
+							%>
+							<%
+							for (Project vo : ingList) {
+							%>
+							<li style="margin-bottom: 10px;"><a
+								href="GoPrjDetails.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a>
+							</li>
+							<button
+								onclick='location.href="joinList.do?prj_seq=<%=vo.getPrj_seq()%>"'>참가신청현황보기</button>
+							<%
+							}
+							%>
+						</ul>
+					</li>
 
-
-				<li style="margin-bottom: 10px;">
-					<a href="viewPostContent.do?prj_seq=${vo.prj_seq}"></a>
-					<button onclick='location.href="joinList.do?prj_seq="'>참가신청현황보기</button>
-				</li>
-
-			</ul>
-		</li>
-		<li style="margin: 10px; width: 300px;">
-			<h3>모집 중인 프로젝트</h3>
-			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
-				<%
-				List<Project> ingList = (List<Project>) request.getAttribute("ingList");
-				%>
-				<%
-				for (Project vo : ingList) {
-				%>
-				<li style="margin-bottom: 10px;">
-					<a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a>
-					<button onclick='location.href="joinList.do?prj_seq=<%=vo.getPrj_seq()%>"'>참가신청현황보기</button>
-				</li>
-				<%
-				}
-				%>
-			</ul>
-		</li>
-
-		<li style="margin: 10px; width: 300px;">
-			<h3>완료된 프로젝트</h3>
-			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
-				<%
-				List<Project> endList = (List<Project>) request.getAttribute("endList");
-				%>
-				<%
-				for (Project vo : endList) {
-				%>
-				<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
-				<li style="margin-bottom: 10px;">
-					<a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a>
-					<button onclick='location.href="eval_leader.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀장평가</button>
-					<button onclick='location.href="eval_participant.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀원평가</button>
-				</li>
-				<%
-				}
-				%>
-			</ul>
-		</li>
-	</ul>
-				<footer class="major">
-					<h3>빈 공간이에용</h3>
-				</footer>
-
+					<li style="margin: 10px; width: 300px;">
+						<h3>완료된 프로젝트</h3>
+						<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+							<%
+							List<Project> endList = (List<Project>) request.getAttribute("endList");
+							%>
+							<%
+							for (Project vo : endList) {
+							%>
+							<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
+							<li style="margin-bottom: 10px;"><a
+								href="GoPrjDetails.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a>
+								<button
+									onclick='location.href="eval_leader.do?prj_seq=<%=vo.getPrj_seq()%>"'>팀장평가</button>
+								<button
+									onclick='location.href="eval_participant.do?prj_seq=<%=vo.getPrj_seq()%>"'>팀원평가</button>
+							</li>
+							<%
+							}
+							%>
+						</ul>
+					</li>
+				</ul>
 
 			</section>
 
@@ -314,20 +320,21 @@ System.out.println(user);
 									<th>보낸 일자</th>
 								</tr>
 							</thead>
-								<%
-								List<Message> MessageList = (List<Message>) request.getAttribute("MessageList");
-								%>
-								<%
-								for (Message vo : MessageList) {
-								%>
+							<%
+							List<Message> MessageList = (List<Message>) request.getAttribute("MessageList");
+							%>
+							<%
+							for (Message vo : MessageList) {
+							%>
 							<tbody>
 								<td colspan="2"><%=vo.getSender_id()%></td>
-								<td colspan="7"><a href="ViewMessage.do?msg_seq=<%=vo.getMsg_seq()%>"><%=vo.getMsg_content()%></a></td>
+								<td colspan="7"><a
+									href="ViewMessage.do?msg_seq=<%=vo.getMsg_seq()%>"><%=vo.getMsg_content()%></a></td>
 								<td colspan="3"><%=vo.getMsg_dt()%></td>
 							</tbody>
-								<%
-								}
-								%>
+							<%
+							}
+							%>
 							<tfoot>
 								<tr>
 									<td colspan="2"></td>

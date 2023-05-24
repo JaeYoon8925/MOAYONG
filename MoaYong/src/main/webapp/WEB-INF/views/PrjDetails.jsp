@@ -60,7 +60,6 @@
 			<li><a href="goMain.do">게시판</a></li>
 			<li><a href="GomypagePrjList.do">프로젝트 리스트</a></li>
 			<li><a href="goMypage.do">마이페이지</a></li>
-			<li><a href="GoPrjGant.do" class="active">프로젝트 세부</a></li>
 			<%
 			if (user != null) {
 			%>
