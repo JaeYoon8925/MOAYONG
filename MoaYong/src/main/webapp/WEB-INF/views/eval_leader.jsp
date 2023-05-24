@@ -9,9 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
 <style>
+
+
   /* 테이블 컨테이너 스타일 */
   .table-container {
     display: flex;
@@ -68,16 +68,46 @@
   button:hover {
     background-color: #138496;
   }
+
+  /* Additional style for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 </style>
-		
-
-
-
-
-
-
-
-
+</head>
+<body>
 <div class="table-container"> 
 	<% User user = (User) session.getAttribute("user"); %>
 	<% Project view_leader = (Project) request.getAttribute("view_leader");	%>
@@ -90,9 +120,19 @@
 			</tr>
 		</thead>
 		<tbody>
-
 			<tr>
-				<td><%=view_leader.gett_Id()%></td>
+				<td>
+					<%=view_leader.gett_Id()%>
+					<button class="info_btn">Info</button>
+					<!-- Modal -->
+					<div id="infoModal" class="modal">
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<h3>leader inoformation</h3>
+							<p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
+						</div> 
+					</div>
+				</td>
 				<% if(view_leader.gett_Id()!=null){ %>
 				<td>
 					<button class="eval_btn">평가하기</button>
@@ -113,54 +153,72 @@
 					</form>
 				</td>
 			</tr>
-<%}else{ %>
+			<%}else{ %>
 			<tr>
 				<td>데이터가 없습니다.</td>
 			</tr>
 			<%} %>
-
 		</tbody>
 	</table>
 </div>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.eval_btn').on('click', function() {
-				var form = $(this).next('.eval_form');
-				form.css('display', 'block');
-				form.find('select').focus();
-			});
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.eval_btn').on('click', function() {
+      var form = $(this).next('.eval_form');
+      form.css('display', 'block');
+      form.find('select').focus();
+    });
 
-			$('.eval_form').on('submit', function(e) {
-				e.preventDefault();
-				var form = $(this);
-				var confirmMessage = "평가 완료";
-				if (confirm(confirmMessage)) {
-					var ev_rating = form.find('select[name=ev_rating]').val();
-				      var t_id = form.find('input[name=t_id]').val();
-				      var prj_seq = form.find('input[name=prj_seq]').val()
-				      var leader_id = form.find('input[name=leader_id]').val()
-				      console.log(ev_rating);
-				      console.log(t_id);
-				      console.log(prj_seq);
-				      console.log(leader_id);
-					$.ajax({
-						url : form.attr('action'),
-						method : form.attr('method'),
-						data : form.serialize(),
-						success : function(response) {
-							console.log("전송완료");
-							form.css('display', 'block');
-							form.find('select').focus();
-						},
-						error : function(e) {
-							console.error("띠바");
-						}
-					});
-				}
-				return false;
-			});
-		});
-	</script>
+    $('.eval_form').on('submit', function(e) {
+      e.preventDefault();
+      var form = $(this);
+      var confirmMessage = "평가 완료";
+      if (confirm(confirmMessage)) {
+        var ev_rating = form.find('select[name=ev_rating]').val();
+        var t_id = form.find('input[name=t_id]').val();
+        var prj_seq = form.find('input[name=prj_seq]').val()
+        var leader_id = form.find('input[name=leader_id]').val()
+        console.log(ev_rating);
+        console.log(t_id);
+        console.log(prj_seq);
+        console.log(leader_id);
+        $.ajax({
+          url: form.attr('action'),
+          method: form.attr('method'),
+          data: form.serialize(),
+          success: function(response) {
+            console.log("전송완료");
+            form.css('display', 'block');
+            form.find('select').focus();
+          },
+          error: function(e) {
+            console.error("띠바");
+          }
+        });
+      }
+      return false;
+    });
+
+    // Modal functionality
+    var modal = document.getElementById("infoModal");
+    var btn = document.getElementsByClassName("info_btn")[0];
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  });
+</script>
 </body>
 </html>
