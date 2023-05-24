@@ -34,6 +34,7 @@ public class mainpage_GoViewPostContent implements controller {
 		Board info = dao.viewPostContent(dto);
 		        
         request.setAttribute("viewPostContent", info);
+        
         HttpSession session= request.getSession();
         
 		Reply dtoo = new Reply();
@@ -42,6 +43,8 @@ public class mainpage_GoViewPostContent implements controller {
 		ReplyDAO daoo = new ReplyDAO();
 		List<Reply> list =daoo.viewReplyList(dtoo);
 		request.setAttribute("viewReply", list);
+		
+		
         return "viewPostContent"; // 게시글 보여주는 JSP 파일의 경로
         
         

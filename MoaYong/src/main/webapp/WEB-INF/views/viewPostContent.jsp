@@ -1,4 +1,5 @@
 <%@ page import="com.smhrd.entity.User"%>
+<%@ page import="com.smhrd.entity.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -49,6 +50,7 @@
 	<!-- 유저정보 받아오기-->
 	<%
 	User user = (User) session.getAttribute("user");
+	String login_id = user.getT_id();
 	System.out.println(user);
 	%>
 
@@ -177,21 +179,61 @@
 
 
 
-				<form id="joinForm">
-					<input type="hidden" name="prj_seq"
-						value="${viewPostContent.prj_seq}"> <input type="hidden"
-						name="t_id" value="${user.t_id}">
-					<button type="button" id="joinButton">참가신청</button>
-				</form>
 
-				<!--  댓글 리스트  -->
-				<c:forEach items="${viewReply}" var="reply">
-					<li>작성자 : ${reply.t_id}</li>
-					<li>작성내용 : ${reply.reply_comment}</li>
-					<li>작성일시 : ${reply.comment_dt}</li>
-				</c:forEach>
+				<%
+				Board viewPostContent = (Board) request.getAttribute("viewPostContent");
+				String poster_id = viewPostContent.getT_id();
+				%>
+				<div style="display: flex; justify-content: flex-end;">
+					<%
+					if (login_id.equals(poster_id)) {
+					%>
+					<!-- 작성자 본인에게만 보이게 시작 -->
+					<form action="goModifyPost.do" method="post">
+						<input type="hidden" name="prj_seq"
+							value="${viewPostContent.prj_seq}"> <input type="hidden"
+							name="prj_category" value="${viewPostContent.prj_category}">
+						<input type="hidden" name="deadline_dt"
+							value="${viewPostContent.deadline_dt }"> <input
+							type="hidden" name="start_dt" value="${viewPostContent.start_dt}">
+						<input type="hidden" name="end_dt"
+							value="${viewPostContent.end_dt}"> <input type="hidden"
+							name="prj_name" value="${viewPostContent.prj_name}"> <input
+							type="hidden" name="recruit_count"
+							value="${viewPostContent.recruit_count}"> <input
+							type="hidden" name="post" value="${viewPostContent.post}">
+						<button type="submit" id="Modifybtn"
+							style="float: right; max-width: none;">수정</button>
+					</form>
 
-				<!-- 작성자 본인에게만 보이게  -->
+					<form action="deletePost.do">
+						<input type="hidden" name="prj_seq"
+							value="${viewPostContent.prj_seq}">
+						<button type="submit" id="deletebtn"
+							style="float: right; max-width: none; margin-left: 5%;">삭제</button>
+					</form>
+
+					<!-- 작성자 본인에게만 보이게 끝 -->
+					<%
+					} else {
+					%>
+
+
+					<form id="joinForm">
+						<input type="hidden" name="prj_seq"
+							value="${viewPostContent.prj_seq}"> <input type="hidden"
+							name="t_id" value="${user.t_id}">
+						<button type="button" id="joinButton">참가신청</button>
+					</form>
+
+
+					<%
+					}
+					%>
+
+				</div>
+
+				<!-- 댓글 달기  -->
 				<form action="uploadReply.do" method="post">
 					<input type="hidden" name="prj_seq"
 						value="${viewPostContent.prj_seq }"> <input type="hidden"
@@ -201,31 +243,15 @@
 					<button type="submit">댓글달기</button>
 				</form>
 
-				<!-- 작성자 본인에게만 보이게 시작 -->
-				<form action="goModifyPost.do" method="post">
-					<input type="hidden" name="prj_seq"
-						value="${viewPostContent.prj_seq}"> <input type="hidden"
-						name="prj_category" value="${viewPostContent.prj_category}">
-					<input type="hidden" name="deadline_dt"
-						value="${viewPostContent.deadline_dt }"> <input
-						type="hidden" name="start_dt" value="${viewPostContent.start_dt }">
-					<input type="hidden" name="end_dt"
-						value="${viewPostContent.end_dt}"> <input type="hidden"
-						name="prj_name" value="${viewPostContent.prj_name}"> <input
-						type="hidden" name="recruit_count"
-						value="${viewPostContent.recruit_count}"> <input
-						type="hidden" name="post" value="${viewPostContent.post}">
-					<button type="submit" id="Modifybtn"
-						style="float: right; max-width: none;">수정</button>
-				</form>
+				<!--  댓글 리스트  -->
+				<div style="display: flex; justify-content: flex-end;">
+					<c:forEach items="${viewReply}" var="reply">
+						<li>작성자 : ${reply.t_id}</li>
+						<li>작성내용 : ${reply.reply_comment}</li>
+						<li>작성일시 : ${reply.comment_dt}</li>
+				</div>
+				</c:forEach>
 
-				<form action="deletePost.do">
-					<input type="hidden" name="prj_seq"
-						value="${viewPostContent.prj_seq}">
-					<button type="submit" id="deletebtn"
-						style="float: right; max-width: none; margin-left: 5%;">삭제</button>
-				</form>
-				<!-- 작성자 본인에게만 보이게 끝 -->
 
 				<!-- <a><c items="${user}" var="user">${user.nickname}님</a> -->
 
