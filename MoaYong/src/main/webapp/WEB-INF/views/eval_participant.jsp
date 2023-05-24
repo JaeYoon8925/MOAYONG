@@ -122,15 +122,15 @@
         <tr>
           <td>
             <%=vo.getT_id()%>
-            <button class="info_btn">Info</button>
+            <button class="info_btn" data-modal-id="<%=vo.getT_id()%>_modal">Info</button>
             <!-- Modal -->
-					<div id="infoModal" class="modal">
-						<div class="modal-content">
-							<span class="close">&times;</span>
-							<h3>participant inoformation</h3>
-							<p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
-						</div>
-					</div>
+            <div id="<%=vo.getT_id()%>_modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" data-modal-id="<%=vo.getT_id()%>_modal">&times;</span>
+                    <h3>participant information</h3>
+                    <p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
+                </div>
+            </div>
           </td>
           <td>
             <button class="eval_btn">평가하기</button>
@@ -189,25 +189,26 @@
         return false;
       });
 
-   // Modal functionality
-      var modal = document.getElementById("infoModal");
-      var btn = document.getElementsByClassName("info_btn")[0];
-      var span = document.getElementsByClassName("close")[0];
+      $('.info_btn').on('click', function() {
+          var modalId = $(this).data('modal-id');
+          var modal = $('#' + modalId);
+          modal.css('display', 'block');
+      });
 
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
+      $('.close').on('click', function() {
+          var modalId = $(this).data('modal-id');
+          var modal = $('#' + modalId);
+          modal.css('display', 'none');
+      });
 
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-    });
+      $(window).on('click', function(event) {
+          if ($(event.target).hasClass('modal')) {
+              var modalId = $(event.target).attr('id');
+              var modal = $('#' + modalId);
+              modal.css('display', 'none');
+          }
+      });
+  });
       
   </script>
 </body>
