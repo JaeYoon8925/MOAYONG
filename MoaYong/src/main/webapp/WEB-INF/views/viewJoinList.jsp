@@ -137,8 +137,8 @@
 					<div id="infoModal" class="modal">
 						<div class="modal-content">
 							<span class="close">&times;</span>
-							<h3>leader inoformation</h3>
-							<p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
+							<h3> 제 소개입니다.</h3>
+							<p>저는 시켜만 주시면 뭐든 잘합니다!</p>
 						</div> 
 					</div>
             </td>
