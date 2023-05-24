@@ -57,8 +57,8 @@ body {
 .main2 {
 	/* rgba(0~255, 0~255, 0~255, 0~1)
 		   a : 1에 가까워질수록 색깔이 선명해진다 */
-	background-color: rgb(255, 255, 255, 0.4) !important;
-	height: 540px !important;
+	background-color: rgb(255, 255, 255, 0.6) !important;
+	height: 460px !important;
 	width: 400px !important;
 	padding: 50px !important;
 	border-radius: 50px !important;
@@ -69,6 +69,7 @@ body {
 	transform: translate(-50%, -50%) !important;
 	/* 내부 가운데 정렬 */
 	text-align: center !important;
+	margin-top: 50px;
 }
 
 .main2>h1 {
@@ -85,18 +86,20 @@ body {
 }
 
 #login-button {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255, 0,4);
 	width: 283px;
 	height: 55px;
 	text-align: center;
+	border= none;
 }
 
 #sign-button {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255 );
 	text-align: center;
-	margin-top: 10px;
 	width: 30px;
 	height: 55px;
+	border= none;
+	margin-top: 10px;
 }
 
 #reset-button {
@@ -104,17 +107,18 @@ body {
 	text-align: center;
 	width: 30px;
 	height: 55px;
+	margin-top: 10px;
 }
 
 #sign-button {
 	background-color: rgb(95, 18, 18);
 	transition: background-color 0.5s ease-in-out;
+	
 }
 
 #sign-button:hover {
 	background-color: rgb(25, 40, 126);
 }
-
 #login-button {
 	background-color: rgb(255, 255, 255);
 	transition: background-color 0.5s ease-in-out;
@@ -222,25 +226,28 @@ h1 {
 
 
 						<form action="login.do" method="post">
-							<div id="result-area">ID</div>
-							<input type="text" class="user-input" name="t_id">
+							<div id="result-area"></div>
+							<input type="text" class="user-input" name="t_id" placeholder="ID">
 
-							<div id="chance-area">Password</div>
-							<input type="text" class="user-input" name="pw">
-
+							<div id="chance-area"></div>
+							<input type="text" class="user-input" name="pw" placeholder="PW">
 							<div class="button-area" style="height: 150px;">
-								<button type="submit" id="login-button">Login</button>
+								<button type="submit" id="login-button">LOGIN</button>
 								<br>
 
-								<button type="button" id="sign-button"
+
+							
+						   <button type="button" id="sign-button"
 									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원가입</button>
 								<button type="button" id="reset-button"
 									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원찾기</button>
-							</div>
+							
+							
 							<!-- <button id="sign-button" style="display:flex;">회원가입</button>
 								<button id="reset-button" style="display:flex;">회원찾기</button> -->
 						</form>
 
+							</div>
 
 					</div>
 
