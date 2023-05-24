@@ -93,7 +93,8 @@
 					class="active">세부임무</a></li>
 				<li><a href="GoPrjGant.do?prj_seq=${viewPostContent.prj_seq}">간트차트</a></li>
 				<li><a href="GoPrjOutput.do?prj_seq=${viewPostContent.prj_seq}">산출물</a></li>
-				<li style="float: right;"><a href="viewPostContent.do?prj_seq=${viewPostContent.prj_seq}"><img
+				<li style="float: right;"><a
+					href="viewPostContent.do?prj_seq=${viewPostContent.prj_seq}"><img
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnxA7tm7xkKByRkkmlzNfZWvgfytkw-OYN_A&usqp=CAU"
 						width=40px; height=40px></a></li>
 			</ul>
@@ -137,31 +138,44 @@
 									</div>
 									<div class="col-3 col-12-xsmall" style="display: flex;">
 										<label for="join_count" style="padding: 0px 8px 0px 0px;">
-										모집인원 :</label> <input name="join_count" type="text"
-								value="${viewPostContent.join_count}">
+											모집인원 :</label> <input name="join_count" type="text"
+											value="${viewPostContent.join_count}">
 									</div>
 								</div>
 								<!-- 윗줄 끝 -->
 
 								<!--  -->
-								<br>
-								<br>
+								<br> <br>
 								<div align="right">
 									<button>지도첨부</button>
-									<button style="margin-inline:15px;">이미지첨부</button>
+									<button style="margin-inline: 15px;">이미지첨부</button>
 								</div>
 								<br>
 								<table style="margin-left: auto; margin-right: auto;">
-									<td style="overflow-y: scroll;"><input type="text" name="post"
-										value=${viewPostContent.post}
+									<td style="overflow-y: scroll;"><input type="text"
+										name="post" value=${viewPostContent.post
+										}
 										style="width: 100%; height: 670px; font-size: 22px;">
 									</td>
 								</table>
 								<div align="right">
-									<button>수정하기</button>
-									<button style="margin-inline: 15px;">레이드 종료</button>
+									<button align="right" style="float: right;">수정하기</button>
 								</div>
 							</form>
+							<%
+							Board viewPostContent = (Board) request.getAttribute("viewPostContent");
+							String status = viewPostContent.getStatus();
+							%>
+							
+							<% if (  !status.equals("종료") ) { %>
+							<form method="post" action="#">
+							<button align="right" id="RaidEnd"
+								style="margin-inline: 15px; float: right; background-color: red; opacity: 0.7; color: white !important;">
+								<a href=PrjRaidEnd.do?prj_seq=<%=viewPostContent.getPrj_seq()%>>레이드 종료</a>
+							</button>
+							</form>
+							<% } %>
+							
 							<!-- 폼 끝 -->
 
 
