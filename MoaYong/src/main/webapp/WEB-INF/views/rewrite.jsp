@@ -94,14 +94,27 @@
 					<table>
 						<tr>
 							<td>
+								
 								<div style="float: left; max-width: none; width: 15%;">
 									<select name="prj_category" class="col-12"
 										style="display: flex;">
-										<option value="" selected disabled>${viewPostContent.prj_category}</option>
+										<option value="${viewPostContent.prj_category}" selected disabled>${viewPostContent.prj_category}</option>
 										<option value="프로그래밍" type="text">프로그래밍</option>
 										<option value="전시회" type="text">전시회</option>
 										<option value="게임" type="text">게임</option>
 										<option value="스터디" type="text">스터디</option>
+									</select>
+									<!-- <input type="text" name="search_keyword" placeholder="검색어를 입력하세요"> -->
+								</div>
+								
+								<div style="float: right; max-width: none; width: 15%;">
+									<select name="status" class="col-12"
+										style="display: flex;">
+										<option name="status" value="${viewPostContent.status}" selected disabled>${viewPostContent.status}</option>
+										<option name="status" value="모집중" type="text">모집중</option>
+										<option name="status" value="모집완료" type="text">모집완료</option>
+										<option name="status" value="진행중" type="text">진행중</option>
+										<option name="status" value="종료" type="text">종료</option>
 									</select>
 									<!-- <input type="text" name="search_keyword" placeholder="검색어를 입력하세요"> -->
 								</div>
