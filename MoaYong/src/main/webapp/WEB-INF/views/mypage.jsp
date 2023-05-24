@@ -183,57 +183,74 @@ System.out.println(user);
 				<header class="major">
 					<h2>Project</h2>
 				</header>
-				<ul class="features">
-					<li><span stlye="width:196px height:196px "></span>
-						<h3>참가신청 한 프로젝트</h3>
+				<ul class="features" style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; list-style: none; padding: 0;">
+		<li style="margin: 10px; width: 300px;">
+			<h3>참가신청 한 프로젝트</h3>
+			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+				<%
+				List<Project> partinList = (List<Project>) request.getAttribute("partinList");
+				%>
+				<%
+				for (Project vo : partinList) {
+				%>
+				<li style="margin-bottom: 10px;"><a href="viewPostContent.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a></li>
+				<%
+				}
+				%>
+			</ul>
+		</li>
+		<li style="margin: 10px; width: 300px;">
+			<h3>진행 중인 프로젝트</h3>
+			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
 
-						<ul class="alt" style="height: 300px; overflow: auto">
-							<%
-							List<Project> partinList = (List<Project>) request.getAttribute("partinList");
-							%>
-							<%
-							for (Project vo : partinList) {
-							%>
-							<li><a
-								href="viewPostContent.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a></li>
-							<%
-							}
-							%>
-						</ul>
-					<li><span stlye="width:196px height:196px "></span>
-						<h3>진행 중인 프로젝트</h3>
-						<ul class="alt" style="height: 300px; overflow: auto">
-							<%
-							List<Project> ingList = (List<Project>) request.getAttribute("ingList");
-							%>
-							<%
-							for (Project vo : ingList) {
-							%>
-							<!-- 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔 -->
-							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
-							
-							<%
-							}
-							%>
 
-						</ul> <!-- 이 사람의 진행 중 프로젝트 리스트 전부 보기 --></li>
-					<li><span stlye="width:196px height:196px "></span>
-						<h3>완료된 프로젝트</h3>
+				<li style="margin-bottom: 10px;">
+					<a href="viewPostContent.do?prj_seq=${vo.prj_seq}"></a>
+					<button onclick='location.href="joinList.do?prj_seq="'>참가신청현황보기</button>
+				</li>
 
-						<ul class="alt" style="height: 300px; overflow: auto">
-							<%
-							List<Project> endList = (List<Project>) request.getAttribute("endList");
-							%>
-							<%
-							for (Project vo : endList) {
-							%>
-							<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
-							<li><a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a></li>
-							<%
-							}
-							%>
-						</ul> <!-- 이 사람의 완료 프로젝트 리스트 전부 보기 --></li>
-				</ul>
+			</ul>
+		</li>
+		<li style="margin: 10px; width: 300px;">
+			<h3>모집 중인 프로젝트</h3>
+			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+				<%
+				List<Project> ingList = (List<Project>) request.getAttribute("ingList");
+				%>
+				<%
+				for (Project vo : ingList) {
+				%>
+				<li style="margin-bottom: 10px;">
+					<a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a>
+					<button onclick='location.href="joinList.do?prj_seq=<%=vo.getPrj_seq()%>"'>참가신청현황보기</button>
+				</li>
+				<%
+				}
+				%>
+			</ul>
+		</li>
+
+		<li style="margin: 10px; width: 300px;">
+			<h3>완료된 프로젝트</h3>
+			<ul class="alt" style="height: 350px; overflow: auto; padding: 0;">
+				<%
+				List<Project> endList = (List<Project>) request.getAttribute("endList");
+				%>
+				<%
+				for (Project vo : endList) {
+				%>
+				<!-- 이것도 뷰포스트 말고 세부프로젝트 페이지로 이동가능하게끔? -->
+				<li style="margin-bottom: 10px;">
+					<a href="viewPostContent.do?prj_seq=${vo.prj_seq}"><%=vo.getPrj_name()%></a>
+					<button onclick='location.href="eval_leader.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀장평가</button>
+					<button onclick='location.href="eval_participant.do?prj_seq=<%=vo.getPrj_seq() %>"'>팀원평가</button>
+				</li>
+				<%
+				}
+				%>
+			</ul>
+		</li>
+	</ul>
 				<footer class="major">
 					<h3>빈 공간이에용</h3>
 				</footer>
