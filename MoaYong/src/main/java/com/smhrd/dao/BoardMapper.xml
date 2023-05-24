@@ -8,10 +8,13 @@
 	</insert>
 
 	<select id="list" resultType="com.smhrd.entity.Board">
-		SELECT t.*, TO_CHAR(t.post_dt,
-		'YYYY-MM-DD') AS format_post_dt
+		SELECT *
+		FROM (
+		SELECT t.*, TO_CHAR(t.post_dt, 'YYYY-MM-DD') AS format_post_dt
 		FROM T_project t
 		ORDER BY t.post_dt DESC
+		)
+		WHERE ROWNUM &lt;= 10
 	</select>
 
 	<select id="searchPost" resultType="com.smhrd.entity.Board">
