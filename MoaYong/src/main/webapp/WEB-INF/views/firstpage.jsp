@@ -58,7 +58,7 @@ body {
 	/* rgba(0~255, 0~255, 0~255, 0~1)
 		   a : 1에 가까워질수록 색깔이 선명해진다 */
 	background-color: rgb(255, 255, 255, 0.4) !important;
-	height: 430px !important;
+	height: 540px !important;
 	width: 400px !important;
 	padding: 50px !important;
 	border-radius: 50px !important;
@@ -87,7 +87,7 @@ body {
 #login-button {
 	background-color: rgb(255, 255, 255);
 	width: 283px;
-	height: 45px;
+	height: 55px;
 	text-align: center;
 }
 
@@ -96,14 +96,14 @@ body {
 	text-align: center;
 	margin-top: 10px;
 	width: 30px;
-	height: 45px;
+	height: 55px;
 }
 
 #reset-button {
 	background-color: rgb(255, 255, 255);
 	text-align: center;
 	width: 30px;
-	height: 45px;
+	height: 55px;
 }
 
 #sign-button {
@@ -233,9 +233,9 @@ h1 {
 								<br>
 
 								<button type="button" id="sign-button"
-									style="min-width: unset; width: 140px !important; display: inline-block !important;">회원가입</button>
+									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원가입</button>
 								<button type="button" id="reset-button"
-									style="min-width: unset; width: 140px !important; display: inline-block !important;">회원찾기</button>
+									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원찾기</button>
 							</div>
 							<!-- <button id="sign-button" style="display:flex;">회원가입</button>
 								<button id="reset-button" style="display:flex;">회원찾기</button> -->
