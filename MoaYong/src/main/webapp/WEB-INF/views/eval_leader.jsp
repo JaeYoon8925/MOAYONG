@@ -11,6 +11,74 @@
 <title>Insert title here</title>
 </head>
 <body>
+<style>
+  /* 테이블 컨테이너 스타일 */
+  .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* 테이블 스타일 */
+  table {
+    width: 50%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 테이블 헤더 스타일 */
+  thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* 테이블 헤더 셀 스타일 */
+  th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #fff;
+  }
+
+  /* 테이블 데이터 셀 스타일 */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* 첫 번째 데이터 셀 스타일 */
+  td:first-child {
+    font-weight: bold;
+  }
+
+  /* 버튼 스타일 */
+  button {
+    padding: 5px 10px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* 버튼에 호버 효과 */
+  button:hover {
+    background-color: #138496;
+  }
+</style>
+		
+
+
+
+
+
+
+
+
+<div class="table-container"> 
 	<% User user = (User) session.getAttribute("user"); %>
 	<% Project view_leader = (Project) request.getAttribute("view_leader");	%>
 
@@ -53,7 +121,7 @@
 
 		</tbody>
 	</table>
-
+</div>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {

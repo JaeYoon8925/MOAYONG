@@ -285,7 +285,7 @@ System.out.println(user);
 								<ul class="gantt__row-bars">
 									<li style="grid-column: 3/7; background-color: #ff6252;">작업1차</li>
 									<li style="grid-column: 9/12; background-color: #54c6f9;">마감
-										및 평가진헹</li>
+										및 평가진행</li>
 								</ul>
 							</div>
 							<div class="gantt__row gantt__row--empty">

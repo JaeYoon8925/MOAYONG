@@ -138,7 +138,7 @@
 								placeholder="모집인원을 입력하세요" style="float: left; width: 22.5%;">
 								<div
 									style="float: right; max-width: none; margin-top: 12.5px; padding-right: 15px;">
-									이미지 첨부 : <input type="file" style="float: right;"> <br>
+									이미지 첨부 :<input type="file" style="float: right;"> <br>
 								</div>
 								<div
 								style="float: right; max-width: none; margin-top: 12.5px; padding-right: 15px;">
