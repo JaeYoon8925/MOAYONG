@@ -123,15 +123,15 @@
 			<tr>
 				<td>
 					<%=view_leader.gett_Id()%>
-					<button class="info_btn">Info</button>
-					<!-- Modal -->
-					<div id="infoModal" class="modal">
-						<div class="modal-content">
-							<span class="close">&times;</span>
-							<h3>leader inoformation</h3>
-							<p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
-						</div> 
-					</div>
+					 <button class="info_btn" data-modal-id="<%=view_leader.gett_Id()%>_modal">Info</button>
+          <!-- Modal -->
+          <div id="<%=view_leader.gett_Id()%>_modal" class="modal">
+            <div class="modal-content">
+              <span class="close" data-modal-id="<%=view_leader.gett_Id()%>_modal">&times;</span>
+              <h3>leader information</h3>
+              <p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
+            </div> 
+          </div>
 				</td>
 				<% if(view_leader.gett_Id()!=null){ %>
 				<td>
@@ -201,24 +201,32 @@
     });
 
     // Modal functionality
-    var modal = document.getElementById("infoModal");
-    var btn = document.getElementsByClassName("info_btn")[0];
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function() {
+    $('.info_btn').on('click', function() {
+      var modalId = $(this).data('modal-id');
+      var modal = document.getElementById(modalId);
       modal.style.display = "block";
-    }
+    });
 
-    span.onclick = function() {
+    $('.close').on('click', function() {
+      var modalId = $(this).data('modal-id');
+      var modal = document.getElementById(modalId);
       modal.style.display = "none";
-    }
+    });
 
     window.onclick = function(event) {
-      if (event.target == modal) {
+      if (event.target.classList.contains("modal")) {
+        var modalId = event.target.id;
+        var modal = document.getElementById(modalId);
         modal.style.display = "none";
       }
     }
   });
+  
+  
+  
+  
+  
+  
 </script>
 </body>
 </html>

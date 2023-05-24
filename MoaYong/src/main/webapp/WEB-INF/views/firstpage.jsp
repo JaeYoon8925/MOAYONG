@@ -169,7 +169,7 @@ h1 {
 		<!-- Header -->
 		<header id="header">
 			<div>
-				<h1 style="text-align: center;">MoaYong</h1>
+				<h1 style="text-align: center;">MOAYONG</h1>
 				<!-- <p style="text-align: center;">레이드형 구인구직 프로젝트</p> -->
 			</div>
 		</header>
