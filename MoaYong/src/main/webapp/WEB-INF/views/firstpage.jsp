@@ -232,10 +232,15 @@ h1 {
 								<button type="submit" id="login-button">Login</button>
 								<br>
 
-								<button type="button" id="sign-button"
-									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원가입</button>
-								<button type="button" id="reset-button"
-									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원찾기</button>
+								<div style="text-align: center;">
+									<button type="button" id="sign-button"
+										style="min-width: unset; display: flex; justify-content: center; width: 130px !important;">회원
+										가입</button>
+									<button type="button" id="reset-button"
+										style="min-width: unset; display: flex; justify-content: center; width: 130px !important;">회원
+										찾기</button>
+								</div>
+
 							</div>
 							<!-- <button id="sign-button" style="display:flex;">회원가입</button>
 								<button id="reset-button" style="display:flex;">회원찾기</button> -->
