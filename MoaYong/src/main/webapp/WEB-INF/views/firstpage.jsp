@@ -93,7 +93,6 @@ body {
 
 #sign-button {
 	background-color: rgb(255, 255, 255);
-	text-align: center;
 	margin-top: 10px;
 	width: 30px;
 	height: 55px;
@@ -101,7 +100,7 @@ body {
 
 #reset-button {
 	background-color: rgb(255, 255, 255);
-	text-align: center;
+	margin-top: 10px;
 	width: 30px;
 	height: 55px;
 }
@@ -232,12 +231,12 @@ h1 {
 								<button type="submit" id="login-button">Login</button>
 								<br>
 
-								<div style="text-align: center;">
+								<div>
 									<button type="button" id="sign-button"
-										style="min-width: unset; display: flex; justify-content: center; width: 130px !important;">회원
+										style="min-width: unset;  width: 140px !important; display: inline-block; !important;">회원
 										가입</button>
 									<button type="button" id="reset-button"
-										style="min-width: unset; display: flex; justify-content: center; width: 130px !important;">회원
+										style="min-width: unset;  width: 140px !important; display: inline-block; !important;">회원
 										찾기</button>
 								</div>
 
