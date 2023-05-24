@@ -22,6 +22,8 @@ where p_seq=#{p_seq} and prj_seq=#{prj_seq} and t_id=#{t_id}
 </update>
 
 <update id="joinCount" parameterType="com.smhrd.entity.JoinParty">
+<choose>
+<when test="join_ok=='참가신청' or join_ok=='참가거절">
 UPDATE t_project
 SET join_count = join_count + 1
 WHERE prj_seq = #{prj_seq}
@@ -30,6 +32,18 @@ SELECT prj_seq
 FROM t_participant
 WHERE prj_seq = #{prj_seq}
 AND t_id = #{t_id})
+</when>
+<otherwise>
+UPDATE t_project
+SET join_count = join_count + 0
+WHERE prj_seq = #{prj_seq}
+AND EXISTS (
+SELECT prj_seq
+FROM t_participant
+WHERE prj_seq = #{prj_seq}
+AND t_id = #{t_id})
+</otherwise>
+</choose>
 </update>
 
 <update id="joinDisCount" parameterType="com.smhrd.entity.JoinParty">
@@ -39,7 +53,7 @@ UPDATE t_project
 SET join_count = join_count + 0
 WHERE prj_seq = #{prj_seq}
 AND EXISTS (
-SELECT 1
+SELECT prj_seq
 FROM t_participant
 WHERE prj_seq = #{prj_seq}
 AND t_id = #{t_id})
@@ -49,7 +63,7 @@ UPDATE t_project
 SET join_count = join_count-1
 WHERE prj_seq = #{prj_seq}
 AND EXISTS (
-SELECT 1
+SELECT prj_seq
 FROM t_participant
 WHERE prj_seq = #{prj_seq}
 AND t_id = #{t_id})
