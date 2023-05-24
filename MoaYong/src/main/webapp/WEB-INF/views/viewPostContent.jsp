@@ -239,18 +239,26 @@
 						value="${viewPostContent.prj_seq }"> <input type="hidden"
 						name="t_id" value="${user.t_id }">
 					<textarea name="reply_comment" placeholder="내용을 입력해주세요."></textarea>
-					<br>
-					<button type="submit">댓글달기</button>
+					<div style="display: flex; justify-content: flex-end;">
+						<button type="submit">댓글달기</button>
+					</div>
 				</form>
 
 				<!--  댓글 리스트  -->
-				<div style="display: flex; justify-content: flex-end;">
+				<table>
 					<c:forEach items="${viewReply}" var="reply">
-						<li>작성자 : ${reply.t_id}</li>
-						<li>작성내용 : ${reply.reply_comment}</li>
-						<li>작성일시 : ${reply.comment_dt}</li>
-				</div>
-				</c:forEach>
+						<tr>
+							<td>
+								<div style="float: left; max-width: none;">작성자 :
+									${reply.t_id}</div>
+								<div style="float: left; margin-left: 10%; max-width: none;">
+									작성내용 : ${reply.reply_comment}</div>
+								<div style="float: right; max-width: none;">작성일시 :
+									${reply.comment_dt}</div>
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
 
 
 				<!-- <a><c items="${user}" var="user">${user.nickname}님</a> -->
