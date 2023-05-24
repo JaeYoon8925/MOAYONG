@@ -26,9 +26,11 @@ public class party_joinCountCon implements controller {
 		JoinParty dto = new JoinParty();
 		dto.setPrj_seq(prj_seq);
 		dto.setT_id(t_id);
+		dto.setJoin_ok(join_ok);
 		
 		System.out.println("DTO_prj_seq: " + dto.getPrj_seq());
 		System.out.println("DTO_t_id: " + dto.getT_id());
+		System.out.println("DTO_Join_ok : " + join_ok);
 		
 		JoinPartyDAO dao = new JoinPartyDAO();
 		int row = dao.joinCount(dto);

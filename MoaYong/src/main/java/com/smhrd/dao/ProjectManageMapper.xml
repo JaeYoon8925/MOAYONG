@@ -4,8 +4,9 @@
 
 
 	<!-- 참가 신청한 프로젝트 -->
-	<select id="partin" parameterType="String"
+<select id="partin" parameterType="String"
 		resultType="com.smhrd.entity.Project">
+
 		SELECT *
 		FROM t_project
 		WHERE status = '모집중' and
@@ -17,8 +18,8 @@
 		AND prj_seq IN (
 		SELECT prj_seq
 		FROM t_participant
-		WHERE join_ok = '참가신청'
-		)
+		WHERE join_ok = '참가신청')
+		
 	</select>
 
 	<!-- 진행 중인 프로젝트 -->
