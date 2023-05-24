@@ -28,27 +28,27 @@ public class mainpage_WritePostCon implements controller {
 		String prj_category = request.getParameter("prj_category");
 		String prj_name = request.getParameter("prj_name");
 		String post = request.getParameter("post");
-		Date deadline_dt;
-		try {
-		    deadline_dt = dateFormat.parse(request.getParameter("deadline_dt"));
-		} catch (ParseException e) {
-		    e.printStackTrace();
-		    deadline_dt = new Date();
-		}
-		Date start_dt;
-		try {
-		    start_dt = dateFormat.parse(request.getParameter("start_dt"));
-		} catch (ParseException e) {
-		    e.printStackTrace();
-		    start_dt = new Date();
-		}
-		Date end_dt;
-		try {
-		    end_dt = dateFormat.parse(request.getParameter("end_dt"));
-		} catch (ParseException e) {
-		    e.printStackTrace();
-		    end_dt = new Date(); 
-		}
+		String deadline_dt = request.getParameter("deadline_dt"); // 원래 null
+//		try {
+//		    deadline_dt = dateFormat.parse(request.getParameter("deadline_dt"));
+//		} catch (ParseException e) {
+//		    e.printStackTrace();
+//		    deadline_dt = new Date();
+//		}
+		String start_dt = request.getParameter("start_dt");
+//		try {
+//		    start_dt = dateFormat.parse(request.getParameter("start_dt"));
+//		} catch (ParseException e) {
+//		    e.printStackTrace();
+//		    start_dt = new Date();
+//		}
+		String end_dt=request.getParameter("end_dt");
+//		try {
+//		    end_dt = dateFormat.parse(request.getParameter("end_dt"));
+//		} catch (ParseException e) {
+//		    e.printStackTrace();
+//		    end_dt = new Date(); 
+//		}
 		int recruit_count = Integer.parseInt(request.getParameter("recruit_count"));
 		
 		

@@ -33,12 +33,9 @@ public class prj_GoPrjDetailsCon implements controller {
 		Board info = dao.viewPostContent(dto);
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date start_dt_another = info.getStart_dt();
-		String start_dt = dateFormat.format(start_dt_another);
-		Date end_dt_another = info.getEnd_dt();
-		String end_dt = dateFormat.format(end_dt_another);
-		Date deadline_dt_another = info.getDeadline_dt();
-		String deadline_dt = dateFormat.format(deadline_dt_another);
+		String start_dt = info.getStart_dt();
+		String end_dt = info.getEnd_dt();
+		String deadline_dt = info.getDeadline_dt();
 		
 		
 		request.setAttribute("viewPostContentDt1", start_dt);
