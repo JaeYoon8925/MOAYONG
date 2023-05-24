@@ -130,9 +130,9 @@ System.out.println(user);
 								<!-- Modal -->
 								<button type="button" class="button" data-toggle="modal"
 									data-target="#myModal">칭호 조회</button> <!-- Modal -->
-								<div class="modal" id="myModal">
-									<div class="modal-dialog">
-										<div class="modal-content">
+								<div class="modal" id="myModal" >
+									<div class="modal-dialog" style="width: 40%; height: 700px; position: fixed; top: 60%; left: 50%; transform: translate(-50%, -50%);">
+										<div class="modal-content" >
 
 											<!-- Modal Header -->
 
@@ -146,12 +146,32 @@ System.out.println(user);
 
 											<!-- Modal body -->
 											<div class="modal-body">
-												칭호1 이름
-												<div class="btn-group btn-group-sm">
+												<div style="display: flex; float:left ; margin-left:50px;">뉴비</div>
+												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br> 칭호2 이름
-												<div class="btn-group btn-group-sm">
+												<br>
+												<br> 
+												<div style="display: flex; float:left ; margin-left:50px;">꿀벌</div>
+												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+													<button type="button" class="btn btn-outline-primary">선택</button>
+												</div>
+												<br>
+												<br> 
+												<div style="display: flex; float:left ; margin-left:50px;">일벌</div>
+												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+													<button type="button" class="btn btn-outline-primary">선택</button>
+												</div>
+												<br>
+												<br> 
+												<div style="display: flex; float:left; margin-left:50px;">여왕벌</div>
+												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+													<button type="button" class="btn btn-outline-primary">선택</button>
+												</div>
+												<br>
+												<br> 
+												<div style="display: flex; float:left ; margin-left:50px;">나쁜벌</div>
+												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
 											</div>
@@ -225,7 +245,7 @@ System.out.println(user);
 							List<Project> recruitingList = (List<Project>) request.getAttribute("recruitingList");
 							%>
 							<%
-							for (Project vo : recruitingList ) {
+							for (Project vo : recruitingList) {
 							%>
 							<li style="margin-bottom: 10px;"><a
 								href="GoPrjDetails.do?prj_seq=<%=vo.getPrj_seq()%>"><%=vo.getPrj_name()%></a>
