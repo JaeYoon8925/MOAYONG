@@ -129,17 +129,31 @@
 										프로젝트 종료일 : <input type="date" name="end_dt"
 											value="${viewPostContentDt2}">
 									</div>
-									<div class="col-3 col-12-xsmall" style="display: flex;">
-										<label for="status" style="padding: 0px 8px 0px 0px;">진행상태
-											:</label><input type="text" value="${viewPostContent.status}"
-											style="width: 60%;">
+									<div></div>
+
+									<div class="col-5" style="display: flex;">
+										<label for="join_count"
+											style="padding: 0px 8px 0px 0px; width: 200px; padding: 10px 8px 0px 0px;">
+											모집 완료인원 : </label> <input name="join_count" type="text"
+											value="${viewPostContent.join_count}" readonly>
 									</div>
-									<div class="col-9 col-12-xsmall" style="display: flex;">
+									<div class="col-5" style="display: flex;">
+										<label for="join_count"
+											style="padding: 0px 8px 0px 0px; width: 200px; padding: 10px 8px 0px 0px;">
+											목표 모집인원 : </label> <input name="join_count" type="text"
+											value="${viewPostContent.recruit_count}">
 									</div>
-									<div class="col-3 col-12-xsmall" style="display: flex;">
-										<label for="join_count" style="padding: 0px 8px 0px 0px;">
-											모집인원 :</label> <input name="join_count" type="text"
-											value="${viewPostContent.join_count}">
+									<div class="col-2" style="display: flex;">
+										<label for="status"
+											style="padding: 0px 8px 0px 0px; width: 150px; padding: 10px 8px 0px 0px;">상태
+											:</label><select name="status" class="col-8" style="display: flex;">
+											<option name="status" value="${viewPostContent.status}"
+												selected disabled>${viewPostContent.status}</option>
+											<option name="status" value="모집중" type="text">모집중</option>
+											<option name="status" value="모집완료" type="text">모집완료</option>
+											<option name="status" value="진행중" type="text">진행중</option>
+											<option name="status" value="종료" type="text">종료</option>
+										</select>
 									</div>
 								</div>
 								<!-- 윗줄 끝 -->
@@ -153,8 +167,7 @@
 								<br>
 								<table style="margin-left: auto; margin-right: auto;">
 									<td style="overflow-y: scroll;"><input type="text"
-										name="post" value=${viewPostContent.post
-										}
+										name="post" value=${viewPostContent.post }
 										style="width: 100%; height: 670px; font-size: 22px;">
 									</td>
 								</table>
@@ -166,16 +179,21 @@
 							Board viewPostContent = (Board) request.getAttribute("viewPostContent");
 							String status = viewPostContent.getStatus();
 							%>
-							
-							<% if (  !status.equals("종료") ) { %>
+
+							<%
+							if (!status.equals("종료")) {
+							%>
 							<form method="post" action="#">
-							<button align="right" id="RaidEnd"
-								style="margin-inline: 15px; float: right; background-color: red; opacity: 0.7; color: white !important;">
-								<a href=PrjRaidEnd.do?prj_seq=<%=viewPostContent.getPrj_seq()%>>레이드 종료</a>
-							</button>
+								<button align="right" id="RaidEnd"
+									style="margin-inline: 15px; float: right; background-color: red; opacity: 0.7; color: white !important;">
+									<a href=PrjRaidEnd.do?prj_seq=
+										<%=viewPostContent.getPrj_seq()%>>레이드 종료</a>
+								</button>
 							</form>
-							<% } %>
-							
+							<%
+							}
+							%>
+
 							<!-- 폼 끝 -->
 
 
@@ -251,7 +269,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	
+
 
 </body>
 
