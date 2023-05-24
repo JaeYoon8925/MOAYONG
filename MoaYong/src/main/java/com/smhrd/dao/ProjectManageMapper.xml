@@ -18,7 +18,7 @@
 		AND prj_seq IN (
 		SELECT prj_seq
 		FROM t_participant
-		WHERE join_ok = '참가신청'
+		WHERE join_ok = '참가신청')
 		
 	</select>
 
