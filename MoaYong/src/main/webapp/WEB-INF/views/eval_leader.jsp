@@ -105,6 +105,22 @@
     text-decoration: none;
     cursor: pointer;
   }
+  eval_btn {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .eval_form {
+    display: none;
+    margin-left: 10px;
+  }
+
+  .eval_btn:focus + .eval_form {
+    display: inline-block;
+  }
+  
 </style>
 </head>
 <body>
@@ -138,7 +154,11 @@
 					<button class="eval_btn">평가하기</button>
 					<form class="eval_form" action="submit_eval_leader.do" method="POST"
 						style="display: none;">
-						<select name="ev_rating">
+						 <input type="hidden" name="t_id" value="<%=user.getT_id()%>">
+						<input type="hidden" name="prj_seq" value="<%=view_leader.getPrj_seq()%>">
+						<input type="hidden" name="leader_id" value="<%=view_leader.gett_Id() %>">
+						<button type="submit" style="float:right;" >제출</button>
+						<select style="float:right;" name="ev_rating">
 							<%
 							for (int i = 1; i <= 5; i++) {
 							%>
@@ -146,10 +166,7 @@
 							<%
 							}
 							%>
-						</select> <input type="hidden" name="t_id" value="<%=user.getT_id()%>">
-						<input type="hidden" name="prj_seq" value="<%=view_leader.getPrj_seq()%>">
-						<input type="hidden" name="leader_id" value="<%=view_leader.gett_Id() %>">
-						<button type="submit">제출</button>
+						</select>
 					</form>
 				</td>
 			</tr>
@@ -166,7 +183,7 @@
   $(document).ready(function() {
     $('.eval_btn').on('click', function() {
       var form = $(this).next('.eval_form');
-      form.css('display', 'block');
+      form.css('display', 'inline');
       form.find('select').focus();
     });
 
