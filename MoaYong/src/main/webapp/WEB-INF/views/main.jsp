@@ -73,8 +73,8 @@ System.out.println(user);
 
 		<!-- Header -->
 		<header id="header" style="padding-top: 6em;">
-			<h1 style="margin-top: 40px;">MoaYong</h1>
-			<p>게시판이에용</p>
+			<h1 style="margin-top: 40px; font-weight: 600" >MOAYOUNG</h1>
+		<p>메인 게시판</p>
 		</header>
 
 		<!-- Main -->

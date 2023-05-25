@@ -155,8 +155,15 @@ body {
 	cursor: pointer;
 }
 
+
+
+
 h1 {
-	font-weight: bold;
+	font-weight: 500;
+}
+
+.mainname{
+	font-weight: 600;
 }
 </style>
 </head>
@@ -169,7 +176,7 @@ h1 {
 		<!-- Header -->
 		<header id="header">
 			<div>
-				<h1 style="text-align: center;">MOAYONG</h1>
+				<h1 class="mainname" style="text-align: center;">MOAYONG</h1>
 				<!-- <p style="text-align: center;">레이드형 구인구직 프로젝트</p> -->
 			</div>
 		</header>
