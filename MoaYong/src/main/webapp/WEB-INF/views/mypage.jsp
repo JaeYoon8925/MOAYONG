@@ -366,7 +366,6 @@ System.out.println(user);
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="goSendMessage.do" class="button">쪽지 보내기</a></li>
-						<li><a href="generic.html" class="button primary">읽음</a></li>
 					</ul>
 				</footer>
 			</section>
