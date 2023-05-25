@@ -140,7 +140,7 @@
 									<div class="col-5" style="display: flex;">
 										<label for="join_count"
 											style="padding: 0px 8px 0px 0px; width: 200px; padding: 10px 8px 0px 0px;">
-											목표 모집인원 : </label> <input name="join_count" type="text"
+											목표 모집인원 : </label> <input name=recruit_count type="text"
 											value="${viewPostContent.recruit_count}">
 									</div>
 									<div class="col-2" style="display: flex;">
@@ -184,10 +184,11 @@
 							if (!status.equals("종료")) {
 							%>
 							<form method="post" action="#">
+
 								<button align="right" id="RaidEnd"
 									style="margin-inline: 15px; float: right; background-color: red; opacity: 0.7; color: white !important;">
-									<a href=PrjRaidEnd.do?prj_seq=
-										<%=viewPostContent.getPrj_seq()%>>레이드 종료</a>
+									<a href=PrjRaidEnd.do?prj_seq=${viewPostContent.prj_seq} } >레이드
+										종료</a>
 								</button>
 							</form>
 							<%

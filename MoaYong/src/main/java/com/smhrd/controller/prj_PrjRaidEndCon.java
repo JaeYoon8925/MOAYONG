@@ -29,32 +29,28 @@ public class prj_PrjRaidEndCon implements controller {
 
 		ProjectDAO dao = new ProjectDAO();
 
-		List<Project> partinList = dao.partin(t_id);
-		request.setAttribute("partinList", partinList);
-
-		List<Project> ingList = dao.ing(t_id);
-		request.setAttribute("ingList", ingList);
-
-		List<Project> endList = dao.end(t_id);
-		request.setAttribute("endList", endList);
-
-		List<Project> recruiting = dao.recruiting(t_id);
-		request.setAttribute("recruitingList", recruiting);
-		
-		
-		
+		System.out.println("리퀘프젝시퀀스:" + request.getParameter("prj_seq"));
 		int prj_seq = Integer.parseInt(request.getParameter("prj_seq"));
-		System.out.println("프로젝트 엔드"+prj_seq);
+		System.out.println("프로젝트 엔드" + prj_seq);
 
 		int endUp = dao.raidEnd(prj_seq);
-		
-		
-		
-		if ( endUp > 0 ) {
+
+		if (endUp > 0) {
 			System.out.println("레이드 종료 완료");
+
+			List<Project> partinList = dao.partin(t_id);
+			request.setAttribute("partinList", partinList);
+
+			List<Project> ingList = dao.ing(t_id);
+			request.setAttribute("ingList", ingList);
+
+			List<Project> endList = dao.end(t_id);
+			request.setAttribute("endList", endList);
+
+			List<Project> recruiting = dao.recruiting(t_id);
+			request.setAttribute("recruitingList", recruiting);
 		}
-		
-		
+
 		return "mypagePrjList";
 	}
 
