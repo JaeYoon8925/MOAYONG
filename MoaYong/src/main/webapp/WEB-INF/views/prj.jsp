@@ -230,7 +230,7 @@ System.out.println(user);
 
 				<br>
 
-				<p class="content">캘린더 아래에 메모를 적을 수 있어용</p>
+				<p class="content">메모</p>
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="generic.html" class="button">메모하기</a></li>
@@ -242,7 +242,7 @@ System.out.println(user);
 			<!-- Get Started -->
 			<section id="cta" class="main special">
 				<header class="major">
-					<h2>자기소개란</h2>
+					<h2>자기소개</h2>
 					<p>
 						<%=user.getSelf_intro()%>
 					</p>
@@ -261,7 +261,7 @@ System.out.println(user);
 			<!-- 알람 -->
 			<section id="Alert" class="main special">
 				<header class="major">
-					<h2>알람 / 쪽지 등이 나올 공간이에용</h2>
+					<h2>알람 / 쪽지 </h2>
 
 
 					<!-- if문으로 출력할거라 코드가 압축될거에용-->
@@ -270,7 +270,7 @@ System.out.println(user);
 							<tr>
 								<th>보낸 사람</th>
 								<th>제목</th>
-								<th>보낸 일자(년월일까지만?)</th>
+								<th>보낸 일자</th>
 							</tr>
 						</thead>
 						<tbody>

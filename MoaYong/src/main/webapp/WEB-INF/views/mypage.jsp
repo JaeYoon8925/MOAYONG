@@ -289,7 +289,7 @@ System.out.println(user);
 			<section id="second" class="main special">
 				<header class="major">
 					<h2>Calendar</h2>
-					<p>개인 일정이에용</p>
+					<p>개인 일정</p>
 				</header>
 
 				<!-- 캘린더 API -->
@@ -298,7 +298,7 @@ System.out.println(user);
 
 				<br>
 
-				<p class="content">캘린더 아래에 메모를 적을 수 있어용</p>
+				<p class="content" text-align="center;" important!>메모</p>
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="generic.html" class="button">메모하기</a></li>
@@ -312,8 +312,8 @@ System.out.println(user);
 				<header class="major">
 					<h2>자기소개란</h2>
 					<p>
-						상세 정보<br> 상세 경력<br> 대충 엄청 대단한 경력1<br> 대충 엄청난 경력2<br>
-						대충 멋진 경력3<br>
+						상세 정보<br> 상세 경력<br>엄청 대단한 경력1<br>엄청난 경력2<br>
+						멋진 경력3<br>
 					</p>
 				</header>
 				<footer class="major">
@@ -369,7 +369,7 @@ System.out.println(user);
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="goSendMessage.do" class="button">쪽지 보내기</a></li>
-						<li><a href="generic.html" class="button primary">읽음처리(안됌)</a></li>
+						<li><a href="generic.html" class="button primary">읽음</a></li>
 					</ul>
 				</footer>
 			</section>

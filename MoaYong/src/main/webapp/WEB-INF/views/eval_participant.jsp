@@ -126,9 +126,10 @@ button:hover {
 							<div class="modal-content">
 								<span class="close" data-modal-id="<%=vo.getT_id()%>_modal">&times;</span>
 								<h3>participant information</h3>
-								<p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
+								<p>저는 시켜만 주시면 뭐든 잘합니다!</p>
 							</div>
-						</div></td>
+						</div>
+						</td>
 					<td>
 						<button class="eval_btn">평가하기</button>
 						<form class="eval_form" action="submit_eval_participant.do"
