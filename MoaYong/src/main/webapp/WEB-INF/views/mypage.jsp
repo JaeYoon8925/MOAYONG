@@ -86,7 +86,7 @@ System.out.println(user);
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			로고 <span class="logo"><img src="images/logo.svg" alt="" /></span>
+			 <span class="logo"><img src="images/logo.svg" alt="" /></span>
 			built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a
 				href="https://html5up.net">HTML5 UP</a>.
 		</header>
