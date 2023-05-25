@@ -145,7 +145,7 @@
             <div class="modal-content">
               <span class="close" data-modal-id="<%=view_leader.gett_Id()%>_modal">&times;</span>
               <h3>leader information</h3>
-              <p>나아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>
+              <p>저는 시켜만 주시면 뭐든 잘합니다!</p>
             </div> 
           </div>
 				</td>

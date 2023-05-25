@@ -101,12 +101,11 @@ button:hover {
           <tbody>
             <tr>
               <td>1</td>
-              <td>집가
-                고싶다</td>
+              <td>프로젝트 재밌다</td>
               <td>김</td>
               <td><input type="checkbox" name="del" value="del"></td>
               <td>1</td>
-              <td>집가고싶다</td>
+              <td>물을 많이 마시자</td>
               <td>김</td>
               <td><input type="checkbox" name="del" value="del"></td>
             </tr>
