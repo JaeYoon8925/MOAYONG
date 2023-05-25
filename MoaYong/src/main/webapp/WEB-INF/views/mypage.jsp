@@ -319,9 +319,6 @@ System.out.println(user);
 				<footer class="major">
 					<ul class="actions special">
 						<!-- 자기 소개를 수정할 수 있는 새로운 페이지로? 아니면 그냥 여기서 처리? / goSelf_intro -->
-						<li><a href="generic.html" class="button"></a></li>
-						<li><a href="generic.html" class="button primary">Learn
-								More</a></li>
 					</ul>
 				</footer>
 			</section>
