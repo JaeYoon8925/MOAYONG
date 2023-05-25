@@ -86,9 +86,8 @@ System.out.println(user);
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			 <span class="logo"><img src="images/logo.svg" alt="" /></span>
-			built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a
-				href="https://html5up.net">HTML5 UP</a>.
+			<span class="logo"><img src="images/logo.svg" alt="" /></span>
+			<h1 style="margin-top: 40px; font-weight: 600">MOAYONG</h1>
 		</header>
 
 
@@ -130,9 +129,10 @@ System.out.println(user);
 								<!-- Modal -->
 								<button type="button" class="button" data-toggle="modal"
 									data-target="#myModal">칭호 조회</button> <!-- Modal -->
-								<div class="modal" id="myModal" >
-									<div class="modal-dialog" style="width: 40%; height: 700px; position: fixed; top: 60%; left: 50%; transform: translate(-50%, -50%);">
-										<div class="modal-content" >
+								<div class="modal" id="myModal">
+									<div class="modal-dialog"
+										style="width: 40%; height: 700px; position: fixed; top: 60%; left: 50%; transform: translate(-50%, -50%);">
+										<div class="modal-content">
 
 											<!-- Modal Header -->
 
@@ -146,32 +146,33 @@ System.out.println(user);
 
 											<!-- Modal body -->
 											<div class="modal-body">
-												<div style="display: flex; float:left ; margin-left:50px;">뉴비</div>
-												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+												<div style="display: flex; float: left; margin-left: 50px;">뉴비</div>
+												<div class="btn-group btn-group-sm"
+													style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br>
-												<br> 
-												<div style="display: flex; float:left ; margin-left:50px;">꿀벌</div>
-												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+												<br> <br>
+												<div style="display: flex; float: left; margin-left: 50px;">꿀벌</div>
+												<div class="btn-group btn-group-sm"
+													style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br>
-												<br> 
-												<div style="display: flex; float:left ; margin-left:50px;">일벌</div>
-												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+												<br> <br>
+												<div style="display: flex; float: left; margin-left: 50px;">일벌</div>
+												<div class="btn-group btn-group-sm"
+													style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br>
-												<br> 
-												<div style="display: flex; float:left; margin-left:50px;">여왕벌</div>
-												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+												<br> <br>
+												<div style="display: flex; float: left; margin-left: 50px;">여왕벌</div>
+												<div class="btn-group btn-group-sm"
+													style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
-												<br>
-												<br> 
-												<div style="display: flex; float:left ; margin-left:50px;">나쁜벌</div>
-												<div class="btn-group btn-group-sm" style="display: flex; float: right;">
+												<br> <br>
+												<div style="display: flex; float: left; margin-left: 50px;">나쁜벌</div>
+												<div class="btn-group btn-group-sm"
+													style="display: flex; float: right;">
 													<button type="button" class="btn btn-outline-primary">선택</button>
 												</div>
 											</div>
@@ -298,7 +299,7 @@ System.out.println(user);
 
 				<br>
 
-				<p class="content" text-align="center;" important!>메모</p>
+				<p class="content" text-align="center;"important!>메모</p>
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="generic.html" class="button">메모하기</a></li>

@@ -72,9 +72,9 @@ System.out.println(user);
 	<div id="wrapper">
 
 		<!-- Header -->
-		<header id="header" style="padding-top: 6em;">
-			<h1 style="margin-top: 40px; font-weight: 600" >MOAYONG</h1>
-		<p>메인 게시판</p>
+		<header id="header" class="alt" style="padding-top: 6em;">
+			<h1 style="margin-top: 40px; font-weight: 600">MOAYONG</h1>
+			<p>메인 게시판</p>
 		</header>
 
 		<!-- Main -->
