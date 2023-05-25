@@ -86,7 +86,7 @@ System.out.println(user);
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			로고 <span class="logo"><img src="images/logo.svg" alt="" /></span>
+			 <span class="logo"><img src="images/logo.svg" alt="" /></span>
 			built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a
 				href="https://html5up.net">HTML5 UP</a>.
 		</header>
@@ -319,9 +319,6 @@ System.out.println(user);
 				<footer class="major">
 					<ul class="actions special">
 						<!-- 자기 소개를 수정할 수 있는 새로운 페이지로? 아니면 그냥 여기서 처리? / goSelf_intro -->
-						<li><a href="generic.html" class="button"></a></li>
-						<li><a href="generic.html" class="button primary">Learn
-								More</a></li>
 					</ul>
 				</footer>
 			</section>
@@ -369,7 +366,6 @@ System.out.println(user);
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="goSendMessage.do" class="button">쪽지 보내기</a></li>
-						<li><a href="generic.html" class="button primary">읽음</a></li>
 					</ul>
 				</footer>
 			</section>

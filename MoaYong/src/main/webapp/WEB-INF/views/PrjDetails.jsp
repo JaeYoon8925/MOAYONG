@@ -166,9 +166,8 @@
 								</div>
 								<br>
 								<table style="margin-left: auto; margin-right: auto;">
-									<td style="overflow-y: scroll;"><input type="text"
-										name="post" value=${viewPostContent.post }
-										style="width: 100%; height: 670px; font-size: 22px;">
+									<td style="overflow-y: scroll;">
+									${viewPostContent.post}
 									</td>
 								</table>
 								<div align="right">
@@ -183,13 +182,11 @@
 							<%
 							if (!status.equals("종료")) {
 							%>
-							<form method="post" action="#">
-
+							<form method="post"
+								action="PrjRaidEnd.do?prj_seq=${viewPostContent.prj_seq}">
 								<button align="right" id="RaidEnd"
 									style="margin-inline: 15px; float: right; background-color: red; opacity: 0.7; color: white !important;">
-									<a href=PrjRaidEnd.do?prj_seq=${viewPostContent.prj_seq} } >레이드
-										종료</a>
-								</button>
+									레이드 종료</button>
 							</form>
 							<%
 							}

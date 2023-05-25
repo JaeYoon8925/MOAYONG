@@ -57,10 +57,11 @@ public class mypage_ProfileUpdate implements controller {
 			List<Project> ingList = dao2.ing(t_id);
 			request.setAttribute("ingList", ingList);
 
-			List<Project> mytest = (List<Project>) request.getAttribute("ingList");
 			List<Project> endList = dao2.end(t_id);
 			request.setAttribute("endList", endList);
-			List<Project> mytest2 = (List<Project>) request.getAttribute("endList");
+
+			List<Project> recruiting = dao2.recruiting(t_id);
+			request.setAttribute("recruitingList", recruiting);
 
 			// session에 저장된 데이터 업데이트
 			session.setAttribute("user", dto);
