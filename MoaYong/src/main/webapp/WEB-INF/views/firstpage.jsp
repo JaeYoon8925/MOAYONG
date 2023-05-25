@@ -86,19 +86,20 @@ body {
 }
 
 #login-button {
-	background-color: rgb(255, 255, 255, 0,4);
+	background-color: rgb(255, 255, 255, 0, 4);
 	width: 283px;
 	height: 55px;
 	text-align: center;
-	border= none;
+	border
+	=
+	none;
 }
 
 #sign-button {
-	background-color: rgb(255, 255, 255 );
+	background-color: rgb(255, 255, 255);
 	text-align: center;
 	width: 30px;
-	height: 55px;
-	border= none;
+	height: 55px; border = none;
 	margin-top: 10px;
 }
 
@@ -113,12 +114,12 @@ body {
 #sign-button {
 	background-color: rgb(95, 18, 18);
 	transition: background-color 0.5s ease-in-out;
-	
 }
 
 #sign-button:hover {
 	background-color: rgb(25, 40, 126);
 }
+
 #login-button {
 	background-color: rgb(255, 255, 255);
 	transition: background-color 0.5s ease-in-out;
@@ -155,14 +156,11 @@ body {
 	cursor: pointer;
 }
 
-
-
-
 h1 {
 	font-weight: 500;
 }
 
-.mainname{
+.mainname {
 	font-weight: 600;
 }
 </style>
@@ -196,16 +194,20 @@ h1 {
 					<dialog id="sign"> <span id="close-modal"
 						onclick="document.getElementById('sign').close()">X</span> <!-- Close icon -->
 					<form action="join.do" method="post">
-						<label for="username">ID:</label> <input type="text" id="username"
-							name="t_id" required><br>
-						<button type="submit">중복검사</button>
-						<br> <label for="password">Pw:</label> <input type="password"
-							id="password" name="pw" required><br> <label
-							for="email">email:</label> <input type="text" id="email"
-							name="email" required><br> <label for="nickname">Nick:</label>
-						<input type="text" id="nickname" name="nickname" required><br>
-
-						<button type="submit">Submit</button>
+						<label for="username"></label> <input type="text" id="username"
+							name="t_id" required placeholder="ID"><br>
+						<div style="text-align: center;">
+							<button type="submit">중복검사</button>
+						</div>
+						<br> <label for="password"></label> <input type="password"
+							id="password" name="pw" required placeholder="PW"><br>
+						<label for="email"></label> <input type="text" id="email"
+							name="email" required placeholder="EMAIL"><br> <label
+							for="nickname"></label> <input type="text" id="nickname"
+							name="nickname" required placeholder=NICKNAME><br>
+						<div style="text-align: center;">
+							<button type="submit">Submit</button>
+						</div>
 					</form>
 					</dialog>
 
@@ -219,11 +221,13 @@ h1 {
 							onclick="document.getElementById('reset').close()">X</span>
 						<!-- Close icon -->
 
-						<label for="reset-id">ID:</label> <input type="text" id="id"
-							name="t_id" required><br> <label for="reset-email">Email:</label>
-						<input type="email" id="reset-email" name="email" required><br>
-
-						<button type="submit">Submit</button>
+						<label for="reset-id"></label> <input type="text" id="id"
+							name="t_id" required placeholder="ID"><br> <label
+							for="reset-email"></label> <input type="email" id="reset-email"
+							name="email" required placeholder="EMAIL"><br>
+						<div style="text-align: center;">
+							<button type="submit">Submit</button>
+						</div>
 					</form>
 					</dialog>
 
@@ -234,7 +238,8 @@ h1 {
 
 						<form action="login.do" method="post">
 							<div id="result-area"></div>
-							<input type="text" class="user-input" name="t_id" placeholder="ID">
+							<input type="text" class="user-input" name="t_id"
+								placeholder="ID">
 
 							<div id="chance-area"></div>
 							<input type="text" class="user-input" name="pw" placeholder="PW">
@@ -243,66 +248,64 @@ h1 {
 								<br>
 
 
-							
-						   <button type="button" id="sign-button"
+
+								<button type="button" id="sign-button"
 									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원가입</button>
 								<button type="button" id="reset-button"
 									style="min-width: unset; text-align: center; width: 140px !important; display: inline-block; !important;">회원찾기</button>
-							
-							
-							<!-- <button id="sign-button" style="display:flex;">회원가입</button>
+
+
+								<!-- <button id="sign-button" style="display:flex;">회원가입</button>
 								<button id="reset-button" style="display:flex;">회원찾기</button> -->
 						</form>
 
-							</div>
-
 					</div>
-
-
-				</section>
-
 			</div>
 
 
-
-		</body>
-
+			</section>
 	</div>
 
-	<!-- Footer -->
 
 
-	<!--  
+</body>
+
+</div>
+
+<!-- Footer -->
+
+
+<!--  
 		top_btn
 		바로는 안보이고 아래로 어느정도 스크롤을 내려야 버튼이 표시됌 
 	-->
-	<!-- <div>
+<!-- <div>
 					<a href="#header" id="top_btn"><img src="/images/icon_to_top.png" title="위로 가기"></a>
 				</div> -->
 
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script>
-		var joinCom = '${joinComplete}';
-		if (joinCom === "회원가입 완료!") {
-			alert("회원가입 완료!");
-		}
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+	var joinCom = '${joinComplete}';
+	if (joinCom === "회원가입 완료!") {
+		alert("회원가입 완료!");
+	}
 
-		$('#sign-button').on('click', function() {
-			sign.showModal();
-		});
+	$('#sign-button').on('click', function() {
+		sign.showModal();
+	});
 
-		$('#reset-button').on('click', function() {
-			reset.showModal();
-		});
-	</script>
+	$('#reset-button').on('click', function() {
+		reset.showModal();
+	});
+</script>
 
 </body>
 
