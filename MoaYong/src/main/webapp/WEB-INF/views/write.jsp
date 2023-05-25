@@ -103,6 +103,13 @@
 										<option value="전시회" type="text">전시회</option>
 										<option value="게임" type="text">게임</option>
 										<option value="스터디" type="text">스터디</option>
+										<option value="자동차" type="text">자동차</option>
+										<option value="음악" type="text">음악</option>
+										<option value="애완동물" type="text">애완동물</option>
+										<option value="사진" type="text">사진</option>
+										<option value="스포츠" type="text">스포츠</option>
+										<option value="금융" type="text">금융</option>
+										<option value="경매" type="text">경매</option>
 									</select>
 									<!-- <input type="text" name="search_keyword" placeholder="검색어를 입력하세요"> -->
 								</div>

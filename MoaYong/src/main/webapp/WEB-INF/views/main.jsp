@@ -91,6 +91,13 @@ System.out.println(user);
 							<option value="전시회" type="text">전시회</option>
 							<option value="게임" type="text">게임</option>
 							<option value="스터디" type="text">스터디</option>
+							<option value="자동차" type="text">자동차</option>
+							<option value="음악" type="text">음악</option>
+							<option value="애완동물" type="text">애완동물</option>
+							<option value="사진" type="text">사진</option>
+							<option value="스포츠" type="text">스포츠</option>
+							<option value="금융" type="text">금융</option>
+							<option value="경매" type="text">경매</option>
 						</select>
 					</div>
 					<div
@@ -129,8 +136,8 @@ System.out.println(user);
 										<td>${searchPost.prj_seq }</td>
 										<td>${searchPost.prj_category }</td>
 										<td>${searchPost.status }</td>
-										<td>
-										<a href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
+										<td><a
+											href="viewPostContent.do?prj_seq=${searchPost.prj_seq}">${searchPost.prj_name}</a>
 										</td>
 										<td>${searchPost.t_id}</td>
 										<td>${searchPost.post_dt}</td>
@@ -202,18 +209,22 @@ System.out.println(user);
 					<%
 					if (i == currentPage) {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left; width:44px; min-width:unset !important;">
+					<form action="GoListPage.do" method="post"
+						style="float: left; width: 44px; min-width: unset !important;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist" style=" width:44px; min-width:unset !important; margin-right: 30px; padding: 0px !important;">
+						<button type="submit" id="pagelist"
+							style="width: 44px; min-width: unset !important; margin-right: 30px; padding: 0px !important;">
 							<%=i%>
 						</button>
 					</form>
 					<%
 					} else {
 					%>
-					<form action="GoListPage.do" method="post" style="float: left; width:44px; min-width:unset !important;">
+					<form action="GoListPage.do" method="post"
+						style="float: left; width: 44px; min-width: unset !important;">
 						<input type="hidden" name="pageNum" value="<%=i%>">
-						<button type="submit" id="pagelist" style=" width:44px; min-width:unset !important; margin-right: 30px; padding: 0px !important">
+						<button type="submit" id="pagelist"
+							style="width: 44px; min-width: unset !important; margin-right: 30px; padding: 0px !important">
 							<%=i%>
 						</button>
 					</form>
@@ -227,7 +238,8 @@ System.out.println(user);
 					<%
 					if (endPage < pageCount) {
 					%>
-					<form action="GoListPage.do" methond="post" style="float: left; min-width: none !important;">
+					<form action="GoListPage.do" methond="post"
+						style="float: left; min-width: none !important;">
 						<a href="GoListPage.do?pageNum=<%=startPage + pageBlock%>">[다음]</a>
 					</form>
 					<%
