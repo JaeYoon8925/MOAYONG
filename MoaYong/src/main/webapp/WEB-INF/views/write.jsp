@@ -110,6 +110,7 @@
 										<option value="스포츠" type="text">스포츠</option>
 										<option value="금융" type="text">금융</option>
 										<option value="경매" type="text">경매</option>
+										<option value="기타" type="text">기타</option>
 									</select>
 									<!-- <input type="text" name="search_keyword" placeholder="검색어를 입력하세요"> -->
 								</div>
