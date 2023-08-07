@@ -2,7 +2,8 @@
 
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/de8efb58-ba23-498a-b598-8bc992d4d9e6)
 
-RAID는 Redundant Array of Independent Disks의 약자가 아닌 비디오 게임의 <BR>
+RAID는 Redundant Array of Independent Disks의 약자가 아닌, <BR>
+비디오 게임의 <BR>
 다수의 플레이어가 한 가지의 공통 목적을 가지고 함께 행동하는 단어를 의미합니다.
 
 # 본인의 역할
