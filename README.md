@@ -1,60 +1,64 @@
-MOAYONG (팀명 : AZ조)
+# MOAYONG (팀명 : AZ조)
 
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/de8efb58-ba23-498a-b598-8bc992d4d9e6)
 
+# 서비스 소개
+딱딱한 이미지를 탈피하여 하나의 분야에 국한되지 않은 범용 프로젝트 관리 플랫폼
 
-서비스 소개 : 딱딱한 이미지를 탈피하여 하나의 분야에 국한되지 않은 범용 프로젝트 관리 플랫폼
-
-
-프로젝트 기간
+# 프로젝트 기간
 2023.05.10 ~ 2023.05.26
 
-
-주요 기능
+# 주요 기능
 1.레이드 게시판
+<BR>
 2.간트 차트
+<BR>
 3.카카오맵 API
+<BR>
 4.평가 기능
+<BR>
 
+## ✒️ 기술스택
+|구분|내용|
+|------|---|
+|사용언어|![java](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/150534b0-7d09-4cc8-9093-73c7f35bd58e) java, ![css3-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/07fcbc81-de08-412d-bd86-471b9170a21b) css3, ![html5-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/9f9ede26-edda-48f1-8dd4-e26ea5a44c3a) html5, ![javascript-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/d3f92edd-b8ac-4dcb-9fa2-2ad003dd87b3) javascript  |
+|라이브러리|![bootstrap-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/c5cbbd1f-7d1b-4f93-bce7-1167cbab848a) bootstrap, ![jquery-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/38690816-d9fb-4a34-9b68-9647a61053e9) jquery, ![chartdotjs-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/3b88ee03-f718-472d-9553-147a822754fc) chart.js, ![kakao-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/15d14767-218b-4a99-af5c-0c01c6a1f5a7) kakao api |
+|개발도구| ![eclipseide-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/8222ae87-6597-4f9d-adcc-6342ef1ba5bb) Eclipse, ![visualstudiocode-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/9e79ba8d-75c2-4134-aaf8-a503350bf679) VisualStudio |
+|서버환경|![apachetomcat-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/2bf4c4ad-dc67-494d-903f-6c1b4f7a9e1f) apachetomcat |
+|데이터베이스|![download](https://github.com/JaeYoon8925/MOAYONG/assets/130745390/54fea4b6-1e7f-42c5-913a-3364ff5762bd)|
+|협업도구|![github-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/4f02bd37-8cdc-4860-92a7-1d8d4e10bbdb) github |
+<BR>
 
-기술 스택
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/32289cf6-163b-4f7d-8574-0eab894d69a8)
-
-시스템 아키텍처(구조) 예시
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/f7ef7a4d-cecf-4593-b727-b93d0c74135a)
 
-SW유스케이스
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/e438c982-c43b-4801-90cb-cad96289fe7d)
-
-서비스 흐름도
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/7e1a14a4-1b63-45b8-93cd-258d5b0920b7)
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/3734c12b-311d-4dec-90de-75755b86e0ae)
 
-RE다이어그램
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/8d6e9d77-21c6-4861-8a2c-8a4b7c87da8b)
 
-화면 구성
+# 화면 구성
 
-로그인/회원가입/회원관리/회원수정
+# 로그인/회원가입/회원관리/회원수정
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/ee4bf607-2600-49cf-8bba-f35dc9bbe703)
 
+# 본인의 역할
+웹페이지 기능 구현 및 각각 기능구현에 필요한 쿼리문 작성 <BR>
+MVC패턴 예시 코드 및 시연영상
+https://blog.naver.com/4yuiko/223176895274
 
-글쓰기 / 카테고리 검색 / 참가신청 현황/ 프로젝트 리스트 / 지도 첨부
+로그인, 로그아웃, 회원정보 수정. <BR> 
 
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/5394198c-9576-48f0-ac88-5728ea881f5f)
+FullCalendar API, 쪽지, 게시글 조회/수정, 
 
-프로그램 종료/ 간트차트 / 캘린더 / 쪽지
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/c45c19c4-8dbc-4ce1-b098-c5a0be064485)
+게시판 페이징 기능. <BR>
+https://blog.naver.com/4yuiko/223176868969
 
-칭호 조회 / 산출물
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/da2ba5fa-5dff-4bc1-b8b9-8213bdd7bd9f)
+<BR>
 
 
-팀원 역할
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/91970801-0292-4763-82fd-0117a1302cee)
 
-트러블 슈팅
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/AZJo/assets/132859531/a7909d8b-640d-4011-9571-348b91f0a6d9)
+# 트러블 슈팅 / 느낀 점
+
 
 
 
