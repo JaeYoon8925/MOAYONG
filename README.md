@@ -18,7 +18,7 @@
 4.평가 기능
 <BR>
 
-## ✒️ 기술스택
+## 기술스택
 |구분|내용|
 |------|---|
 |사용언어|![java](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/150534b0-7d09-4cc8-9093-73c7f35bd58e) java, ![css3-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/07fcbc81-de08-412d-bd86-471b9170a21b) css3, ![html5-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/9f9ede26-edda-48f1-8dd4-e26ea5a44c3a) html5, ![javascript-color](https://github.com/2021-SMHRD-KDT-BigData-18/scentis/assets/130745390/d3f92edd-b8ac-4dcb-9fa2-2ad003dd87b3) javascript  |
@@ -43,22 +43,27 @@
 
 # 본인의 역할
 웹페이지 기능 구현 및 각각 기능구현에 필요한 쿼리문 작성 <BR>
-MVC패턴 예시 코드 및 시연영상
-https://blog.naver.com/4yuiko/223176895274
+MVC패턴 코드 예시(게시글 작성) 및 시연영상 <BR>
+https://blog.naver.com/4yuiko/223176895274 <BR>
 
 로그인, 로그아웃, 회원정보 수정. <BR> 
+https://blog.naver.com/4yuiko/223176878705 <BR>
 
-FullCalendar API, 쪽지, 게시글 조회/수정, 
+FullCalendar API, 쪽지, 게시글 작성/조회/수정, <BR>
+https://blog.naver.com/4yuiko/223176926546 <BR>
 
 게시판 페이징 기능. <BR>
-https://blog.naver.com/4yuiko/223176868969
+https://blog.naver.com/4yuiko/223176868969 <BR>
 
 <BR>
 
 
 
-# 트러블 슈팅 / 느낀 점
-
+# 느낀 점
+간단한 홈페이지 기능을 구현함에 있어서도 고려해야할 사항, 예외처리 등이 많이 필요함을 알게되었습니다. <BR>
+MVC 패턴을 통한 웹 페이지 구성이 처음이라 오탈자, 파라미터타입 설정 누락 등 간단한 부분에서 많은 오류가 발생하였고, <BR>
+시간이 할당되었지만 프로젝트가 중반을 넘어서 익숙해짐에 따라 오류 빈도와 수정에 필요한 시간이 많이 줄어들어 <BR>
+약간이지만 실력이 성장함을 느꼈습니다.
 
 
 
